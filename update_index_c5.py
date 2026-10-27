@@ -1,0 +1,657 @@
+# -*- coding: utf-8 -*-
+
+index_path = r"G:\我的雲端硬碟\0_AI Agent\Obsidian\DavidCloud\大衛工作\3.0 組織層級\3.3 人資管理\3.3.5 育才\pv-om-knowledge-hub\index.html"
+
+new_html = '''<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>光伏維運專業工程師知識庫 (PV O&M Engineering Knowledge Hub) ｜ 進金生能源 6692</title>
+  <meta name="description" content="專為進金生能源 (6692) 維運團隊打造之麥肯錫風格光伏工程知識庫。收錄 20261027 太陽光電乙級技術士回訓五大課程：發電物理特性、案場清洗策略、熱影像檢查與失效分析、表後儲能系統與能源管理、綠電交易機制與再生能源憑證、光電併網與相關政策趨勢。">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <style>
+    .flagship-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Global Header / Navbar -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="brand-block">
+        <div class="brand-logo-mark">6692</div>
+        <div class="brand-text">
+          <span class="brand-title">進金生能源 ACMEPOINT</span>
+          <span class="brand-sub">光伏維運專業工程師知識庫 ✕ 乙級技術士回訓體系</span>
+        </div>
+      </a>
+      <nav class="nav-links">
+        <a href="#courses" class="nav-link">課程目錄</a>
+        <a href="courses/pv-om-fundamentals.html" class="nav-link">#01 基礎維運</a>
+        <a href="courses/pv-thermal-ir-inspection.html" class="nav-link">#02 熱影像分析</a>
+        <a href="courses/bess-technologies-applications.html" class="nav-link">#03 儲能與能管</a>
+        <a href="courses/green-power-trading-trec.html" class="nav-link">#04 綠電交易</a>
+        <a href="courses/pv-grid-connection-policies.html" class="nav-link">#05 併網政策</a>
+        <a href="#expansion" class="nav-link">擴充指南</a>
+        <a href="https://github.com/davidyeh51/pv-om-knowledge-hub" target="_blank" class="nav-btn-github">
+          <span>GitHub 專案倉庫 ↗</span>
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section (McKinsey Navy & Gold Theme) -->
+  <section class="hero-section">
+    <div class="hero-inner">
+      <div class="hero-badge-wrap">
+        <span class="badge badge-gold">進金生能源 6692 企業內部專案</span>
+        <span class="badge badge-blue">太陽光電設置乙級技術士回訓體系</span>
+      </div>
+      <h1 class="hero-title">
+        光伏維運專業工程師知識庫<br>
+        <span style="font-size:1.6rem; color:#94A3B8; font-weight:400; display:block; margin-top:0.75rem;">
+          以麥肯錫顧問思維・解耦半導體發電物理・嚴守電氣工藝・突破台電併網與綠電交易
+        </span>
+      </h1>
+      <p class="hero-lead">
+        打破「光電維運只是擦板打掃」的傳統誤解。本平台依據 20261027 太陽光電設置乙級技術士實體回訓教材、台電配電處最新併聯法規與標檢局憑證規則重塑，提煉 250 分鐘現場演講精華，以金字塔原理行動結論、三段式講稿與高清圖冊，建立專業維運工程師的資產防禦體系。
+      </p>
+
+      <!-- Key Metrics Stats Row -->
+      <div class="hero-stats-row">
+        <div class="stat-card">
+          <div class="stat-num">5 門</div>
+          <div class="stat-label">回訓核心課程已上線</div>
+          <div class="stat-sub">基礎 ✕ 熱影像 ✕ 儲能 ✕ 綠電 ✕ 併網</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">100 頁</div>
+          <div class="stat-label">麥肯錫金字塔簡報</div>
+          <div class="stat-sub">結論先行 ✕ 三段式講者備忘</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">250 分鐘</div>
+          <div class="stat-label">錄音精華完整提煉</div>
+          <div class="stat-sub">葉大衛 ＆ 慧能張經理 ＆ 標檢局張科長 ＆ 台電吳課長</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">50 條</div>
+          <div class="stat-label">工程維運鐵律軍規</div>
+          <div class="stat-sub">巡檢工藝、儲能套利、綠電合規與併網審查</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Global Search Container -->
+  <div class="search-container">
+    <div class="search-box">
+      <span class="search-icon">🔍</span>
+      <input type="text" id="global-search-input" class="search-input" placeholder="全域即時檢索 100 頁簡報：輸入關鍵字（如：併網六階段、2個月簽約、汰舊換新VPC、每20m²設1k、台電跑兩趟、先換後報備、二三型鬆綁、沙盒3.0、批次電價9.29元、反向電流...）" autocomplete="off">
+      <button class="search-clear-btn" id="search-clear-btn" title="清除">&times;</button>
+    </div>
+    <!-- Search Dropdown Results -->
+    <div class="search-results-dropdown" id="search-results-dropdown"></div>
+
+    <!-- Quick Search Hints -->
+    <div class="search-hints">
+      <span>熱門檢索標籤：</span>
+      <span class="hint-pill" data-keyword="併網六階段">#併網六大階段</span>
+      <span class="hint-pill" data-keyword="VPC">#汰舊換新VPC擴容</span>
+      <span class="hint-pill" data-keyword="每20m²">#每20m²強制設1kW</span>
+      <span class="hint-pill" data-keyword="跑兩趟">#台電檢驗班長跑兩趟</span>
+      <span class="hint-pill" data-keyword="先換後報">#變流器先換後報備</span>
+      <span class="hint-pill" data-keyword="二三型">#二三型售電鬆綁</span>
+      <span class="hint-pill" data-keyword="沙盒">#台電沙盒3.0</span>
+      <span class="hint-pill" data-keyword="零股">#綠電零股化按月結算</span>
+      <span class="hint-pill" data-keyword="批次電價">#批次電價9.29元</span>
+      <span class="hint-pill" data-keyword="2880次">#台電2880次抓最高</span>
+      <span class="hint-pill" data-keyword="熱影像">#熱影像相對溫差0.5度</span>
+      <span class="hint-pill" data-keyword="反向電流">#反向電流23A</span>
+    </div>
+  </div>
+
+  <!-- Main Content Area -->
+  <main class="main-wrapper">
+
+    <!-- Flagship Courses Section -->
+    <section style="margin-bottom: 4rem;">
+      <div class="section-header">
+        <div>
+          <h2 class="section-title">旗艦培訓核心課程（五門已全數上線，共 100 頁簡報）</h2>
+          <p style="font-size:0.9rem; color:#64748B; margin-top:0.25rem;">20261027 太陽光電設置乙級技術士專業回訓課程・100 頁麥肯錫風格 16:9 互動簡報</p>
+        </div>
+        <span class="badge badge-gold" style="font-size:0.85rem; padding:0.4rem 0.8rem;">進金生內部必修課程</span>
+      </div>
+
+      <div class="flagship-grid">
+
+        <!-- Course 1 Card -->
+        <div class="flagship-course-card">
+          <div class="flagship-content">
+            <div>
+              <div class="flagship-badges">
+                <span class="badge badge-gold">核心課 #01</span>
+                <span class="badge badge-blue">乙級技術士回訓</span>
+                <span class="badge badge-teal">62 分鐘實務提煉</span>
+              </div>
+              <h3 class="flagship-title">太陽光電設置乙級技術士回訓課程——光電維運技能與基本光電知識</h3>
+              <p class="flagship-thesis">
+                <strong>核心論點：</strong>光伏維運的核心不是被動擦板，而是解耦發電物理參數、防範熱斑起火、嚴格遵循接頭工藝與精準匹配台電電網併聯特性。
+              </p>
+              <div class="flagship-highlights">
+                <div class="hl-title">💡 麥肯錫顧問三大精華亮點：</div>
+                <ul>
+                  <li><strong>物理特性解耦：</strong>日照定電流、通風散熱定電壓；模組更換嚴格匹配電流差值在 1A 以內。半切封裝集電密度提高，內阻熱損降為全片四分之一 ($P=I^2R$)。</li>
+                  <li><strong>案場清洗科學決策：</strong>切忌盲看歷史 PR 值，以共平面照度鉗表修正值衰退 30% 為觸發標準。鳥糞遮陰會熔斷二極體引發背板 100°C 龜裂大火。</li>
+                  <li><strong>工安死角防禦：</strong>單斷正極組串負極對地仍帶 -199V 高壓，需正負極雙斷並驗電歸零方可施作。嚴禁砂輪機切線以防鐵屑短路炸機。</li>
+                </ul>
+              </div>
+              <div class="flagship-meta">
+                <span>👨‍🏫 授課講師：<strong>葉大衛 (David Yeh)</strong></span>
+                <span>📅 培訓日期：2026-10-27</span>
+                <span>📑 投影片數：20 頁 16:9 (含原廠講義圖冊)</span>
+              </div>
+            </div>
+            <div>
+              <a href="courses/pv-om-fundamentals.html" class="flagship-action-btn">
+                <span>進入全螢幕簡報演示 (20 Slides) →</span>
+              </a>
+            </div>
+          </div>
+          <div class="flagship-visual">
+            <div class="visual-card-header">
+              <span>課程模組架構圖 (5 大工程模組)</span>
+              <span class="badge badge-gold">Module Map</span>
+            </div>
+            <div class="module-list-mini">
+              <div class="mod-item">
+                <span class="mod-num">01</span>
+                <div>
+                  <div class="mod-name">光電基礎與發電物理特性</div>
+                  <div class="mod-desc">光熱/光電轉換解耦・全片到半切電阻熱損・日照定電流模型</div>
+                </div>
+              </div>
+              <div class="mod-item">
+                <span class="mod-num">02</span>
+                <div>
+                  <div class="mod-name">案場清洗策略與熱斑風險防控</div>
+                  <div class="mod-desc">1%~2%專屬備品・照度鉗表30%清洗標準・二極體熱擊穿防禦</div>
+                </div>
+              </div>
+              <div class="mod-item">
+                <span class="mod-num">03</span>
+                <div>
+                  <div class="mod-name">逆變器選型、超配與台電併網規範</div>
+                  <div class="mod-desc">集中/組串/微逆辨析・1.5倍超配折舊・台電調TAP與三相不平衡</div>
+                </div>
+              </div>
+              <div class="mod-item">
+                <span class="mod-num">04</span>
+                <div>
+                  <div class="mod-name">案場巡檢工安、施工工藝與接頭防護</div>
+                  <div class="mod-desc">變流器遮陽板・20kg扭力扳手・負極-199V帶電防觸電SOP</div>
+                </div>
+              </div>
+              <div class="mod-item">
+                <span class="mod-num">05</span>
+                <div>
+                  <div class="mod-name">前瞻安全技術與分散式光儲微電網</div>
+                  <div class="mod-desc">NEC 690.12 RSD快速關斷・AFCI電弧偵測・雙CT防逆送微電網</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Course 2 Card -->
+        <div class="flagship-course-card">
+          <div class="flagship-content">
+            <div>
+              <div class="flagship-badges">
+                <span class="badge badge-gold">核心課 #02</span>
+                <span class="badge badge-blue">乙級技術士回訓</span>
+                <span class="badge badge-teal">44 分鐘實務提煉</span>
+              </div>
+              <h3 class="flagship-title">太陽光電系統熱影像檢查與失效分析</h3>
+              <p class="flagship-thesis">
+                <strong>核心論點：</strong>熱影像檢查是以熱力學溫差倒推電氣內阻與壓差異常的電氣聽診器，是捍衛電廠資產最前線的防禦利刃。
+              </p>
+              <div class="flagship-highlights">
+                <div class="hl-title">💡 麥肯錫顧問三大精華亮點：</div>
+                <ul>
+                  <li><strong>遮陰放熱乘數效應：</strong>遮陰 1/4 產生 9R 熱耗；遮陰 3/4 飆升 243 倍放熱；全遮片退化為絕緣體引發峰值狂熱。半切組件受遮大電流湧向未遮區高溫發熱。</li>
+                  <li><strong>集中式並聯反向逆灌：</strong>單片開路壓差在低照度陰天誘發 20~23A 反向電流充電，在連接器狂熱起火。25A 熔絲專為反向電流超標熔斷隔離而設。</li>
+                  <li><strong>三大工程防禦紅線：</strong>打破絕對溫度迷思（同工況相對溫差 ≥0.5°C 即異常）；鋁框嚴禁鐵自攻螺絲（電位差 2.3V 腐蝕大洞）；設備接地嚴禁共地台電 N 相。</li>
+                </ul>
+              </div>
+              <div class="flagship-meta">
+                <span>👨‍🏫 授課講師：<strong>葉大衛 (David Yeh)</strong></span>
+                <span>📅 培訓日期：2026-10-27</span>
+                <span>📑 投影片數：20 頁 16:9 (含原廠講義圖冊)</span>
+              </div>
+            </div>
+            <div>
+              <a href="courses/pv-thermal-ir-inspection.html" class="flagship-action-btn">
+                <span>進入全螢幕簡報演示 (20 Slides) →</span>
+              </a>
+            </div>
+          </div>
+          <div class="flagship-visual">
+            <div class="visual-card-header">
+              <span>課程模組架構圖 (5 大失效分析模組)</span>
+              <span class="badge badge-gold">Module Map</span>
+            </div>
+            <div class="module-list-mini">
+              <div class="mod-item">
+                <span class="mod-num">01</span>
+                <div>
+                  <div class="mod-name">遮陰熱效應原理與半導體物理特性</div>
+                  <div class="mod-desc">I²R 焦耳熱放大乘數（遮3/4飆243倍）・全遮絕緣化峰值熱・半切分流</div>
+                </div>
+              </div>
+              <div class="mod-item">
+                <span class="mod-num">02</span>
+                <div>
+                  <div class="mod-name">開路故障、電壓特徵與系統級隱患</div>
+                  <div class="mod-desc">整片遮陰啟動門檻・開路溫升2~7°C・單片開路電壓跌落2~13V與PR盲區</div>
+                </div>
+              </div>
+              <div class="mod-item">
+                <span class="mod-num">03</span>
+                <div>
+                  <div class="mod-name">反向電流危害、熔絲真諦與典型案場</div>
+                  <div class="mod-desc">陰天20~23A反向充電引火災・25A熔絲真諦・水庫白鷺鸶鳥糞避雷針獨立串</div>
+                </div>
+              </div>
+              <div class="mod-item">
+                <span class="mod-num">04</span>
+                <div>
+                  <div class="mod-name">接頭工藝、電位差腐蝕與熱異常判定</div>
+                  <div class="mod-desc">MC4異廠混接3分鐘160°C融毀・鐵鋁自攻螺絲2.3V腐蝕・相對溫差0.5°C標準</div>
+                </div>
+              </div>
+              <div class="mod-item">
+                <span class="mod-num">05</span>
+                <div>
+                  <div class="mod-name">並聯拓撲、保護元件演進與表前開關</div>
+                  <div class="mod-desc">巧克力三色反向充電穿透IGBT・二極體到DC熔絲座・表前開關養豬場1500A選型</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Course 3 Card (BESS & Energy Management) -->
+        <div class="flagship-course-card">
+          <div class="flagship-content">
+            <div>
+              <div class="flagship-badges">
+                <span class="badge badge-gold">核心課 #03</span>
+                <span class="badge badge-blue">乙級技術士回訓</span>
+                <span class="badge badge-teal">44 分鐘實務提煉</span>
+              </div>
+              <h3 class="flagship-title">儲能系統技術與應用現況</h3>
+              <p class="flagship-thesis">
+                <strong>核心論點：</strong>儲能是前鋒，能管是中樞；以數據診斷用電浪費，以儲能放電免除限電，是工廠電費最佳化的終極解法。
+              </p>
+              <div class="flagship-highlights">
+                <div class="hl-title">💡 麥肯錫顧問三大精華亮點：</div>
+                <ul>
+                  <li><strong>批次電價價差 9.29 元：</strong>製造業尖離峰套利空間雄厚，扣除 15% 充放電損耗，125kW/261kWh 儲能櫃 5.22 年全本金收回。</li>
+                  <li><strong>台電需量 2880 次規則：</strong>每月 2880 次 15 分鐘平均需量取單次最高值，儲能放電無感削峰免除超約重罰，空調錯峰同比省 11 萬。</li>
+                  <li><strong>四大實操管理案例：</strong>高低壓雙表揪出變壓器損耗 12.6%（年漏40萬）、空壓機共振改管關一台（省40萬降50kW）、自強號讓莒光號錯峰（省100萬基本費）、生鏽輸送帶狂吃 13 萬度電。</li>
+                </ul>
+              </div>
+              <div class="flagship-meta">
+                <span>👨‍🏫 授課講師：<strong>慧能 張經理 (特聘業界專家) ＆ 葉大衛</strong></span>
+                <span>📅 培訓日期：2026-10-27</span>
+                <span>📑 投影片數：20 頁 16:9 (含一體機效益模型與電表架構)</span>
+              </div>
+            </div>
+            <div>
+              <a href="courses/bess-technologies-applications.html" class="flagship-action-btn">
+                <span>進入全螢幕簡報演示 (20 Slides) →</span>
+              </a>
+            </div>
+          </div>
+          <div class="flagship-visual">
+            <div class="visual-card-header">
+              <span>課程模組架構圖 (5 大儲能能管模組)</span>
+              <span class="badge badge-gold">Module Map</span>
+            </div>
+            <div class="module-list-mini">
+              <div class="mod-item">
+                <span class="mod-num">01</span>
+                <div>
+                  <div class="mod-name">管理型節能理念與台灣電力政策局勢</div>
+                  <div class="mod-desc">台塑14年節能心法・AIDC機房缺口・批次電價價差9.29元與用電大戶履約</div>
+                </div>
+              </div>
+              <div class="mod-item">
+                <span class="mod-num">02</span>
+                <div>
+                  <div class="mod-name">電費單科學診斷與台電需量規則</div>
+                  <div class="mod-desc">能源管理法800kW・電費單六大維度・台電2880次抓最高峰與夏月自我同比</div>
+                </div>
+              </div>
+              <div class="mod-item">
+                <span class="mod-num">03</span>
+                <div>
+                  <div class="mod-name">表後儲能七大效益與操作模式</div>
+                  <div class="mod-desc">免拉閘限電・夏月單充單放非夏月雙充雙放・需量反應10元補貼・關鍵冷凍機UPS</div>
+                </div>
+              </div>
+              <div class="mod-item">
+                <span class="mod-num">04</span>
+                <div>
+                  <div class="mod-name">工廠電力痛點與現場改善實戰</div>
+                  <div class="mod-desc">變壓器漏油損耗12.6%・空壓機共振改管・自強號讓莒光號・生鏽輸送帶</div>
+                </div>
+              </div>
+              <div class="mod-item">
+                <span class="mod-num">05</span>
+                <div>
+                  <div class="mod-name">台電輔助服務、虛擬電廠與十條軍規</div>
+                  <div class="mod-desc">需量反應日選型與彈性型10元補貼・離網1秒UPS配比・儲能維運十條軍規</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Course 4 Card (Green Power Trading & T-REC) -->
+        <div class="flagship-course-card">
+          <div class="flagship-content">
+            <div>
+              <div class="flagship-badges">
+                <span class="badge badge-gold">核心課 #04</span>
+                <span class="badge badge-blue">乙級技術士回訓</span>
+                <span class="badge badge-teal">55 分鐘實務提煉</span>
+              </div>
+              <h3 class="flagship-title">綠電交易機制與再生能源憑證制度</h3>
+              <p class="flagship-thesis">
+                <strong>核心論點：</strong>T-REC 憑證是唯一官方法定綠電身分證；善用二三型設備售電鬆綁、沙盒 3.0 事後彈性分配與零股化新制，打破發用電時空錯配，實現綠電採購效益最大化。
+              </p>
+              <div class="flagship-highlights">
+                <div class="hl-title">💡 麥肯錫顧問三大精華亮點：</div>
+                <ul>
+                  <li><strong>二三型設備售電鬆綁紅利：</strong>自用發電設備免去轉型一型發電業繁瑣審查，直接透過合格售電業代銷入市，釋放全台百萬瓩「螞蟻雄兵」自由市場綠電供給。</li>
+                  <li><strong>台電沙盒 3.0 事後彈性分配：</strong>打破事前合約固定比例限制，月結後企業自主將綠電精準灌頂至外銷重點電號，規費斷崖式大降 98% (大戶自 120 萬降至 2.4 萬)。</li>
+                  <li><strong>三大即將落地法規新制：</strong>未售台電之余電可全額核發 T-REC 憑證、解約轉綠電次日電表拍照追溯起算點消滅真空期、單一電號多主體依出資比例直接拆分發證。</li>
+                </ul>
+              </div>
+              <div class="flagship-meta">
+                <span>👨‍🏫 授課講師：<strong>張彥堂 科長 (經濟部標檢局憑證中心) ＆ 葉大衛</strong></span>
+                <span>📅 培訓日期：2026-10-27</span>
+                <span>📑 投影片數：20 頁 16:9 (含交易拓撲與四大時段彌合)</span>
+              </div>
+            </div>
+            <div>
+              <a href="courses/green-power-trading-trec.html" class="flagship-action-btn">
+                <span>進入全螢幕簡報演示 (20 Slides) →</span>
+              </a>
+            </div>
+          </div>
+          <div class="flagship-visual">
+            <div class="visual-card-header">
+              <span>課程模組架構圖 (5 大綠電憑證模組)</span>
+              <span class="badge badge-gold">Module Map</span>
+            </div>
+            <div class="module-list-mini">
+              <div class="mod-item">
+                <span class="mod-num">01</span>
+                <div>
+                  <div class="mod-name">綠電憑證本質與國際範疇界定</div>
+                  <div class="mod-desc">T-REC唯一官方綠電身分證・轉讓一次為限・RE100五大綠能正名・CBAM認PPA實務</div>
+                </div>
+              </div>
+              <div class="mod-item">
+                <span class="mod-num">02</span>
+                <div>
+                  <div class="mod-name">綠電交易市場演進與路徑全貌</div>
+                  <div class="mod-desc">98年FIT拓荒到106年電業自由化・4A自用/4B電證分離/PPA直轉供・二三型售電大鬆綁</div>
+                </div>
+              </div>
+              <div class="mod-item">
+                <span class="mod-num">03</span>
+                <div>
+                  <div class="mod-name">自由市場定價與便民推廣政策</div>
+                  <div class="mod-desc">台電FIT下限錨定疊加加成・台資電統購分銷破信評・台電小額綠電練兵場與4.3元平價競標</div>
+                </div>
+              </div>
+              <div class="mod-item">
+                <span class="mod-num">04</span>
+                <div>
+                  <div class="mod-name">無電號租戶解方與沙盒3.0彈性分配</div>
+                  <div class="mod-desc">台北101綠色大樓團購破2億度・供需時空錯配・台電15分鐘四水桶彌合與沙盒3.0規費降98%</div>
+                </div>
+              </div>
+              <div class="mod-item">
+                <span class="mod-num">05</span>
+                <div>
+                  <div class="mod-name">2026最新變革與維運十條軍規</div>
+                  <div class="mod-desc">零股化按月結算對齊全球財年・查核打破分區與1MW自撰報告快速發證・綠電採購十條軍規</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Course 5 Card (Grid Connection & Policies) -->
+        <div class="flagship-course-card">
+          <div class="flagship-content">
+            <div>
+              <div class="flagship-badges">
+                <span class="badge badge-gold">核心課 #05</span>
+                <span class="badge badge-blue">乙級技術士回訓</span>
+                <span class="badge badge-teal">47 分鐘實務提煉</span>
+              </div>
+              <h3 class="flagship-title">光電併網與相關政策趨勢</h3>
+              <p class="flagship-thesis">
+                <strong>核心論點：</strong>併網合規是電廠商轉的命脈；嚴格卡控 2 個月簽約與 1 年完工時效紅線，把握全數換新 VPC 突破容量上限新政，杜絕孤島逆送與先發後用檢驗卡點，確保併網收益分秒不漏。
+              </p>
+              <div class="flagship-highlights">
+                <div class="hl-title">💡 麥肯錫顧問三大精華亮點：</div>
+                <ul>
+                  <li><strong>併網六階段與嚴格時效紅線：</strong>取得地方備案後 2 個月內必向台電申請簽約，簽約後 1 年內必須完工登記，逾期備案失效費率跌落；細部協商專注交流側責任分界點保護協調 (50/51/27/59)，故障必須比外線優先跳脫。</li>
+                  <li><strong>第三型全數汰舊換新 VPC 擴容新政：</strong>更換為高效能模組 (VPC) 可突破原登記容量上限（如 20kW 增至 30kW），免重附土地建物權狀，原容量保歷史高費率、新增容量享新費率雙軌結算。</li>
+                  <li><strong>新建千坪建物強制設光電與台電跑兩趟：</strong>新建/增改建 ≥1,000m² 每 20m² 強制設 1kW，CNS 61215 靜態負載 5,400Pa 抗 17 級強颱；市電斷電 ATS 實體切離獨立運轉，台電檢驗班長跑兩趟『先發後用』卡控使照送電。</li>
+                </ul>
+              </div>
+              <div class="flagship-meta">
+                <span>👨‍🏫 授課講師：<strong>吳家進 課長 (台電配電處) ＆ 葉大衛</strong></span>
+                <span>📅 培訓日期：2026-10-27</span>
+                <span>📑 投影片數：20 頁 16:9 (含併網六階段與政策拓撲圖)</span>
+              </div>
+            </div>
+            <div>
+              <a href="courses/pv-grid-connection-policies.html" class="flagship-action-btn">
+                <span>進入全螢幕簡報演示 (20 Slides) →</span>
+              </a>
+            </div>
+          </div>
+          <div class="flagship-visual">
+            <div class="visual-card-header">
+              <span>課程模組架構圖 (5 大併網政策模組)</span>
+              <span class="badge badge-gold">Module Map</span>
+            </div>
+            <div class="module-list-mini">
+              <div class="mod-item">
+                <span class="mod-num">01</span>
+                <div>
+                  <div class="mod-name">太陽光電併網六大階段與時效紅線</div>
+                  <div class="mod-desc">審查到結算六階段・2個月簽約1年完工・保護協調邊界・前送電掛表結清</div>
+                </div>
+              </div>
+              <div class="mod-item">
+                <span class="mod-num">02</span>
+                <div>
+                  <div class="mod-name">第三型光電全數汰舊換新擴容新政</div>
+                  <div class="mod-desc">管理辦法第16條・VPC高效模組突破容量・免重附權狀・雙軌費率結算</div>
+                </div>
+              </div>
+              <div class="mod-item">
+                <span class="mod-num">03</span>
+                <div>
+                  <div class="mod-name">新建建築物強制設置太陽光電</div>
+                  <div class="mod-desc">發展條例第12條之1・千坪門檻・每20m²設1kW・CNS 61215 5400Pa爬梯</div>
+                </div>
+              </div>
+              <div class="mod-item">
+                <span class="mod-num">04</span>
+                <div>
+                  <div class="mod-name">孤島獨立運轉與台電兩次檢驗卡控</div>
+                  <div class="mod-desc">ATS自動切離防逆送・公設維生盤・建使照卡控・台電檢驗班長跑兩趟</div>
+                </div>
+              </div>
+              <div class="mod-item">
+                <span class="mod-num">05</span>
+                <div>
+                  <div class="mod-name">第三型變流器簡化更換與十條軍規</div>
+                  <div class="mod-desc">1:1容量相同先換後報備抽核・三相禁換單相・年底法規・併網十條軍規</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Planned Courses Section -->
+    <section id="courses" style="margin-bottom: 4rem;">
+      <div class="section-header">
+        <div>
+          <h2 class="section-title">後續規劃回訓模組（擴充資料架構）</h2>
+          <p style="font-size:0.9rem; color:#64748B; margin-top:0.25rem;">標準化擴充管線已就緒，可隨時注入最新技術講義與錄音逐字稿</p>
+        </div>
+        <span class="badge badge-teal">系統模組擴充就緒</span>
+      </div>
+
+      <div class="courses-grid">
+        <div class="course-card">
+          <div class="course-badge">
+            <span class="badge badge-blue">預備擴充模組 #06</span>
+            <span class="badge" style="background:#F1F5F9; color:#64748B;">規劃中 (2027 Q1)</span>
+          </div>
+          <h3 class="course-title">高壓/特高壓升壓站與台電調度通訊審查防禦實務</h3>
+          <p class="course-desc">
+            針對 69kV/161kV 級別大型光電案場，解析 DNP3.0 與 IEC 61850 通訊協定架構、台電自動頻率控制 (AFC) 降載邏輯與保護電驛 (50/51/87/27/59) 整定值攻防。
+          </p>
+          <div class="course-meta">
+            <span>👨‍🏫 講師規劃：電網工程組</span>
+            <span>📑 預計規格：18 頁 16:9 簡報 ✕ 28 頁圖冊</span>
+          </div>
+        </div>
+
+        <div class="course-card">
+          <div class="course-badge">
+            <span class="badge badge-blue">預備擴充模組 #07</span>
+            <span class="badge" style="background:#F1F5F9; color:#64748B;">規劃中 (2027 Q2)</span>
+          </div>
+          <h3 class="course-title">8D 問題解決法於光伏電廠性能異常與客訴管理實戰</h3>
+          <p class="course-desc">
+            以福特與車規級 8D 方法論，建立 D0 遏制、D2 Is/Is Not 邊界收斂、D4 發生鏈與流出鏈雙向 5-Why 根因追查法典，杜絕「推託天氣遮陰」的經驗主義偽根因。
+          </p>
+          <div class="course-meta">
+            <span>👨‍🏫 講師規劃：品保與運維治理部</span>
+            <span>📑 預計規格：20 頁 16:9 簡報 ✕ 30 頁圖冊</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- System Expansion SOP Section -->
+    <section id="expansion" class="expansion-section">
+      <div class="expansion-inner">
+        <h2 class="expansion-title">🛠️ 知識庫模組化資料擴充 SOP (三步驟快速發布)</h2>
+        <p class="expansion-subtitle">
+          本平台採用資料驅動 (Data-Driven) 架構設計，新增回訓課程或技術手冊無需改動核心系統，僅需三步驟：
+        </p>
+
+        <div class="sop-steps">
+          <div class="sop-step">
+            <div class="step-num">01</div>
+            <div class="step-title">提煉麥肯錫簡報結構</div>
+            <div class="step-desc">
+              依原講義章節順序，運用金字塔原理整理：本頁行動結論標題、核心論點、1-3 個關鍵數據或案例、一句話總結與三段式講者備忘錄。
+            </div>
+          </div>
+          <div class="sop-step">
+            <div class="step-num">02</div>
+            <div class="step-title">建立獨立簡報頁面</div>
+            <div class="step-desc">
+              在 <code>courses/</code> 目錄建立對應 HTML 簡報，繼承 <code>assets/css/deck.css</code> 與 <code>assets/js/deck.js</code>，自動獲得鍵盤切換、講稿抽屜與 PDF 匯出功能。
+            </div>
+          </div>
+          <div class="sop-step">
+            <div class="step-num">03</div>
+            <div class="step-title">更新中繼與搜尋索引</div>
+            <div class="step-desc">
+              於 <code>data/courses.json</code> 登記課程資訊，並於 <code>data/search-index.json</code> 注入投影片全文索引，主頁即刻聯動支援全域模糊搜尋與直達。
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Global Footer -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-brand-info">
+          <h4>進金生能源服務股份有限公司 (ACMEPOINT 6692)</h4>
+          <p>
+            光伏維運專業工程師內部知識庫 ✕ 太陽光電設置乙級技術士專業回訓課程系統。<br>
+            以麥肯錫顧問規格提煉工程心法，保障全台案場資產二十年穩定發電收益。
+          </p>
+        </div>
+        <div class="footer-nav-col">
+          <h5>知識庫導航</h5>
+          <ul>
+            <li><a href="index.html">入口主頁</a></li>
+            <li><a href="courses/pv-om-fundamentals.html">回訓簡報 #01：基礎維運與發電特性</a></li>
+            <li><a href="courses/pv-thermal-ir-inspection.html">回訓簡報 #02：熱影像檢查與失效分析</a></li>
+            <li><a href="courses/bess-technologies-applications.html">回訓簡報 #03：儲能系統技術與應用現況</a></li>
+            <li><a href="courses/green-power-trading-trec.html">回訓簡報 #04：綠電交易機制與再生能源憑證</a></li>
+            <li><a href="courses/pv-grid-connection-policies.html">回訓簡報 #05：光電併網與相關政策趨勢</a></li>
+            <li><a href="#courses">後續規劃課程</a></li>
+          </ul>
+        </div>
+        <div class="footer-nav-col">
+          <h5>技術體系參考</h5>
+          <ul>
+            <li>台電高壓/特高壓再生能源併聯要點</li>
+            <li>再生能源發電設備設置管理辦法第16條 (汰舊換新VPC擴容)</li>
+            <li>再生能源發展條例第12條之1 (新建建築物強制設置光電)</li>
+            <li>IEC 62446-3 光伏系統紅外熱影像檢測標準</li>
+            <li>美國 NEC 690.12 光電方陣快速關斷 (RSD)</li>
+            <li>NFPA 855 固定式儲能系統安裝消防防護標準</li>
+            <li>經濟部標檢局 國家再生能源憑證 (T-REC) 實施作業要點</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>© 2026 進金生能源服務股份有限公司 (ACMEPOINT 6692) 運維管理部・版權所有</div>
+        <div>託管於 GitHub Pages 企業靜態站點 ｜ 麥肯錫顧問風格結構化設計</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/search.js"></script>
+</body>
+</html>
+'''
+
+with open(index_path, 'w', encoding='utf-8') as f:
+    f.write(new_html)
+
+print("Updated index.html successfully with all 5 Courses!")
