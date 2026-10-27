@@ -1,0 +1,1128 @@
+# -*- coding: utf-8 -*-
+import os
+
+out_dir = r"G:\我的雲端硬碟\0_AI Agent\Obsidian\DavidCloud\大衛工作\3.0 組織層級\3.3 人資管理\3.3.5 育才\pv-om-knowledge-hub\courses"
+os.makedirs(out_dir, exist_ok=True)
+out_path = os.path.join(out_dir, "pv-thermal-ir-inspection.html")
+
+slides_data = [
+    {
+        "slideNo": 1,
+        "module": "COURSE OVERVIEW ｜ 核心回訓模組",
+        "ref": "講義對照 P.18~33 ｜ 錄音 00:00~02:26",
+        "title": "太陽光電系統熱影像檢查與失效分析：從微觀發熱物理到宏觀電廠安全防線",
+        "question": "如何透過紅外熱影像與電氣參數，精準診斷電池片遮陰焦耳熱、開路電壓跌落、反向電流逆灌、接頭異廠熔毀與接地混淆死角？",
+        "highlights": [
+            "<strong>微觀物理發熱放大：</strong>遮陰 3/4 焦耳熱暴增 243 倍，全遮片退化為絕緣體引發峰值集中加熱。",
+            "<strong>宏觀並聯連鎖災難：</strong>單片開路壓差在集中式逆變器誘發 20~23A 反向電流逆灌，燒毀 MPPT 與匯流箱。",
+            "<strong>工程死角嚴格防禦：</strong>打破絕對溫度迷思（相對溫差 &ge;0.5&deg;C 即異常）、嚴禁鐵自攻螺絲打鋁框、設備接地嚴禁共地 N 相。"
+        ],
+        "takeaway": "熱影像不是看顏色漂亮，而是以熱力學溫差倒推電氣內阻與壓差異常的電氣聽診器，是捍衛電廠資產最前線的防禦利刃。",
+        "visualTitle": "熱影像與失效分析五大模組防護體系",
+        "visualType": "overview",
+        "thumbImg": "../assets/images/slides/slide_01.jpg",
+        "thumbCaption": "講義 P.01：回訓整體課程總綱",
+        "thumbLabel": "P.01 課程總綱",
+        "noteTakeaway": "本堂課為 20261027 乙級回訓第二堂重磅核心課，聚焦熱影像檢測與深層電氣失效機制。",
+        "noteDetail": "講師葉大衛深入剖析遮陰放熱乘數、二極體極限、開路溫升、反向電流、MC4混接融毀、電位差腐蝕及接地共地觸電真實案例。",
+        "noteTransition": "請進入下一頁，從底層半導體 I²R 公式推導遮陰面積與發熱倍率的驚人非線性關係。"
+    },
+    {
+        "slideNo": 2,
+        "module": "MODULE 1 ｜ 遮陰熱效應原理",
+        "ref": "講義對照 P.18 ｜ 錄音 00:01:01~02:26",
+        "title": "I²R 焦耳熱倍率乘數效應：遮陰 3/4 放熱飆升 243 倍，全遮絕緣化達到峰值加熱",
+        "question": "為什麼電池片遮陰發熱不是線性增加，而是呈現幾何級數的爆炸性增長？全遮蔽狀態會引發何種物理質變？",
+        "highlights": [
+            "<strong>遮陰 1/4 產生 9R 熱耗：</strong>12A 串聯大電流強行通過只剩 9A 產能之遮陰區，差額電流在內部等效電阻強烈摩擦放熱。",
+            "<strong>遮陰 3/4 飆升 243 倍熱效應：</strong>僅剩 3A 產能時，差額電流達到 9A，$(12-3)^2 \\times 3R = 243R$，放熱量呈指數量級劇增！",
+            "<strong>全遮狀態質變為絕緣體：</strong>不受光電池片喪失自由電子激發，轉變為高阻絕緣體，表面微線路被迫承載全部串聯大電流，溫度急劇飆破耐受極限。"
+        ],
+        "takeaway": "遮陰發熱具有強烈的平方放熱乘數效應；全遮電池片不是不工作，而是變成串聯回路中最危險的高溫加熱棒。",
+        "visualTitle": "遮陰面積 vs 焦耳熱放熱倍率對比曲線",
+        "visualType": "i2r_shading",
+        "thumbImg": "../assets/images/slides/slide_35.jpg",
+        "thumbCaption": "講義 P.18：遮陰熱效應計算與電池片等效電阻模型",
+        "thumbLabel": "P.18 遮陰發熱公式",
+        "noteTakeaway": "遮蔽 3/4 時放熱量高達正常值的 243 倍，是引爆熱斑與背板融化最常見的物理起點。",
+        "noteDetail": "講師強調，電池片不受光時不再是導體或半導體，而是趨近絕緣體，全部大電流只能靠表面微金屬柵線強行通過，產生不可逆的熱損傷。",
+        "noteTransition": "接下來探討新一代半切組件在遮陰時，所呈現出的反直覺熱分佈特徵。"
+    },
+    {
+        "slideNo": 3,
+        "module": "MODULE 1 ｜ 半切組件發熱特徵",
+        "ref": "講義對照 P.19 ｜ 錄音 00:34:49~00:38:38",
+        "title": "半切組件反直覺熱分佈：下半部受遮受阻，大電流被迫全數湧向上半部背板集中發熱",
+        "question": "為什麼半切組件下半部被小面積遮陰時，熱影像顯示異常高溫點卻出現在未受遮陰的上半部？",
+        "highlights": [
+            "<strong>反直覺熱分佈現象：</strong>傳統全片組件遮哪裡熱哪裡，但半切組件下部受局部微遮時，熱斑卻頻繁浮現於上半部背板。",
+            "<strong>內部並聯分流物理：</strong>半切組件採上下兩半並聯拓撲；下半部電阻因微遮升高後，7~8A 之大電流被迫湧向上半部支路分流導通。",
+            "<strong>短邊朝下工法指引：</strong>建議組件短邊朝下安裝以緩解背板熱積聚；巡檢時遮擋下半部觀測上半部亮斑，可快速精準定位隱裂破片。"
+        ],
+        "takeaway": "半切技術降低了傳導內阻，但改變了遮陰熱流拓撲；運維工程師切忌套用全片直覺，必須以分流模型研判熱斑。",
+        "visualTitle": "半切組件上下分流通路與異常溫升模型",
+        "visualType": "halfcut_heat",
+        "thumbImg": "../assets/images/slides/slide_07.jpg",
+        "thumbCaption": "講義 P.04：半切組件內部串並聯電路圖與電流路徑",
+        "thumbLabel": "P.04 半切分流模型",
+        "noteTakeaway": "下半部被泥垢或欄杆遮擋時，高達數安培的多餘電流湧向上半部，使上半部背板長期處於高溫烘烤狀態。",
+        "noteDetail": "現場監工需特別注意：半切組件的橫裝與豎裝會直接改變陰影落點與分流方向，短邊朝下更能優化散熱防護。",
+        "noteTransition": "當電池片遭受遮陰時，組件上方的旁路二極體是否能提供萬無一失的保護？請看第四頁剖析。"
+    },
+    {
+        "slideNo": 4,
+        "module": "MODULE 1 ｜ 旁路二極體局限與風險",
+        "ref": "講義對照 P.05 ｜ 錄音 00:02:26~00:04:06",
+        "title": "短時救急與長時過熱：狹小接線盒灌膠環境下的熱積聚與二極體熔斷起弧風險",
+        "question": "旁路二極體（Bypass Diode）是否可以作為長期遮陰的常規運作機制？它的致命使用邊界在哪裡？",
+        "highlights": [
+            "<strong>自身為耗能發熱元件：</strong>二極體導通時吸收遮陰能量並以熱形式向外散發，順向壓降產生持續焦耳熱。",
+            "<strong>接線盒散熱惡劣三疊加：</strong>接線盒體積小且灌膠密封 + 晴天外界高溫環境 + 長期導通發熱，三者疊加極易引發永久熱穿孔。",
+            "<strong>搭電起弧與火勢蔓延：</strong>二極體燒融短路後引燃接線盒塑料，拉出持續直流電弧；若背板可燃或下方有雜草，將直接誘發大火。"
+        ],
+        "takeaway": "旁路二極體只是短暫幾分鐘的過渡救命氣囊，絕不能作為長期遮陰的常規運作機制；長期受遮必壞無疑。",
+        "visualTitle": "旁路二極體接線盒內部熱積聚三疊加模型",
+        "visualType": "bypass_limits",
+        "thumbImg": "../assets/images/slides/slide_09.jpg",
+        "thumbCaption": "講義 P.05：旁路二極體接線盒封裝與散熱路徑",
+        "thumbLabel": "P.05 接線盒二極體",
+        "noteTakeaway": "二極體長期導通會因高溫矽膠碳化失效，一旦燒毀即形成永久開路或永久短路故障。",
+        "noteDetail": "講師在課堂直言：『你那邊故意拿一個東西天天在那把它遮住，那個二極體壞給你看，真的會壞！』",
+        "noteTransition": "既然二極體如此敏感，那麼它到底在什麼臨界條件下才會啟動？請看第五頁啟動門檻解析。"
+    },
+    {
+        "slideNo": 5,
+        "module": "MODULE 2 ｜ 二極體啟動電壓門檻",
+        "ref": "講義對照 P.06 ｜ 錄音 00:03:50~00:04:06",
+        "title": "二極體啟動嚴格門檻：必須遮蔽整片完整電池片方觸發，局部小面積遮陰落入保護盲區",
+        "question": "為什麼鳥糞微斑或局部樹葉遮蔽時，旁路二極體完全不動作？這種『保護盲區』會帶來何種更深層的損害？",
+        "highlights": [
+            "<strong>電壓門檻觸發機制：</strong>1 顆二極體通常跨接保護 20~24 片串聯電池片，必須被遮蔽的單片電池產生足夠大的反向偏壓，方能克服二極體導通門檻。",
+            "<strong>局部微遮陰保護盲區：</strong>若僅遮蔽 1/4 片或零星鳥糞，回路電壓差未達二極體導通電壓，二極體維持截止，受遮電池片被迫持續承受全部串聯電流烘烤。",
+            "<strong>竣工驗收熱異常判讀：</strong>無遮陰工況下，若熱影像測得接線盒內某顆二極體持續偏熱，代表該二極體內部已短路擊穿或引線虛焊。"
+        ],
+        "takeaway": "局部微小遮陰反而比全遮更具破壞力，因為它躲過了二極體旁路保護，使局部熱斑悄無聲息地將電池片燒穿。",
+        "visualTitle": "整片完整遮蔽 vs 局部微遮蔽導通門檻對比",
+        "visualType": "diode_threshold",
+        "thumbImg": "../assets/images/slides/slide_11.jpg",
+        "thumbCaption": "講義 P.06：三顆旁路二極體保護迴路與偏壓導通曲線",
+        "thumbLabel": "P.06 偏壓導通條件",
+        "noteTakeaway": "二極體不會為零星小污漬動作；微小髒污直擊電池片弱點，必須靠現場定期清洗排查清除。",
+        "noteDetail": "驗收檢查時，若發現全新案場模組未受遮陰卻有二極體偏熱，應直接列為嚴重缺陷要求廠家出保更換。",
+        "noteTransition": "當電池片內部連接斷裂或二極體開路時，熱影像會呈現什麼樣的國際標準特徵？請進入第六頁。"
+    },
+    {
+        "slideNo": 6,
+        "module": "MODULE 2 ｜ 開路故障熱影像診斷",
+        "ref": "講義對照 P.19 ｜ 錄音 00:04:07~00:04:58",
+        "title": "IEC 62446-3 國際標準：無功耗散能量原位轉熱，開路故障區域溫升 2～7°C",
+        "question": "開路（Open Circuit）回路發不出電，按常理沒有電流流過，為什麼在紅外熱影像下反而比正常發電區域溫度更高？",
+        "highlights": [
+            "<strong>發熱物理本質解密：</strong>正常運轉組件將 20% 光能轉為電能輸出，80% 轉熱；開路組件電能無法向外傳輸，100% 輻照能量全數在原位轉化為純熱能！",
+            "<strong>IEC 62446-3 溫差標準：</strong>依據國際電工委員會規範，開路區域溫度通常比正常運轉發電區域高出 2～7&deg;C，呈現整排或整塊均勻亮溫斑。",
+            "<strong>日照強度關鍵窗口：</strong>高日照（&gt;700 W/m²）時開路溫差特徵極為鮮明；弱日照（&lt;400 W/m²）下溫差極易被環境底溫平滑覆蓋，難以辨識。"
+        ],
+        "takeaway": "開路不是變冷而是變熱！發不出電的光伏能量全數轉化為原位純熱能，溫升 2~7°C 是確診開路的第一物理特徵。",
+        "visualTitle": "IEC 62446-3 開路溫升熱成像模型與光熱能量平衡",
+        "visualType": "open_circuit_ir",
+        "thumbImg": "../assets/images/slides/slide_37.jpg",
+        "thumbCaption": "講義 P.19：IEC 62446-3 標準熱影像開路排查圖譜 (6排中2排高溫)",
+        "thumbLabel": "P.19 IEC開路標準",
+        "noteTakeaway": "開路區域能量無處可去，熱成像上高出 2~7°C 即是開路最直觀的物理證據。",
+        "noteDetail": "巡檢時熱像儀游標點選正常區與可疑區，若穩定溫差落於 2~7°C 區間，即可直接判定為內部串列開路斷線。",
+        "noteTransition": "除熱影像外，電氣端電壓量測如何與溫升特徵相互印證？請看第七頁。"
+    },
+    {
+        "slideNo": 7,
+        "module": "MODULE 2 ｜ 開路故障電壓檢測",
+        "ref": "講義對照 P.20 ｜ 錄音 00:04:59~00:06:25",
+        "title": "開路電壓斷崖式跌落：單片端電壓驟降至 2～13V，實務無需繁瑣溫度修正即可確診",
+        "question": "當組件內部 1/3 子回路發生開路時，端電壓會發生什麼樣的突變？現場維運如何快速量測驗證？",
+        "highlights": [
+            "<strong>端電壓斷崖式縮減：</strong>正常單片 600W 模組工作電壓約 39V；若內部 1/3 回路開路，對應端子量測電壓將驟降至 2～13V（典型實測約 8~10V）。",
+            "<strong>負溫度係數二次拉降：</strong>故障區域溫度升高（高 2~7&deg;C）使開路電壓依半導體負溫度係數進一步小幅縮減，驗證熱電一體化反饋。",
+            "<strong>工程簡化判定準則：</strong>現場運維無需耗時做繁瑣的溫度係數修正，只要電壓出現腰斬級跌落伴隨紅外溫升，即可 100% 確診內部開路。"
+        ],
+        "takeaway": "紅外溫升高 2~7°C 結合端電壓崩跌至 2~13V，熱電雙軌對照是電氣工程師確診開路的最快組合拳。",
+        "visualTitle": "正常發電狀態 vs 1/3 子回路開路端電壓對比階梯",
+        "visualType": "open_circuit_volt",
+        "thumbImg": "../assets/images/slides/slide_39.jpg",
+        "thumbCaption": "講義 P.20：開路電壓現場萬用電表與鉗表量測數據對照",
+        "thumbLabel": "P.20 開路電壓量測",
+        "noteTakeaway": "單片量測電壓跌落至 8~10V 且發熱，代表該模組內部已有 1~2 串內部焊接開路或二極體斷開。",
+        "noteDetail": "講師提醒：現場查修不需要帶計算機算精確溫度補償，掌握 2~13V 區間就能秒殺判定故障。",
+        "noteTransition": "單片開路損失不過 200W，為什麼在集中式逆變器電廠中會演變成毀滅性的系統級災難？請看第八頁。"
+    },
+    {
+        "slideNo": 8,
+        "module": "MODULE 2 ｜ 開路隱性系統風險",
+        "ref": "講義對照 P.21 ｜ 錄音 00:06:26~00:07:47",
+        "title": "開路隱性系統風險：單片 200W 損耗淹沒於 PR 誤差，集中式逆變器並聯誘發反向電流燒毀",
+        "question": "單塊組件開路僅損失 200W，在 10kW 串列中微不足道，為什麼反而會引爆集中式逆變器與匯流箱的重大火災？",
+        "highlights": [
+            "<strong>電量報表完全監控死角：</strong>單片 600W 模組 1/3 開路損失 200W，在 10kW 回路僅少 0.2kW，完全在 3%~5% PR 系統誤差範圍內，SCADA 報表根本看不出來！",
+            "<strong>壓差誘發反向逆灌：</strong>集中式逆變器下多組串列直接並聯；故障串列端電壓低於其他正常串列，形成巨大電位差，正常串列全力向故障串列「反向逆灌」！",
+            "<strong>硬件連鎖損毀鏈條：</strong>反向電流持續灌入，超出組件反向耐受極限，直接燒毀 MPPT 功率模組、直流輸入端子融化、直流保險絲頻繁過載炸裂。"
+        ],
+        "takeaway": "單片開路的代價不是少發幾度電的收益損失，而是壓差失配逆灌反向電流，燒毀數十萬元的逆變器與匯流箱設備。",
+        "visualTitle": "單片微開路誘發宏觀反向電流逆灌損毀鏈",
+        "visualType": "pr_blindspot",
+        "thumbImg": "../assets/images/slides/slide_41.jpg",
+        "thumbCaption": "講義 P.21：集中式逆變器內部多回路並聯與壓差失配拓撲圖",
+        "thumbLabel": "P.21 集中式並聯風險",
+        "noteTakeaway": "千萬不要以發電量報表未見異常就掉以輕心；局部壓差引發的反向電流隨時都在暗中破壞設備。",
+        "noteDetail": "講師在課堂特別警告：100MW 大型案場如果靠人工查電表，半年也查不完；無人機空拍發現回路色差 2~4 倍，才能搶在火災前止血。",
+        "noteTransition": "究竟什麼是反向電流？它在何種氣候條件下最容易引發火災？請進入第九頁深入解析。"
+    },
+    {
+        "slideNo": 3,
+        "slideNo": 9,
+        "module": "MODULE 3 ｜ 反向電流形成機制",
+        "ref": "講義對照 P.22 ｜ 錄音 00:07:48~00:08:46",
+        "title": "反向電流致命機制：低照度陰天逆向灌流高發，20～23A 強大焦耳熱在接頭引爆大火",
+        "question": "反向電流（Reverse Current）是如何形成的？為什麼光伏案場的電氣火災頻繁爆發在低照度的陰雨天？",
+        "highlights": [
+            "<strong>電位差逆向充電物理：</strong>並聯回路中高電壓串列將低電壓串列視為電池負載進行逆向充電；低照度陰天時逆變器吸納能力下降，反向電流逆灌機率達到峰值！",
+            "<strong>20～23A 焦耳熱起火盲區：</strong>多組並聯逆灌電流累加至 20～23A 時，未達 25A 保險絲熔斷值，在接頭微小接觸電阻處依 I²R 瘋狂放熱，瞬時點燃外殼！",
+            "<strong>陰天火災的底層真相：</strong>晴天大電流由逆變器送出做功；陰天電壓不匹配時，能量在內部各回路之間相互廝殺逆向放電，引發連接器高溫自燃。"
+        ],
+        "takeaway": "並聯串列電壓不一致必然產生反向電流；陰天不是安全期，反而是反向電流引爆連接器大火的高發危險期。",
+        "visualTitle": "多組串並聯電壓失配反向電流逆灌與焦耳熱放熱模型",
+        "visualType": "reverse_current",
+        "thumbImg": "../assets/images/slides/slide_43.jpg",
+        "thumbCaption": "講義 P.22：低照度陰天反向電流流向與接頭放熱實測",
+        "thumbLabel": "P.22 反向電流流向",
+        "noteTakeaway": "當反向電流卡在 20~23A，熔絲不跳、接頭狂燒，是光伏電廠最陰險的起火機制。",
+        "noteDetail": "維運巡檢若發現某一路保險絲經常莫名燒斷，千萬不要只換保險絲，必須全面排查回路內部是否有組件開路或接頭氧化。",
+        "noteTransition": "光伏系統為什麼要配置 25A 過電流保護熔絲？它的設計真諦是什麼？請看第十頁。"
+    },
+    {
+        "slideNo": 10,
+        "module": "MODULE 3 ｜ 過電流保護真諦",
+        "ref": "講義對照 P.23 ｜ 錄音 00:07:15~00:07:41",
+        "title": "25A 熔絲設計真諦：絕非防禦順向工作電流，而是反向電流超標時的生死熔斷閥",
+        "question": "光伏組件順向工作電流最多只有 10~13A，為什麼規範與設計上必須配置 25A 的直流保險絲？",
+        "highlights": [
+            "<strong>順向電流為有限電流源：</strong>太陽能電池片本質為光控受限電流源，順向短路電流上限固定（Isc &asymp; 13A），順向永遠不可能自然達到 25A！",
+            "<strong>專為切除反向電流而生：</strong>選用 25A 熔絲的唯一目的，是當外界多組並聯串列逆灌入故障串列的反向電流超過 25A 時，在毫秒級內熔斷隔離！",
+            "<strong>過電流保護器迭代邏輯：</strong>順向發電靠逆變器防護，直流熔絲完全是為了『防禦外部反向逆灌』而設的終極物理保險栓。"
+        ],
+        "takeaway": "直流保險絲是防禦反向電流逆灌的最後生死道閘；保險絲頻繁熔斷是串列電壓失配的緊急求救訊號，絕不能盲目加大規格。",
+        "visualTitle": "順向受限電流源 (13A) vs 反向並聯逆灌 (>25A) 熔斷機制對比",
+        "visualType": "fuse_protection",
+        "thumbImg": "../assets/images/slides/slide_45.jpg",
+        "thumbCaption": "講義 P.23：光伏過電流保護 (OCPD) 規範與反向電流熔斷曲線",
+        "thumbLabel": "P.23 25A熔絲真諦",
+        "noteTakeaway": "順向發電永遠燒不斷 25A 熔絲；只要保險絲熔斷，100% 是因為遭到其他並聯回路的反向電流暴擊。",
+        "noteDetail": "嚴禁維運人員因為保險絲常燒就私自更換為 30A 或用銅線跨接，這等於親手拆除了電廠防禦大火的最後安全氣囊。",
+        "noteTransition": "水庫或水面案場常見的鳥糞覆蓋，是如何一步步引發二極體批量損毀與火災威脅的？請看第十一頁實戰案例。"
+    },
+    {
+        "slideNo": 11,
+        "module": "MODULE 3 ｜ 水庫案場鳥糞實戰案例",
+        "ref": "講義對照 P.24 ｜ 錄音 00:08:47~00:10:06",
+        "title": "白鷺鸶排泄物整片覆蓋連鎖災難：長期遮陰燒毀二極體，更換組件重在防火而非微小度數",
+        "question": "供電水庫案場因水鳥長期盤踞排泄，引發了何種電氣連鎖損毀？現場工程師更換組件的真正動機是什麼？",
+        "highlights": [
+            "<strong>水鳥盤踞整片覆蓋：</strong>白鷺鸶長期盤踞模組頂部，排泄物面積巨大且具黏性，足以完整覆蓋單片甚至整組串聯電池片。",
+            "<strong>旁路二極體批量陣亡：</strong>長期持續性全遮陰迫使二極體持續高溫導通，內部接點熱熔脫焊，最終 2 片模組之 6 顆二極體全數燒毀！",
+            "<strong>維運決策底層邏輯：</strong>換組件的核心目的絕非挽回少發的幾度電，而是避免接線盒燒穿拉出直流電弧，引燃下方浮台與可燃結構！"
+        ],
+        "takeaway": "鳥糞遮陰是引爆直流電弧的定時炸彈；案場更換故障模組是在排除火災引信，而非單純為了微小的發電度數。",
+        "visualTitle": "鳥糞長期全遮陰 &rarr; 二極體熱熔 &rarr; 直流起弧連鎖損毀路徑",
+        "visualType": "bird_droppings",
+        "thumbImg": "../assets/images/slides/slide_47.jpg",
+        "thumbCaption": "講義 P.24：水庫太陽能暗場白鷺鸶鳥糞覆蓋與接線盒燒毀現場",
+        "thumbLabel": "P.24 水庫鳥糞案例",
+        "noteTakeaway": "高架棚架離地高尚可阻斷火勢，若下方有浮筒、乾草或電纜槽，接線盒拉弧將瞬間蔓延成全場大火。",
+        "noteDetail": "講師在課堂特別分享：現場拆下受損模組，二極體全都搭電燒穿，更換是為了阻斷火勢蔓延，安全價值遠超電能損失。",
+        "noteTransition": "當案場遭遇避雷針或周邊障礙物長期陰影掃射時，如何透過電氣拓撲優化避免全場發電腰斬？請看第十二頁。"
+    },
+    {
+        "slideNo": 12,
+        "module": "MODULE 3 ｜ 避雷針遮陰設計優化",
+        "ref": "講義對照 P.25 ｜ 錄音 00:11:10~00:13:08",
+        "title": "避雷針陰影獨立串列隔離：專列專機精準處置，防範全場變流器發電效率腰斬慘劇",
+        "question": "某案場因避雷針遮陰導致 3 年後所有逆變器讀取電壓下降一半，如何透過顧問級電氣串列優化徹底根治？",
+        "highlights": [
+            "<strong>橫向跨列串聯致命傷：</strong>若為了佈線美觀將避雷針陰影路徑上的組件橫向串入正常串列（第 1 列橫串到第 4 列），遮陰效應將污染整台逆變器！",
+            "<strong>三年發電效率腰斬慘劇：</strong>避雷針陰影每日定時掃射，長期累積使各回路二極體頻繁擊穿，全場所有變流器工作電壓暴跌 50%！",
+            "<strong>顧問級獨立隔離方案：</strong>將避雷針掃射軌跡覆蓋之組件單獨集中劃分為 1~2 個獨立串列，專門接入獨立逆變器或獨立 MPPT，隔離故障擴散。"
+        ],
+        "takeaway": "遮陰不可避免時，必須實施『電氣拓撲物理隔離』；寧可犧牲單一專用回路，也絕不讓一根避雷針拖垮整座電廠。",
+        "visualTitle": "錯誤橫向跨列串聯 vs 顧問級獨立串列專機隔離佈局對照",
+        "visualType": "lightning_rod_isolation",
+        "thumbImg": "../assets/images/slides/slide_49.jpg",
+        "thumbCaption": "講義 P.25：避雷針陰影掃射軌跡與電氣串聯優化設計圖",
+        "thumbLabel": "P.25 避雷針隔離設計",
+        "noteTakeaway": "設計時貪圖走線整齊漂亮，下場就是整台逆變器被陰影綁架，維運時連故障點都查不出來。",
+        "noteDetail": "講師提出黃金原則：遇到無法排除的避雷針或樹蔭，直接規劃專屬串列與專屬變流器，壞就那一台跳異常，查修極度迅速。",
+        "noteTransition": "光伏電廠第一大火災起因是 MC4 連接器，異廠混接與隨手施工到底有多致命？請進入第十三頁。"
+    },
+    {
+        "slideNo": 13,
+        "module": "MODULE 4 ｜ 連接器失效致命誘因",
+        "ref": "講義對照 P.26 ｜ 錄音 00:15:24~00:17:41",
+        "title": "MC4 連接器異廠混接 3 分鐘飆至 160°C，隨手施工誘發水氣滲透與海邊氯化銅腐蝕",
+        "question": "為什麼隨手扭動接頭、不同品牌混接會導致接頭融毀？海邊鹽霧環境如何加速接頭金屬的化學腐蝕？",
+        "highlights": [
+            "<strong>異廠混接通電實測融毀：</strong>同廠牌對接通電 5 分鐘溫度穩定於 135&deg;C；異廠混接（LG 對接 A 廠）僅 3 分鐘飆至 160&deg;C，2 分鐘後外殼完全融化變形！",
+            "<strong>毛細負壓滲透效應（Osmosis）：</strong>隨手手擰未達 IP65 扭力規範，表面灰塵吸水，通電溫差形成負壓抽吸，水氣順隙強行滲入接頭內部腐蝕導體。",
+            "<strong>海邊氯離子化學置換：</strong>NaCl 解離強電解質氯離子，直接置換氧化銅之氧生成『氯化銅』，接觸電阻暴增拉出高溫直流電弧！"
+        ],
+        "takeaway": "嚴禁異廠牌接頭混接！必須嚴格使用扭力扳手鎖至額定扭力，杜絕水氣滲透與氯化銅化學腐蝕。",
+        "visualTitle": "同廠牌 vs 異廠混接通電溫升曲線與水氣毛細滲透腐蝕模型",
+        "visualType": "mc4_burn",
+        "thumbImg": "../assets/images/slides/slide_26.jpg",
+        "thumbCaption": "講義 P.13：MC4 連接器異廠混接加熱融毀實驗與金屬置換反應",
+        "thumbLabel": "P.13 MC4異廠混接",
+        "noteTakeaway": "異廠混接外觀看似卡得進去，內部金屬公母差之毫釐，接觸電阻直接引發致命高溫融化。",
+        "noteDetail": "郭署長引用的國際論文證實：連接器表面灰塵加上導體通電熱脹冷縮，會產生滲透壓將外界水氣吸入內部，未按手冊鎖緊就是火災起點。",
+        "noteTransition": "接地施工中在鋁框打入鐵自攻螺絲是常見違規，電位差腐蝕會帶來何種不可逆後果？請看第十四頁。"
+    },
+    {
+        "slideNo": 14,
+        "module": "MODULE 4 ｜ 電位差腐蝕嚴格規範",
+        "ref": "講義對照 P.27 ｜ 錄音 00:17:42~00:19:54",
+        "title": "電位差腐蝕致命傷：鋁框嚴禁鐵自攻螺絲，電位差達 2.3V 嚴重超標導致鋁材溶解大洞",
+        "question": "為什麼在組件鋁框上直接打入鐵自攻螺絲當接地螺絲是極其嚴重的違規？標準規範對接觸金屬電位差有何硬性要求？",
+        "highlights": [
+            "<strong>金屬活動性氧化還原：</strong>鋁活性高、鐵活性低（Al &rarr; Al³⁺ + 3e⁻）；鋁作為陽極持續釋放電子被氧化溶解，最終鋁框被徹底吃出大洞、結構強度盡失！",
+            "<strong>電位差 2.3V 嚴重超標：</strong>標準規範要求接觸之活性金屬電位差需控制在 2V 以內（工程建議控制在 1V 以內），鐵與鋁電位差高達 2.3V，完全違背規範！",
+            "<strong>海邊強電解質加速：</strong>海邊高鹽氯化鈉為強電解質，大幅加速電子在金屬界面間的遷移速度，數月內即可使接地功能完全失效且原廠直接拒保。"
+        ],
+        "takeaway": "組件鋁框嚴禁直接打入鐵自攻螺絲！必須使用不鏽鋼 304/316 螺栓並搭配防電位差腐蝕專用雙面齒形接地墊片。",
+        "visualTitle": "鐵-鋁金屬活動性電位差氧化還原反應與腐蝕穿孔機制",
+        "visualType": "galvanic_corrosion",
+        "thumbImg": "../assets/images/slides/slide_53.jpg",
+        "thumbCaption": "講義 P.27：鋁框自攻螺絲電位差腐蝕穿孔照片與金屬活性順序表",
+        "thumbLabel": "P.27 電位差腐蝕穿孔",
+        "noteTakeaway": "自攻螺絲打下去看似完好，一年後鋁框被溶出一個大洞，組件功率衰退時原廠看到直接拒保。",
+        "noteDetail": "講師在課堂強調：『鋁框被吃掉了，被溶掉了！鐵鋁電位差插到 2.3 伏特，超過標準 2 伏特極限，靠近海邊強電解質加速更是炸裂！』",
+        "noteTransition": "如何客觀研判紅外熱影像異常？幾度以上才算異常？請進入第十五頁掌握黃金法則。"
+    },
+    {
+        "slideNo": 15,
+        "module": "MODULE 4 ｜ 熱異常判定黃金法則",
+        "ref": "講義對照 P.28 ｜ 錄音 00:20:02~00:21:28",
+        "title": "打破絕對溫度迷思：同工況下相對溫差高出 0.5°C 即屬異常，接觸電阻偏大必須立即處置",
+        "question": "熱異常到底該如何判定？高出 10°C 甚至 30°C 才算異常嗎？電氣一致性原理如何指導早期介入？",
+        "highlights": [
+            "<strong>徹底破除絕對溫度迷思：</strong>部分運維誤以為溫度讀數未達 80°C 或未高出 10~30°C 就無需更換，往往錯失早期處置黃金期，引發箱體全燒毀大火！",
+            "<strong>電氣一致性與相對溫差：</strong>相同日照與環境工況下，同型號部件工作溫度應保持高度一致；只要某接頭比周邊同伴高出哪怕 0.5&deg;C，即代表其接觸電阻偏大！",
+            "<strong>百元接頭阻斷全場賠償：</strong>0.5°C 溫差代表對接未做好或微量氧化，此時更換成本僅數十元；拖延至起火，將面臨農牧草料或畜禽舍全場賠償的滅頂之災。"
+        ],
+        "takeaway": "不要問高於幾度才算壞！同工況下只要比別人高出 0.5°C 就是接觸電阻異常，立刻更換絕不拖延。",
+        "visualTitle": "絕對溫度盲點 vs 電氣一致性相對溫差 (0.5°C) 早期介入模型",
+        "visualType": "relative_temp",
+        "thumbImg": "../assets/images/slides/slide_55.jpg",
+        "thumbCaption": "講義 P.28：紅外熱影像相對溫差 0.5°C 判定案例與接頭熱異常圖譜",
+        "thumbLabel": "P.28 相對溫差0.5度",
+        "noteTakeaway": "像量額頭發燒一樣，比大家高 0.5 度就是內阻變大發燒了，立刻換掉接頭成本最低、安全最高。",
+        "noteDetail": "某牧場案場後面堆滿乾草，接頭發熱未及時更換直接引燃箱體大火，整場剛貸款買進的牛隻全部面臨巨額索賠。",
+        "noteTransition": "光伏案場接地系統存在一個極度隱蔽的致命陷阱：設備接地與台電 N 相共地。請看第十六頁血淚案例。"
+    },
+    {
+        "slideNo": 16,
+        "module": "MODULE 4 ｜ 接地系統致命陷阱",
+        "ref": "講義對照 P.14 ｜ 錄音 00:21:29~00:23:10",
+        "title": "設備接地嚴禁與台電 N 相共地：防範電網故障電流反竄鋼梁，電倒全場畜禽血淚案例",
+        "question": "設備接地與台電 N 相接地在物理功能上有何本質區別？二者共地線為何會引發畜禽舍整場帶電的慘劇？",
+        "highlights": [
+            "<strong>功能本質徹底分離：</strong>設備接地用於防漏電、支撐逆變器絕緣檢測跳脫保護（&le;5&Omega; 獨立打設）；N 相接地為協助台電電網分擔系統故障電流，二者嚴禁共地線！",
+            "<strong>共地線觸電災難傳導鏈：</strong>設備接地若誤接 N 相，電網故障電流沿鋁框、金屬支架反竄入建築鋼結構，無標準地網之畜禽舍瞬間全域帶電！",
+            "<strong>種豬懷胎全電倒真實案例：</strong>某未領使照畜禽舍因共地線漏電，故障電流竄入鋼樑，整場即將臨盆之母豬與種豬全被電倒，發電收益尚未回收即面臨巨額索賠。"
+        ],
+        "takeaway": "設備接地必須獨立打設地網（&le;5&Omega;），絕對嚴禁與台電 N 相共地！地網分流是守護人身與牲畜安全的生死界線。",
+        "visualTitle": "獨立設備接地 (防漏電) vs N相接地 (保台電) 與共地漏電傳導流向圖",
+        "visualType": "grounding_trap",
+        "thumbImg": "../assets/images/slides/slide_28.jpg",
+        "thumbCaption": "講義 P.14：設備接地獨立配線圖與畜禽舍鋼梁漏電事故解剖",
+        "thumbLabel": "P.14 嚴禁共地N相",
+        "noteTakeaway": "設備接地自己接（&le;5歐姆），N相接地保台電，兩條線綁在一起等於引電網故障電流往自己家鋼梁灌。",
+        "noteDetail": "非法畜禽舍底下沒有鋼筋水泥完整地網，故障電流走 1 歐姆高鐵回流路徑，反而把地面豬舍變成巨大電擊場，維運設計必須嚴守獨立地網底線。",
+        "noteTransition": "同一逆變器下混接不同串數或不同朝向，會引發何種反向充電災難？請看第十七頁健達巧克力案例。"
+    },
+    {
+        "slideNo": 17,
+        "module": "MODULE 5 ｜ 多串並聯反向充電拓撲",
+        "ref": "講義對照 P.29 ｜ 錄音 00:24:27~00:27:07",
+        "title": "健達巧克力三色案場實錄：嚴禁混接不同串數與方位，IGBT 後端反向灌流頻繁擊穿逆變器",
+        "question": "為什麼未併網的案場空拍會呈現三種奇異顏色？逆變器內部 IGBT 頻繁燒毀的根本電氣病灶是什麼？",
+        "highlights": [
+            "<strong>健達巧克力三色實錄：</strong>未併網電廠空拍呈現 59&deg;C、54&deg;C、65&deg;C 三種顏色，18 片正常串列正對 15 片（3片內部短路）低壓串列劇烈逆向充電！",
+            "<strong>混接不同串數與方位禁忌：</strong>同一逆變器/MPPT 接入 18 片與 16 片，或東西南不同朝向混接，每天隨太陽移動都在內部發生多次反向充電循環！",
+            "<strong>IGBT 後端擊穿原理：</strong>逆變器內部所有回路最終在 IGBT 後端直流母線並聯，反向電流從 IGBT 後端逆灌，長期衝擊導致 IGBT 模組頻繁爆裂燒毀。"
+        ],
+        "takeaway": "嚴禁在同一逆變器 MPPT 下混接不同串數或不同朝向！母線反向逆灌是摧毀逆變器 IGBT 的隱形殺手。",
+        "visualTitle": "18片 vs 15片內部短路反向充電拓撲與逆變器 IGBT 後端母線逆灌圖",
+        "visualType": "kinder_chocolate",
+        "thumbImg": "../assets/images/slides/slide_57.jpg",
+        "thumbCaption": "講義 P.29：健達巧克力三色熱影像空拍照片 (59°C/54°C/65°C)",
+        "thumbLabel": "P.29 三色反向充電",
+        "noteTakeaway": "電壓只要有落差，高電壓回路就會把低電壓回路當成充電電池猛灌，回路沒發電反而先被充壞。",
+        "noteDetail": "很多工程師以為東西南三個朝向接在同一台 100kW 逆變器很聰明，殊不知每天早中晚都在逆變器 IGBT 後端打內戰，逆變器一年燒兩次。",
+        "noteTransition": "直流保護元件經歷了怎樣的迭代？為什麼早期阻隔二極體被徹底淘汰？請看第十八頁。"
+    },
+    {
+        "slideNo": 18,
+        "module": "MODULE 5 ｜ 直流保護元件演進歷程",
+        "ref": "講義對照 P.30 ｜ 錄音 00:27:08~00:31:00",
+        "title": "保護元件演進史：從 IP65 密閉發熱的阻隔二極體，到免動火秒級抽換的 DC 熔絲座",
+        "question": "早期光伏系統使用的阻隔二極體為何頻繁燒毀？現代光伏匯流箱為何全數轉向直流熔絲？",
+        "highlights": [
+            "<strong>早期阻隔二極體原理衝突：</strong>二極體為耗能元件需要良好通風散熱，卻被安裝於密封之 IP65 直流箱內，熱量無法散逸導致頻繁過熱燒穿！",
+            "<strong>動火解焊維運噩夢：</strong>早期二極體兩端要求電氣滿焊，現場損壞更換必須申請『動火作業』逐一解焊重焊，高空火災工安風險極高！",
+            "<strong>現代 DC 熔絲座工程優勢：</strong>更換無需動火作業，拉開熔絲座即可秒級抽換；依 IEC 規範，1~2 串小逆變器可免設，多串集中型則需精準匹配 25A。"
+        ],
+        "takeaway": "密閉箱體排斥發熱二極體；採用免動火 DC 熔絲座，是提升運維安全與檢修效率的標準工程解法。",
+        "visualTitle": "阻隔二極體 (密閉過熱/動火解焊) vs 現代 DC 熔絲座 (免動火/秒抽換) 演進對照表",
+        "visualType": "protection_evolution",
+        "thumbImg": "../assets/images/slides/slide_59.jpg",
+        "thumbCaption": "講義 P.30：直流匯流箱內部阻隔二極體燒毀痕跡與現代保險絲座配置",
+        "thumbLabel": "P.30 保護元件演進",
+        "noteTakeaway": "早期二極體滿焊在接線箱，現場維修還要拉電焊機動火，工安風險極大；保險絲拉開即換是維運體驗的巨大躍升。",
+        "noteDetail": "國際規範明確：1~2 個回路並聯的小型變流器不需要裝熔絲；裝熔絲是為了大型多並聯電廠防範反向逆灌，設計必須精準對號入座。",
+        "noteTransition": "大型電廠如何用無人機熱影像高效巡檢？相機開口率與引線拉扯熱斑有何特徵？請進入第十九頁。"
+    },
+    {
+        "slideNo": 19,
+        "module": "MODULE 5 ｜ 空拍巡檢參數與直流箱價值",
+        "ref": "講義對照 P.31 ｜ 錄音 00:31:01~00:34:20 & 00:38:39~00:39:34",
+        "title": "空拍熱影像開口率 4°~5° 幾何控制，左右兩側零星點精準鎖定接線盒引線拉扯脫焊",
+        "question": "無人機空拍巡檢時相機開口率與飛行高度如何設定？熱圖兩側零星熱斑代表何種典型施工缺陷？",
+        "highlights": [
+            "<strong>開口率 4°~5° 與像素覆蓋：</strong>主流空拍熱像儀視角約 4&deg;~5&deg;，飛行高度必須精確控制，確保『單塊模組至少涵蓋 1 個有效像素以上』，飛太高會使熱點被抹平！",
+            "<strong>左右兩側熱點指紋解析：</strong>空拍熱影像中若出現『零星分佈且集中在模組左右兩側』的微亮斑，十之八九是施工暴力拉扯導致接線盒引線端內部脫焊！",
+            "<strong>直流箱體不可替代之價值：</strong>200MW 案場若無直流箱，逐一拆解 MC4 測開路電壓需耗時 6 個月耗資 2,000 萬；空拍初篩開路/短路/二極體是唯一可行的經濟方案。"
+        ],
+        "takeaway": "無人機空拍嚴控光學幾何解析度；熱圖兩側零星亮斑是接線盒引線被暴力拉扯的典型物理指紋。",
+        "visualTitle": "無人機視角開口率 (4°~5°) 單像素覆蓋幾何關係與接線盒兩側引線拉扯圖",
+        "visualType": "drone_pixel",
+        "thumbImg": "../assets/images/slides/slide_61.jpg",
+        "thumbCaption": "講義 P.31：無人機熱成像空拍俯瞰圖與接線盒引線端拉扯熱斑照片",
+        "thumbLabel": "P.31 空拍開口率幾何",
+        "noteTakeaway": "新加坡投資商 200MW 案場沒設直流箱，請人人工拔接頭要花 2000 萬做半年；無人機空拍只抓開路、短路、二極體啟動三件事即可。",
+        "noteDetail": "半切組件接線盒只有拇指大，工人踩踏或拉扯電纜，左右兩端焊點受力脫落，熱影像下兩端發熱極為明顯，現場監工必須嚴管踩踏。",
+        "noteTransition": "最後一頁探討交接處表前開關在極端腐蝕環境下的選型與耐電流上選原則。"
+    },
+    {
+        "slideNo": 20,
+        "module": "MODULE 5 ｜ 表前開關選型與極端耐蝕",
+        "ref": "講義對照 P.32 ｜ 錄音 00:39:35~00:44:05",
+        "title": "表前開關耐電流必須嚴格上選：養豬場排糞溝直選 1500A 規格，抵禦氨氣腐蝕電弧爆燃",
+        "question": "表前隔離開關為什麼不能當保護元件看待？海邊鹽霧與養豬場氨氣環境下，如何透過『上選原則』保障全生命週期安全？",
+        "highlights": [
+            "<strong>純開關無過載跳脫機制：</strong>表前開關為隔離開關非保護元件，長期過電流運轉將導致銅排過熱、絕緣機殼炭化擊穿對地放電燒穿厚鋼板！",
+            "<strong>耐電流容量必須上選嚴禁下修：</strong>計算得出需 800A/850A 時，嚴禁下修選 700A，必須向上直選 1000A，為高溫環境與接觸面腐蝕預留足夠散熱安全裕度！",
+            "<strong>養豬場排糞溝正上方實戰案例：</strong>開關箱設於豬糞溝上方，氨氣常年蒸騰導致銅排黑化長菌腐蝕，唯有直選 1500A 超大耐電流規格，方能撐過電廠 20 年營運期。"
+        ],
+        "takeaway": "表前開關絕非保護開關，耐電流容量只能上選不能下修；在海邊高鹽與畜禽高氨氣環境中，超規格選型是防禦電弧爆燃的唯一法寶。",
+        "visualTitle": "表前開關計算 vs 實際選型階梯表與養豬場氨氣腐蝕電弧放熱模型",
+        "visualType": "switch_rating",
+        "thumbImg": "../assets/images/slides/slide_63.jpg",
+        "thumbCaption": "講義 P.32：養豬場排糞溝上方 1500A 表前開關箱與被電弧擊穿之金屬外殼",
+        "thumbLabel": "P.32 表前開關選型",
+        "noteTakeaway": "算出來需要 800A，買 700A 是自殺，買 1000A 是保險；養豬場氨氣腐蝕銅排電阻暴增，直上 1500A 才能保證 20 年不拉弧燒箱。",
+        "noteDetail": "講師在課程結語告誡：表前開關雖然台電有上封印，但定期維運必須向台電通報開箱用紅外熱像儀掃描，發現接觸面異常發熱立刻處理。",
+        "noteTransition": "恭喜完成本課程全篇學習！請點擊左上方按鈕返回知識庫首頁，或按 G 鍵回顧 20 頁精彩內容。"
+    }
+]
+
+def render_visual(vt):
+    if vt == "overview":
+        return '''
+        <div style="background:#0F172A; padding:1.25rem; border-radius:8px; border:1px solid #334155;">
+          <div style="display:grid; grid-template-columns:repeat(5, 1fr); gap:0.5rem; text-align:center;">
+            <div style="background:#1E293B; padding:0.75rem 0.5rem; border-radius:6px; border-top:3px solid #38BDF8;">
+              <div style="font-size:0.7rem; color:#94A3B8; font-weight:bold;">MOD 1</div>
+              <div style="font-size:0.85rem; font-weight:bold; color:#F8FAFC; margin:0.25rem 0;">遮陰熱效應</div>
+              <div style="font-size:0.7rem; color:#38BDF8;">I²R 乘數 243倍</div>
+            </div>
+            <div style="background:#1E293B; padding:0.75rem 0.5rem; border-radius:6px; border-top:3px solid #F59E0B;">
+              <div style="font-size:0.7rem; color:#94A3B8; font-weight:bold;">MOD 2</div>
+              <div style="font-size:0.85rem; font-weight:bold; color:#F8FAFC; margin:0.25rem 0;">開路診斷</div>
+              <div style="font-size:0.7rem; color:#F59E0B;">IEC +2~7°C / 2~13V</div>
+            </div>
+            <div style="background:#1E293B; padding:0.75rem 0.5rem; border-radius:6px; border-top:3px solid #EF4444;">
+              <div style="font-size:0.7rem; color:#94A3B8; font-weight:bold;">MOD 3</div>
+              <div style="font-size:0.85rem; font-weight:bold; color:#F8FAFC; margin:0.25rem 0;">反向電流</div>
+              <div style="font-size:0.7rem; color:#EF4444;">20~23A 陰天起火</div>
+            </div>
+            <div style="background:#1E293B; padding:0.75rem 0.5rem; border-radius:6px; border-top:3px solid #10B981;">
+              <div style="font-size:0.7rem; color:#94A3B8; font-weight:bold;">MOD 4</div>
+              <div style="font-size:0.85rem; font-weight:bold; color:#F8FAFC; margin:0.25rem 0;">接頭與腐蝕</div>
+              <div style="font-size:0.7rem; color:#10B981;">MC4 160°C / 鐵鋁2.3V</div>
+            </div>
+            <div style="background:#1E293B; padding:0.75rem 0.5rem; border-radius:6px; border-top:3px solid #8B5CF6;">
+              <div style="font-size:0.7rem; color:#94A3B8; font-weight:bold;">MOD 5</div>
+              <div style="font-size:0.85rem; font-weight:bold; color:#F8FAFC; margin:0.25rem 0;">拓撲與開關</div>
+              <div style="font-size:0.7rem; color:#8B5CF6;">健達巧克力 / 1500A</div>
+            </div>
+          </div>
+          <div style="margin-top:1rem; padding:0.75rem; background:#1E293B; border-radius:6px; display:flex; justify-content:space-around; align-items:center;">
+            <div style="text-align:center;"><span style="color:#94A3B8; font-size:0.75rem;">黃金判別法則</span><br><strong style="color:#E2E8F0; font-size:0.95rem;">&Delta;T &ge; 0.5&deg;C 即異常</strong></div>
+            <div style="width:1px; height:24px; background:#475569;"></div>
+            <div style="text-align:center;"><span style="color:#94A3B8; font-size:0.75rem;">接地系統紅線</span><br><strong style="color:#F59E0B; font-size:0.95rem;">嚴禁設備共地台電N相</strong></div>
+            <div style="width:1px; height:24px; background:#475569;"></div>
+            <div style="text-align:center;"><span style="color:#94A3B8; font-size:0.75rem;">開關選型鐵律</span><br><strong style="color:#38BDF8; font-size:0.95rem;">耐電流容量只能上選</strong></div>
+          </div>
+        </div>
+        '''
+    elif vt == "i2r_shading":
+        return '''
+        <div style="background:#0F172A; padding:1.25rem; border-radius:8px; border:1px solid #334155;">
+          <table style="width:100%; border-collapse:collapse; font-size:0.85rem; text-align:center;">
+            <thead>
+              <tr style="background:#1E293B; color:#94A3B8; border-bottom:1px solid #475569;">
+                <th style="padding:0.5rem; text-align:left;">遮陰情境</th>
+                <th style="padding:0.5rem;">通過電流 vs 產能</th>
+                <th style="padding:0.5rem;">焦耳熱計算公式</th>
+                <th style="padding:0.5rem;">放熱倍率相對值</th>
+                <th style="padding:0.5rem;">物理狀態</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="border-bottom:1px solid #334155; color:#E2E8F0;">
+                <td style="padding:0.5rem; text-align:left; font-weight:bold; color:#10B981;">無遮陰 (正常)</td>
+                <td style="padding:0.5rem;">12A 通過 / 12A 產能</td>
+                <td style="padding:0.5rem;">(12 - 12)² &times; R</td>
+                <td style="padding:0.5rem; font-weight:bold; color:#10B981;">0 R (純發電)</td>
+                <td style="padding:0.5rem; color:#94A3B8;">正常光伏轉換</td>
+              </tr>
+              <tr style="border-bottom:1px solid #334155; color:#E2E8F0;">
+                <td style="padding:0.5rem; text-align:left; font-weight:bold; color:#38BDF8;">遮陰 1/4 片</td>
+                <td style="padding:0.5rem;">12A 通過 / 9A 產能</td>
+                <td style="padding:0.5rem;">(12 - 9)² &times; R = 3² &times; R</td>
+                <td style="padding:0.5rem; font-weight:bold; color:#38BDF8;">9 R (輕微發熱)</td>
+                <td style="padding:0.5rem; color:#94A3B8;">局部內阻受熱</td>
+              </tr>
+              <tr style="border-bottom:1px solid #334155; color:#E2E8F0;">
+                <td style="padding:0.5rem; text-align:left; font-weight:bold; color:#F59E0B;">遮陰 3/4 片</td>
+                <td style="padding:0.5rem;">12A 通過 / 3A 產能</td>
+                <td style="padding:0.5rem;">(12 - 3)² &times; 3R = 9² &times; 3R</td>
+                <td style="padding:0.5rem; font-weight:bold; color:#F59E0B;">243 R (暴增243倍)</td>
+                <td style="padding:0.5rem; color:#F59E0B;">極度危險發熱</td>
+              </tr>
+              <tr style="color:#E2E8F0; background:rgba(239,68,68,0.1);">
+                <td style="padding:0.5rem; text-align:left; font-weight:bold; color:#EF4444;">100% 全遮陰</td>
+                <td style="padding:0.5rem;">12A 通過 / 0A 產能</td>
+                <td style="padding:0.5rem;">12² &times; R_insulator</td>
+                <td style="padding:0.5rem; font-weight:bold; color:#EF4444;">峰值狂熱 (絕緣化)</td>
+                <td style="padding:0.5rem; color:#EF4444;">質變為純電熱棒</td>
+              </tr>
+            </tbody>
+          </table>
+          <div style="margin-top:0.75rem; font-size:0.75rem; color:#94A3B8; text-align:right;">
+            *註：電池片不受光時半導體能階關閉，轉化為高阻絕緣體，表面細線強行導通形成點狀燒穿。
+          </div>
+        </div>
+        '''
+    elif vt == "halfcut_heat":
+        return '''
+        <div style="background:#0F172A; padding:1.25rem; border-radius:8px; border:1px solid #334155; text-align:center;">
+          <svg viewBox="0 0 500 180" style="width:100%; max-height:180px;">
+            <rect x="30" y="20" width="180" height="60" rx="4" fill="#1E293B" stroke="#38BDF8" stroke-width="2"/>
+            <text x="120" y="55" fill="#38BDF8" font-size="13" font-weight="bold" text-anchor="middle">上半部 (正常受光)</text>
+            <rect x="30" y="90" width="180" height="60" rx="4" fill="#1E293B" stroke="#64748B" stroke-width="2"/>
+            <text x="120" y="125" fill="#94A3B8" font-size="13" text-anchor="middle">下半部 (泥垢微遮陰)</text>
+            
+            <!-- Shading overlay -->
+            <rect x="35" y="120" width="170" height="25" fill="#EF4444" fill-opacity="0.3"/>
+            <text x="120" y="138" fill="#EF4444" font-size="11" text-anchor="middle">泥垢遮蔽：電阻驟升</text>
+
+            <!-- Flow Arrow -->
+            <path d="M 230 120 L 270 120 L 270 50 L 310 50" fill="none" stroke="#F59E0B" stroke-width="3" stroke-dasharray="4"/>
+            <polygon points="315,50 305,45 305,55" fill="#F59E0B"/>
+            <text x="270" y="95" fill="#F59E0B" font-size="11" text-anchor="middle">大電流 (7~8A) 強行分流湧入</text>
+
+            <rect x="320" y="20" width="150" height="130" rx="4" fill="#1E293B" stroke="#EF4444" stroke-width="2"/>
+            <circle cx="395" cy="60" r="25" fill="#EF4444" fill-opacity="0.4"/>
+            <text x="395" y="55" fill="#F8FAFC" font-size="12" font-weight="bold" text-anchor="middle">上半部反常亮溫</text>
+            <text x="395" y="75" fill="#EF4444" font-size="11" text-anchor="middle">&Delta;T 異常升溫點</text>
+            <text x="395" y="115" fill="#94A3B8" font-size="10" text-anchor="middle">背板承受長期高溫烘烤</text>
+          </svg>
+          <div style="font-size:0.75rem; color:#94A3B8; margin-top:0.5rem;">
+            工法解方：半切組件建議<strong>短邊朝下安裝</strong>；遮擋下半部觀測上半部亮斑可快速定位內部隱裂破片。
+          </div>
+        </div>
+        '''
+    elif vt == "bypass_limits":
+        return '''
+        <div style="background:#0F172A; padding:1.25rem; border-radius:8px; border:1px solid #334155;">
+          <div style="display:grid; grid-template-columns:repeat(3, 1fr); gap:1rem; text-align:center;">
+            <div style="background:#1E293B; padding:1rem; border-radius:6px; border:1px solid #475569;">
+              <div style="font-size:2rem; margin-bottom:0.25rem;">📦</div>
+              <div style="font-size:0.9rem; font-weight:bold; color:#E2E8F0;">密閉灌膠空間狹小</div>
+              <div style="font-size:0.75rem; color:#94A3B8; margin-top:0.25rem;">接線盒 IP65/67 完全密閉，導熱矽膠有限，自發熱無法有效對流散發</div>
+            </div>
+            <div style="background:#1E293B; padding:1rem; border-radius:6px; border:1px solid #475569;">
+              <div style="font-size:2rem; margin-bottom:0.25rem;">☀️</div>
+              <div style="font-size:0.9rem; font-weight:bold; color:#E2E8F0;">晴天戶外極端高溫</div>
+              <div style="font-size:0.75rem; color:#94A3B8; margin-top:0.25rem;">屋頂與案場地表溫度常破 60~70°C，底溫本已極高，散熱溫差裕度喪失</div>
+            </div>
+            <div style="background:#1E293B; padding:1rem; border-radius:6px; border:1px solid #EF4444;">
+              <div style="font-size:2rem; margin-bottom:0.25rem;">🔥</div>
+              <div style="font-size:0.9rem; font-weight:bold; color:#EF4444;">長期導通焦耳熱</div>
+              <div style="font-size:0.75rem; color:#94A3B8; margin-top:0.25rem;">二極體為耗能半導體，長時間分流連續放熱，三者疊加瞬間擊穿熱穿孔</div>
+            </div>
+          </div>
+          <div style="margin-top:1rem; padding:0.75rem; background:rgba(239,68,68,0.1); border-left:4px solid #EF4444; border-radius:4px; font-size:0.8rem; color:#E2E8F0;">
+            <strong>結論警示：</strong>旁路二極體是暫態幾秒到幾分鐘的救命氣囊，嚴禁用於持續性遮陰；長時受遮必將熱融起弧燒燬整盒！
+          </div>
+        </div>
+        '''
+    elif vt == "diode_threshold":
+        return '''
+        <div style="background:#0F172A; padding:1.25rem; border-radius:8px; border:1px solid #334155;">
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem;">
+            <div style="background:#1E293B; padding:1rem; border-radius:6px; border-top:3px solid #10B981;">
+              <h4 style="margin:0 0 0.5rem; color:#10B981; font-size:0.9rem;">🟢 完整覆蓋整片電池片</h4>
+              <p style="font-size:0.8rem; color:#CBD5E1; line-height:1.4;">單片完全不發電，反向偏壓急劇拉大，<strong>順利跨越二極體導通門檻（約 0.7V）</strong>。</p>
+              <div style="background:#0F172A; padding:0.5rem; border-radius:4px; font-size:0.75rem; color:#38BDF8; margin-top:0.5rem;">
+                &check; 二極體啟動導通分流<br>&check; 串聯大電流繞道受保護迴路
+              </div>
+            </div>
+            <div style="background:#1E293B; padding:1rem; border-radius:6px; border-top:3px solid #EF4444;">
+              <h4 style="margin:0 0 0.5rem; color:#EF4444; font-size:0.9rem;">🔴 局部微遮陰 (鳥糞/落葉/泥斑)</h4>
+              <p style="font-size:0.8rem; color:#CBD5E1; line-height:1.4;">僅遮蔽 1/4 或點狀污垢，<strong>反向偏壓未達門檻，二極體處於截止狀態</strong>。</p>
+              <div style="background:#0F172A; padding:0.5rem; border-radius:4px; font-size:0.75rem; color:#EF4444; margin-top:0.5rem;">
+                &cross; 二極體完全不動作！<br>&cross; 全部串聯電流在受遮點原位狂熱烘烤
+              </div>
+            </div>
+          </div>
+          <div style="margin-top:0.75rem; font-size:0.75rem; color:#94A3B8; text-align:center;">
+            *黃金檢驗原則：竣工驗收若在無遮陰下測得二極體偏熱，代表該二極體內部已短路擊穿或引線虛焊。
+          </div>
+        </div>
+        '''
+    elif vt == "open_circuit_ir":
+        return '''
+        <div style="background:#0F172A; padding:1.25rem; border-radius:8px; border:1px solid #334155; text-align:center;">
+          <div style="display:flex; justify-content:space-around; align-items:center; margin-bottom:1rem;">
+            <div style="background:#1E293B; padding:0.75rem 1rem; border-radius:6px; border:1px solid #10B981;">
+              <div style="font-size:0.75rem; color:#94A3B8;">正常發電迴路</div>
+              <div style="font-size:1.1rem; font-weight:bold; color:#10B981;">光能 &rarr; 電能輸出 (80%熱)</div>
+              <div style="font-size:0.8rem; color:#E2E8F0;">運轉溫度：基準工作溫 T_norm</div>
+            </div>
+            <div style="font-size:1.5rem; color:#F59E0B;">&ne;</div>
+            <div style="background:#1E293B; padding:0.75rem 1rem; border-radius:6px; border:1px solid #EF4444;">
+              <div style="font-size:0.75rem; color:#94A3B8;">開路故障迴路 (IEC 62446-3)</div>
+              <div style="font-size:1.1rem; font-weight:bold; color:#EF4444;">光能無法外送 &rarr; 100%轉純熱</div>
+              <div style="font-size:0.8rem; color:#EF4444;">故障溫度：T_norm + <strong>(2 ~ 7°C)</strong></div>
+            </div>
+          </div>
+          <div style="background:#1E293B; padding:0.75rem; border-radius:6px; font-size:0.8rem; color:#CBD5E1; text-align:left;">
+            <strong>IEC 62446-3 圖譜特徵：</strong>六排電池片中若其中兩排呈現均勻偏高 2~7°C，且游標讀數穩定，100% 為內部子串開路；需在日照強度 &gt;700 W/m² 時執行以保證熱反差。
+          </div>
+        </div>
+        '''
+    elif vt == "open_circuit_volt":
+        return '''
+        <div style="background:#0F172A; padding:1.25rem; border-radius:8px; border:1px solid #334155;">
+          <table style="width:100%; border-collapse:collapse; font-size:0.85rem; text-align:center;">
+            <thead>
+              <tr style="background:#1E293B; color:#94A3B8; border-bottom:1px solid #475569;">
+                <th style="padding:0.5rem; text-align:left;">量測情境</th>
+                <th style="padding:0.5rem;">單片工作電壓 (Vmp)</th>
+                <th style="padding:0.5rem;">紅外熱影像特徵</th>
+                <th style="padding:0.5rem;">故障診斷判定</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="border-bottom:1px solid #334155; color:#E2E8F0;">
+                <td style="padding:0.5rem; text-align:left; font-weight:bold; color:#10B981;">正常工作組件 (600W)</td>
+                <td style="padding:0.5rem; font-weight:bold; color:#10B981;">&asymp; 39 V</td>
+                <td style="padding:0.5rem;">整板均溫一致</td>
+                <td style="padding:0.5rem; color:#10B981;">電氣健康運轉</td>
+              </tr>
+              <tr style="border-bottom:1px solid #334155; color:#E2E8F0;">
+                <td style="padding:0.5rem; text-align:left; font-weight:bold; color:#EF4444;">1/3 子回路開路斷線</td>
+                <td style="padding:0.5rem; font-weight:bold; color:#EF4444;">2 ～ 13 V (典型 8~10V)</td>
+                <td style="padding:0.5rem; color:#EF4444;">開路區溫升 2~7°C</td>
+                <td style="padding:0.5rem; font-weight:bold; color:#EF4444;">內部開路故障</td>
+              </tr>
+              <tr style="color:#E2E8F0; background:rgba(245,158,11,0.05);">
+                <td style="padding:0.5rem; text-align:left; font-weight:bold; color:#F59E0B;">考慮溫度負反饋修正</td>
+                <td style="padding:0.5rem;">微幅下滑 (約再少 0.5~1V)</td>
+                <td style="padding:0.5rem;">高溫使電壓續降</td>
+                <td style="padding:0.5rem; color:#94A3B8;">實務免修正直接判讀</td>
+              </tr>
+            </tbody>
+          </table>
+          <div style="margin-top:0.75rem; font-size:0.75rem; color:#94A3B8;">
+            *速查要訣：萬用電表單量該片，電壓直接掉到 8~10V 且發熱者，判定開路無誤，即刻拆卸維修。
+          </div>
+        </div>
+        '''
+    elif vt == "pr_blindspot":
+        return '''
+        <div style="background:#0F172A; padding:1.25rem; border-radius:8px; border:1px solid #334155;">
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem;">
+            <div style="background:#1E293B; padding:0.75rem; border-radius:6px; border-left:3px solid #38BDF8;">
+              <div style="font-size:0.8rem; color:#94A3B8;">📊 巨觀發電量報表視角 (SCADA)</div>
+              <div style="font-size:0.95rem; font-weight:bold; color:#E2E8F0; margin:0.25rem 0;">單片損失 200W / 10kW 串列</div>
+              <div style="font-size:0.75rem; color:#CBD5E1;">短少 0.2kW 僅佔 2%，遠低於電廠 3%~5% PR 誤差帶，日報表完全看不出任何異常！</div>
+            </div>
+            <div style="background:#1E293B; padding:0.75rem; border-radius:6px; border-left:3px solid #EF4444;">
+              <div style="font-size:0.8rem; color:#94A3B8;">⚡ 微觀電氣並聯拓撲視角</div>
+              <div style="font-size:0.95rem; font-weight:bold; color:#EF4444; margin:0.25rem 0;">集中式逆變器並聯壓差</div>
+              <div style="font-size:0.75rem; color:#CBD5E1;">故障串列電壓偏低，其餘 10~20 串高壓串列強行向其逆向充電，反向電流燒毀設備！</div>
+            </div>
+          </div>
+          <div style="margin-top:0.75rem; padding:0.5rem; background:#0F172A; border-radius:4px; font-size:0.75rem; color:#F59E0B; text-align:center;">
+            100MW 級大型暗場：空拍熱影像呈現開路回路色差暗 2~4 倍，是唯一能穿透 PR 盲區的全域排查手段。
+          </div>
+        </div>
+        '''
+    elif vt == "reverse_current":
+        return '''
+        <div style="background:#0F172A; padding:1.25rem; border-radius:8px; border:1px solid #334155; text-align:center;">
+          <svg viewBox="0 0 500 160" style="width:100%; max-height:160px;">
+            <!-- String 1 Normal -->
+            <rect x="20" y="20" width="130" height="40" rx="4" fill="#1E293B" stroke="#10B981" stroke-width="2"/>
+            <text x="85" y="45" fill="#10B981" font-size="12" font-weight="bold" text-anchor="middle">正常組串 1 (750V)</text>
+            
+            <!-- String 2 Normal -->
+            <rect x="20" y="70" width="130" height="40" rx="4" fill="#1E293B" stroke="#10B981" stroke-width="2"/>
+            <text x="85" y="95" fill="#10B981" font-size="12" font-weight="bold" text-anchor="middle">正常組串 2 (750V)</text>
+
+            <!-- Faulty String -->
+            <rect x="20" y="120" width="130" height="35" rx="4" fill="#1E293B" stroke="#EF4444" stroke-width="2"/>
+            <text x="85" y="142" fill="#EF4444" font-size="12" font-weight="bold" text-anchor="middle">故障低壓串 (710V)</text>
+
+            <!-- DC Bus -->
+            <line x1="180" y1="10" x2="180" y2="155" stroke="#F59E0B" stroke-width="4"/>
+            <text x="180" y="8" fill="#F59E0B" font-size="10" text-anchor="middle">DC BUS</text>
+
+            <!-- Current arrows -->
+            <path d="M 150 40 L 180 40" stroke="#10B981" stroke-width="2" marker-end="url(#arrow)"/>
+            <path d="M 150 90 L 180 90" stroke="#10B981" stroke-width="2"/>
+            <path d="M 180 137 L 155 137" stroke="#EF4444" stroke-width="3"/>
+            <polygon points="152,137 160,132 160,142" fill="#EF4444"/>
+
+            <rect x="220" y="30" width="260" height="100" rx="6" fill="#1E293B" stroke="#EF4444" stroke-width="1.5"/>
+            <text x="350" y="55" fill="#EF4444" font-size="13" font-weight="bold" text-anchor="middle">反向灌入電流：20 ～ 23 A</text>
+            <text x="350" y="80" fill="#E2E8F0" font-size="11" text-anchor="middle">I²R 放熱效應在接頭狂熱累積</text>
+            <text x="350" y="105" fill="#F59E0B" font-size="11" text-anchor="middle">低照度陰天逆變器吸納弱 &rarr; 起火高發！</text>
+          </svg>
+        </div>
+        '''
+    elif vt == "fuse_protection":
+        return '''
+        <div style="background:#0F172A; padding:1.25rem; border-radius:8px; border:1px solid #334155;">
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem; text-align:center;">
+            <div style="background:#1E293B; padding:1rem; border-radius:6px; border:1px solid #38BDF8;">
+              <div style="font-size:0.8rem; color:#94A3B8;">順向發電工作電流</div>
+              <div style="font-size:1.4rem; font-weight:bold; color:#38BDF8; margin:0.25rem 0;">10 ～ 13 A</div>
+              <div style="font-size:0.75rem; color:#CBD5E1;">光伏為受限電流源，順向短路電流固定，<strong>永遠不可能達到 25A</strong></div>
+            </div>
+            <div style="background:#1E293B; padding:1rem; border-radius:6px; border:1px solid #EF4444;">
+              <div style="font-size:0.8rem; color:#94A3B8;">反向逆灌故障電流</div>
+              <div style="font-size:1.4rem; font-weight:bold; color:#EF4444; margin:0.25rem 0;">&gt; 25 A 瞬斷</div>
+              <div style="font-size:0.75rem; color:#CBD5E1;">多組並聯逆向匯流超過 25A，<strong>熔絲毫秒級熔斷保護組件</strong></div>
+            </div>
+          </div>
+          <div style="margin-top:0.75rem; padding:0.5rem; background:rgba(239,68,68,0.1); border-radius:4px; font-size:0.8rem; color:#E2E8F0; text-align:center;">
+            <strong>維運禁令：</strong>保險絲常燒斷代表該回路存在電壓嚴重失配，嚴禁盲目加大規格或換粗銅線！
+          </div>
+        </div>
+        '''
+    elif vt == "bird_droppings":
+        return '''
+        <div style="background:#0F172A; padding:1.25rem; border-radius:8px; border:1px solid #334155;">
+          <div style="display:flex; justify-content:space-between; align-items:center; text-align:center; font-size:0.8rem;">
+            <div style="flex:1; background:#1E293B; padding:0.75rem; border-radius:6px; margin-right:0.5rem;">
+              <div style="color:#94A3B8;">1. 鳥糞覆蓋</div>
+              <div style="color:#F59E0B; font-weight:bold; margin-top:0.25rem;">整片電池片被遮</div>
+            </div>
+            <div style="color:#64748B;">&rarr;</div>
+            <div style="flex:1; background:#1E293B; padding:0.75rem; border-radius:6px; margin:0 0.5rem;">
+              <div style="color:#94A3B8;">2. 長期全導通</div>
+              <div style="color:#EF4444; font-weight:bold; margin-top:0.25rem;">二極體高溫熱穿孔</div>
+            </div>
+            <div style="color:#64748B;">&rarr;</div>
+            <div style="flex:1; background:#1E293B; padding:0.75rem; border-radius:6px; margin:0 0.5rem;">
+              <div style="color:#94A3B8;">3. 接點燒融搭電</div>
+              <div style="color:#EF4444; font-weight:bold; margin-top:0.25rem;">拉出持續直流電弧</div>
+            </div>
+            <div style="color:#64748B;">&rarr;</div>
+            <div style="flex:1; background:rgba(239,68,68,0.2); padding:0.75rem; border-radius:6px; margin-left:0.5rem; border:1px solid #EF4444;">
+              <div style="color:#EF4444;">4. 點燃周邊</div>
+              <div style="color:#F8FAFC; font-weight:bold; margin-top:0.25rem;">浮台/乾草全場蔓延</div>
+            </div>
+          </div>
+          <div style="margin-top:0.75rem; font-size:0.75rem; color:#94A3B8; text-align:center;">
+            真實案例：水庫案場白鷺鸶排泄物導致兩片模組三組二極體全毀，更換是為了防範電弧大火，非計較度數。
+          </div>
+        </div>
+        '''
+    elif vt == "lightning_rod_isolation":
+        return '''
+        <div style="background:#0F172A; padding:1.25rem; border-radius:8px; border:1px solid #334155;">
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem;">
+            <div style="background:#1E293B; padding:0.75rem; border-radius:6px; border-top:3px solid #EF4444;">
+              <div style="color:#EF4444; font-weight:bold; font-size:0.85rem;">🔴 錯誤：橫向跨列串聯 (為求美觀)</div>
+              <div style="font-size:0.75rem; color:#CBD5E1; margin-top:0.5rem; line-height:1.4;">
+                避雷針陰影每日掃射第1至第4列，所有串列每天輪流被遮陰，<strong>導致全場逆變器電壓全部腰斬！</strong>
+              </div>
+            </div>
+            <div style="background:#1E293B; padding:0.75rem; border-radius:6px; border-top:3px solid #10B981;">
+              <div style="color:#10B981; font-weight:bold; font-size:0.85rem;">🟢 顧問級：受遮區域獨立成串專機</div>
+              <div style="font-size:0.75rem; color:#CBD5E1; margin-top:0.5rem; line-height:1.4;">
+                將陰影掃射區單獨串聯為 1~2 個回路，接入專屬獨立逆變器，<strong>其餘正常串列 100% 滿發不受干擾！</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+        '''
+    elif vt == "mc4_burn":
+        return '''
+        <div style="background:#0F172A; padding:1.25rem; border-radius:8px; border:1px solid #334155;">
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem; text-align:center;">
+            <div style="background:#1E293B; padding:0.75rem; border-radius:6px; border:1px solid #10B981;">
+              <div style="font-size:0.8rem; color:#94A3B8;">同廠牌接頭對接 (LG &times; LG)</div>
+              <div style="font-size:1.2rem; font-weight:bold; color:#10B981; margin:0.25rem 0;">通電 5 分鐘：135°C</div>
+              <div style="font-size:0.75rem; color:#CBD5E1;">金屬公母公差精密匹配，溫升受控</div>
+            </div>
+            <div style="background:#1E293B; padding:0.75rem; border-radius:6px; border:1px solid #EF4444;">
+              <div style="font-size:0.8rem; color:#94A3B8;">異廠牌混接 (LG &times; A廠)</div>
+              <div style="font-size:1.2rem; font-weight:bold; color:#EF4444; margin:0.25rem 0;">僅 3 分鐘飆至 160°C</div>
+              <div style="font-size:0.75rem; color:#EF4444;"><strong>2 分鐘後外殼融化變形、拉弧起火！</strong></div>
+            </div>
+          </div>
+          <div style="margin-top:0.75rem; font-size:0.75rem; color:#94A3B8; text-align:center;">
+            滲透現象（Osmosis）：隨手手擰未達 IP65 扭力，灰塵吸水 + 通電負壓吸入水氣，海邊氯離子生成<strong>氯化銅</strong>暴增電阻。
+          </div>
+        </div>
+        '''
+    elif vt == "galvanic_corrosion":
+        return '''
+        <div style="background:#0F172A; padding:1.25rem; border-radius:8px; border:1px solid #334155; text-align:center;">
+          <div style="background:#1E293B; padding:0.75rem; border-radius:6px; margin-bottom:0.75rem;">
+            <div style="font-size:0.9rem; font-weight:bold; color:#EF4444;">鋁框 (陽極) 釋放電子溶解： Al &rarr; Al³⁺ + 3e⁻</div>
+            <div style="font-size:0.8rem; color:#CBD5E1; margin-top:0.25rem;">鐵自攻螺絲 (陰極) 接受電子還原；鋁框被電位差腐蝕溶解出大洞！</div>
+          </div>
+          <div style="display:grid; grid-template-columns:repeat(3, 1fr); gap:0.5rem; font-size:0.8rem;">
+            <div style="background:#0F172A; padding:0.5rem; border-radius:4px; border:1px solid #475569;">
+              <div style="color:#94A3B8;">標準規範上限</div>
+              <div style="color:#E2E8F0; font-weight:bold;">&le; 2.0 V (建議1V)</div>
+            </div>
+            <div style="background:#0F172A; padding:0.5rem; border-radius:4px; border:1px solid #EF4444;">
+              <div style="color:#94A3B8;">鐵-鋁實際電位差</div>
+              <div style="color:#EF4444; font-weight:bold;">2.3 V (嚴重超標)</div>
+            </div>
+            <div style="background:#0F172A; padding:0.5rem; border-radius:4px; border:1px solid #10B981;">
+              <div style="color:#94A3B8;">標準規範解法</div>
+              <div style="color:#10B981; font-weight:bold;">不鏽鋼304 + 齒形墊片</div>
+            </div>
+          </div>
+        </div>
+        '''
+    elif vt == "relative_temp":
+        return '''
+        <div style="background:#0F172A; padding:1.25rem; border-radius:8px; border:1px solid #334155; text-align:center;">
+          <div style="background:#1E293B; padding:1rem; border-radius:6px; border:2px solid #F59E0B; margin-bottom:0.75rem;">
+            <div style="font-size:0.8rem; color:#F59E0B; font-weight:bold;">黃金準則：電氣一致性原理</div>
+            <div style="font-size:1.4rem; font-weight:bold; color:#F8FAFC; margin:0.25rem 0;">同工況下比同伴高出 &ge; 0.5°C 即判定為異常</div>
+            <div style="font-size:0.8rem; color:#94A3B8;">徹底破除高於 10°C / 30°C 才換的盲點，0.5°C 代表接觸電阻已增大，立刻換掉！</div>
+          </div>
+          <div style="font-size:0.75rem; color:#94A3B8;">
+            真實案例：接頭微熱未處理，燒毀整座開關箱，引燃後方牛隻牧草，剛貸款引進的牛群面臨巨額索賠。
+          </div>
+        </div>
+        '''
+    elif vt == "grounding_trap":
+        return '''
+        <div style="background:#0F172A; padding:1.25rem; border-radius:8px; border:1px solid #334155;">
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem;">
+            <div style="background:#1E293B; padding:0.75rem; border-radius:6px; border-left:3px solid #10B981;">
+              <div style="font-size:0.85rem; font-weight:bold; color:#10B981;">設備接地 (必須獨立設置)</div>
+              <div style="font-size:0.75rem; color:#CBD5E1; margin-top:0.25rem; line-height:1.4;">
+                &bull; 功能：防漏電感電、支撐變流器跳脫保護<br>&bull; 電阻要求：<strong>&le; 5 歐姆</strong>獨立地網<br>&bull; 嚴禁與任何台電線路共用
+              </div>
+            </div>
+            <div style="background:#1E293B; padding:0.75rem; border-radius:6px; border-left:3px solid #EF4444;">
+              <div style="font-size:0.85rem; font-weight:bold; color:#EF4444;">台電 N 相接地 (保台電電網)</div>
+              <div style="font-size:0.75rem; color:#CBD5E1; margin-top:0.25rem; line-height:1.4;">
+                &bull; 功能：協助台電分擔電網系統故障電流<br>&bull; <strong>共地後果：</strong>故障電流竄入模組外框與鋼梁，無地網畜禽舍全域帶電，豬隻電倒死亡！
+              </div>
+            </div>
+          </div>
+        </div>
+        '''
+    elif vt == "kinder_chocolate":
+        return '''
+        <div style="background:#0F172A; padding:1.25rem; border-radius:8px; border:1px solid #334155; text-align:center;">
+          <div style="display:grid; grid-template-columns:repeat(3, 1fr); gap:0.5rem; margin-bottom:0.75rem;">
+            <div style="background:#1E293B; padding:0.5rem; border-radius:4px; border-top:3px solid #38BDF8;">
+              <div style="font-size:0.75rem; color:#94A3B8;">區域 1 溫度</div>
+              <div style="font-size:1.1rem; font-weight:bold; color:#38BDF8;">59°C</div>
+              <div style="font-size:0.7rem; color:#94A3B8;">正常開路底溫</div>
+            </div>
+            <div style="background:#1E293B; padding:0.5rem; border-radius:4px; border-top:3px solid #10B981;">
+              <div style="font-size:0.75rem; color:#94A3B8;">區域 2 溫度</div>
+              <div style="font-size:1.1rem; font-weight:bold; color:#10B981;">54°C</div>
+              <div style="font-size:0.7rem; color:#94A3B8;">微風冷卻區</div>
+            </div>
+            <div style="background:#1E293B; padding:0.5rem; border-radius:4px; border-top:3px solid #EF4444;">
+              <div style="font-size:0.75rem; color:#94A3B8;">區域 3 溫度</div>
+              <div style="font-size:1.1rem; font-weight:bold; color:#EF4444;">65°C (最高)</div>
+              <div style="font-size:0.7rem; color:#EF4444;">遭到反向逆灌充電！</div>
+            </div>
+          </div>
+          <div style="font-size:0.75rem; color:#CBD5E1; text-align:left; background:#1E293B; padding:0.5rem; border-radius:4px;">
+            <strong>物理真相：</strong>18片正常串對15片（3片短路）低壓串並聯逆灌；變流器內部所有回路在 <strong>IGBT 後端</strong>匯流，反向電流從後端灌入頻繁燒毀 IGBT 模組。
+          </div>
+        </div>
+        '''
+    elif vt == "protection_evolution":
+        return '''
+        <div style="background:#0F172A; padding:1.25rem; border-radius:8px; border:1px solid #334155;">
+          <table style="width:100%; border-collapse:collapse; font-size:0.8rem; text-align:center;">
+            <thead>
+              <tr style="background:#1E293B; color:#94A3B8; border-bottom:1px solid #475569;">
+                <th style="padding:0.4rem; text-align:left;">比較維度</th>
+                <th style="padding:0.4rem; color:#EF4444;">早期：阻隔二極體 (Blocking Diode)</th>
+                <th style="padding:0.4rem; color:#10B981;">現代：直流熔絲座 (DC Fuse Holder)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="border-bottom:1px solid #334155; color:#E2E8F0;">
+                <td style="padding:0.4rem; text-align:left;">散熱原理衝突</td>
+                <td style="padding:0.4rem; color:#EF4444;">耗能發熱件放入 IP65 密閉箱，頻繁燒毀</td>
+                <td style="padding:0.4rem; color:#10B981;">正常微小阻抗，僅故障超標時熔斷</td>
+              </tr>
+              <tr style="border-bottom:1px solid #334155; color:#E2E8F0;">
+                <td style="padding:0.4rem; text-align:left;">現場維修更換</td>
+                <td style="padding:0.4rem; color:#EF4444;">兩端滿焊，現場需申請動火解焊重焊</td>
+                <td style="padding:0.4rem; color:#10B981;">免動火作業，拉開熔絲座秒級抽換</td>
+              </tr>
+              <tr style="color:#E2E8F0;">
+                <td style="padding:0.4rem; text-align:left;">適用系統場景</td>
+                <td style="padding:0.4rem; color:#94A3B8;">已全面淘汰於常規光伏直流箱</td>
+                <td style="padding:0.4rem; color:#10B981;">多並聯集中式匯流箱標配 25A 熔絲</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        '''
+    elif vt == "drone_pixel":
+        return '''
+        <div style="background:#0F172A; padding:1.25rem; border-radius:8px; border:1px solid #334155; text-align:center;">
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin-bottom:0.75rem;">
+            <div style="background:#1E293B; padding:0.75rem; border-radius:6px; border-left:3px solid #38BDF8;">
+              <div style="font-size:0.8rem; color:#94A3B8;">熱像儀開口率 (FOV) 4°~5°</div>
+              <div style="font-size:0.95rem; font-weight:bold; color:#E2E8F0; margin:0.25rem 0;">嚴格控制飛行高度</div>
+              <div style="font-size:0.75rem; color:#CBD5E1;">確保單片模組對應 &ge;1 個有效像素，太高會將微小熱點平滑濾除</div>
+            </div>
+            <div style="background:#1E293B; padding:0.75rem; border-radius:6px; border-left:3px solid #EF4444;">
+              <div style="font-size:0.8rem; color:#94A3B8;">兩側零星亮斑指紋</div>
+              <div style="font-size:0.95rem; font-weight:bold; color:#EF4444; margin:0.25rem 0;">接線盒引線端拉扯脫焊</div>
+              <div style="font-size:0.75rem; color:#CBD5E1;">半切接線盒僅拇指大，施工拉扯電纜使焊點斷裂起弧</div>
+            </div>
+          </div>
+          <div style="font-size:0.75rem; color:#94A3B8;">
+            *經濟性對比：200MW 案場若無直流箱，人工拔接頭耗時 6 個月需 2000 萬；空拍排查開路/短路/二極體是唯一可行的方案。
+          </div>
+        </div>
+        '''
+    elif vt == "switch_rating":
+        return '''
+        <div style="background:#0F172A; padding:1.25rem; border-radius:8px; border:1px solid #334155;">
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem; text-align:center;">
+            <div style="background:#1E293B; padding:0.75rem; border-radius:6px; border:1px solid #EF4444;">
+              <div style="font-size:0.8rem; color:#EF4444; font-weight:bold;">❌ 錯誤下修選型 (算800A選700A)</div>
+              <div style="font-size:0.75rem; color:#CBD5E1; margin-top:0.25rem;">
+                開關無過載跳脫功能，長期過電流運轉機殼炭化，兩相短路對地放電燒穿鋼板！
+              </div>
+            </div>
+            <div style="background:#1E293B; padding:0.75rem; border-radius:6px; border:1px solid #10B981;">
+              <div style="font-size:0.8rem; color:#10B981; font-weight:bold;">✅ 顧問級上選原則 (直上1000A/1500A)</div>
+              <div style="font-size:0.75rem; color:#CBD5E1; margin-top:0.25rem;">
+                計算 800A 上選 1000A；養豬場排糞溝正上方直選 <strong>1500A</strong> 抵禦氨氣電弧！
+              </div>
+            </div>
+          </div>
+          <div style="margin-top:0.75rem; font-size:0.75rem; color:#94A3B8; text-align:center;">
+            開關箱即使在封印區，維運也必須向台電通報開箱用紅外熱像儀巡檢，杜絕端子鬆動拉弧。
+          </div>
+        </div>
+        '''
+    return ''
+
+# Build slides HTML
+slides_html = []
+for s in slides_data:
+    sn = s["slideNo"]
+    act_cls = "active" if sn == 1 else ""
+    hl_items = "".join([f'<li class="highlight-item">{h}</li>' for h in s["highlights"]])
+    visual_body = render_visual(s["visualType"])
+    
+    sh = f'''
+      <!-- ==========================================
+           SLIDE {sn}
+           ========================================== -->
+      <section class="slide-item {act_cls}" data-slide="{sn}"
+        data-note-takeaway="{s["noteTakeaway"]}"
+        data-note-detail="{s["noteDetail"]}"
+        data-note-transition="{s["noteTransition"]}">
+        <div class="slide-header">
+          <div class="slide-tracker">
+            <span class="module-badge">{s["module"]}</span>
+            <span class="source-ref-badge">{s["ref"]}</span>
+          </div>
+          <h2 class="slide-action-title">{s["title"]}</h2>
+        </div>
+        <div class="slide-body slide-split-2col">
+          <div class="insight-panel">
+            <div class="core-question-block">
+              <div class="block-title">📌 本章要解決的問題／核心論點</div>
+              <div class="block-desc">{s["question"]}</div>
+            </div>
+            <ul class="highlights-list">
+              {hl_items}
+            </ul>
+            <div class="takeaway-banner">
+              {s["takeaway"]}
+            </div>
+          </div>
+          <div class="visual-panel">
+            <div class="diagram-header">
+              <span>{s["visualTitle"]}</span>
+              <span class="badge badge-gold">進金生能源 6692</span>
+            </div>
+            <div class="diagram-body" style="width:100%;">
+              {visual_body}
+            </div>
+            <div class="source-handout-thumb">
+              <div class="thumb-preview-wrap open-lightbox-trigger" data-img-src="{s["thumbImg"]}" data-caption="{s["thumbCaption"]}">
+                <img src="{s["thumbImg"]}" alt="{s["thumbLabel"]}">
+              </div>
+              <div class="thumb-info">
+                <div>原廠講義：<strong>{s["thumbLabel"]}</strong></div>
+                <button type="button" class="open-lightbox-trigger" data-img-src="{s["thumbImg"]}">點擊放大原圖 ↗</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="slide-footer">
+          <div class="footer-meta">
+            <span class="footer-brand-tag">ACMEPOINT 6692 ✕ 熱影像與失效分析</span>
+            <span>頁碼：{sn:02d} / 20</span>
+          </div>
+          <div class="footer-keys-tip">按 N 鍵呼出講稿 ｜ ← / → 換頁 ｜ F 全螢幕 ｜ G 總覽</div>
+        </div>
+      </section>
+    '''
+    slides_html.append(sh)
+
+full_html = f'''<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>太陽光電設置乙級技術士回訓課程——太陽光電系統熱影像檢查與失效分析｜麥肯錫風格專業簡報</title>
+  <link rel="stylesheet" href="../assets/css/deck.css">
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body class="deck-view">
+
+  <!-- Top App Bar -->
+  <header class="deck-topbar">
+    <div class="topbar-left">
+      <a href="../index.html" class="back-home-btn">
+        <span>← 返回知識庫首頁</span>
+      </a>
+      <div class="deck-title-mini">
+        <strong>進金生能源 6692</strong> ｜ 太陽光電設置乙級技術士回訓課程——太陽光電系統熱影像檢查與失效分析
+      </div>
+    </div>
+    <div class="topbar-center">
+      <div class="slide-counter" id="slide-counter-text">1 / 20</div>
+    </div>
+    <div class="topbar-right">
+      <button class="tool-btn" id="notes-toggle-btn" title="開啟/關閉講者備忘錄 (按 N)">
+        <span>📝 講稿備忘 (N)</span>
+      </button>
+      <button class="tool-btn" id="overview-toggle-btn" title="投影片總覽 (按 G)">
+        <span>⊞ 總覽 (G)</span>
+      </button>
+      <button class="tool-btn" id="fullscreen-btn" title="全螢幕模式 (按 F)">
+        <span>⛶ 全螢幕 (F)</span>
+      </button>
+      <button class="tool-btn" id="print-btn" title="列印/匯出 PDF (按 P)">
+        <span>🖨 列印 PDF</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Workspace Canvas -->
+  <main class="deck-workspace">
+    <button class="deck-nav-btn nav-prev" id="deck-prev-btn" title="上一頁 (← / Backspace)">‹</button>
+    <button class="deck-nav-btn nav-next" id="deck-next-btn" title="下一頁 (→ / Space)">›</button>
+
+    <div class="slide-canvas" id="slide-canvas">
+      <div class="deck-progress-bar" id="deck-progress-bar"></div>
+      {"".join(slides_html)}
+    </div>
+  </main>
+
+  <!-- Speaker Notes Drawer (Toggled by 'N') -->
+  <aside class="speaker-notes-drawer" id="speaker-notes-drawer">
+    <div class="notes-header">
+      <div class="notes-title">
+        <span>🎙 麥肯錫顧問風格 3 段式講者備忘錄 (Speaker Notes)</span>
+        <span style="font-size:0.75rem; color:#94A3B8; font-weight:normal;">按 N 鍵或點擊右側 × 關閉</span>
+      </div>
+      <button class="notes-close-btn" id="notes-close-btn" title="關閉備忘錄">&times;</button>
+    </div>
+    <div class="notes-content-grid">
+      <div class="notes-col">
+        <div class="notes-col-label">① 本頁核心結論 (Takeaway)</div>
+        <div class="notes-col-body" id="notes-col-takeaway">
+          本頁重點：依規範嚴格落實。
+        </div>
+      </div>
+      <div class="notes-col">
+        <div class="notes-col-label">② 補充說明與數據佐證 (Field Note & Data)</div>
+        <div class="notes-col-body" id="notes-col-detail">
+          實務數據與補充說明：詳見相關技術手冊。
+        </div>
+      </div>
+      <div class="notes-col">
+        <div class="notes-col-label">③ 下一步 / 轉場提示 (Transition)</div>
+        <div class="notes-col-body" id="notes-col-transition">
+          下一頁重點：進入下一核心環節。
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Overview Grid Modal (Toggled by 'G') -->
+  <div class="overview-modal" id="overview-modal">
+    <div class="overview-header">
+      <h2>⊞ 全簡報 20 頁投影片總覽導航</h2>
+      <button class="tool-btn" id="overview-close-btn">關閉總覽 (Esc)</button>
+    </div>
+    <div class="overview-grid" id="overview-grid"></div>
+  </div>
+
+  <!-- Lightbox Modal for Original Handout Images -->
+  <div class="lightbox-modal" id="lightbox-modal">
+    <button class="lightbox-close-btn" id="lightbox-close-btn">&times;</button>
+    <div class="lightbox-content">
+      <img id="lightbox-img" src="" alt="講義原圖放大">
+      <div class="lightbox-caption" id="lightbox-caption">原版乙級回訓實體講義投影片對照</div>
+    </div>
+  </div>
+
+  <script src="../assets/js/deck.js"></script>
+</body>
+</html>
+'''
+
+with open(out_path, "w", encoding="utf-8") as f:
+    f.write(full_html)
+
+print(f"Generated {out_path} successfully with all 20 slides!")

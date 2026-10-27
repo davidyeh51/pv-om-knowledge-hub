@@ -4,12 +4,36 @@
   "portalName": "光伏維運專業工程師知識庫 (PV O&M Engineering Knowledge Hub)",
   "description": "專為光伏運維團隊、案場主任與專業工程師打造的現代化維運決策與學習平台，依據麥肯錫顧問風格結構化提煉太陽光電乙級技術士回訓技術精髓。",
   "categories": [
-    { "id": "all", "name": "全部領域", "count": 5 },
-    { "id": "fundamentals", "name": "光電基礎與發電特性", "count": 1 },
-    { "id": "cleaning", "name": "案場清洗與熱斑防範", "count": 1 },
-    { "id": "inverter", "name": "逆變器與台電併網", "count": 1 },
-    { "id": "safety", "name": "巡檢工安與施工工藝", "count": 1 },
-    { "id": "advanced", "name": "消防RSD與光儲微電網", "count": 1 }
+    {
+      "id": "all",
+      "name": "全部領域",
+      "count": 5
+    },
+    {
+      "id": "fundamentals",
+      "name": "光電基礎與發電特性",
+      "count": 1
+    },
+    {
+      "id": "cleaning",
+      "name": "案場清洗與熱斑防範",
+      "count": 1
+    },
+    {
+      "id": "inverter",
+      "name": "逆變器與台電併網",
+      "count": 1
+    },
+    {
+      "id": "safety",
+      "name": "巡檢工安與施工工藝",
+      "count": 1
+    },
+    {
+      "id": "advanced",
+      "name": "消防RSD與光儲微電網",
+      "count": 1
+    }
   ],
   "courses": [
     {
@@ -111,26 +135,58 @@
       "oneSentenceTakeaway": "保護協調精準設定與強韌通訊架構，是保障高壓案場不被台電強制解聯的底線。"
     },
     {
-      "id": "pv-thermal-ir-el-inspection",
-      "slug": "pv-thermal-ir-el-inspection",
-      "title": "太陽光電案場無人機紅外線熱成像 (IR) 與 EL 隱裂診斷技術",
-      "subtitle": "符合 IEC 62446-3 標準之熱斑、二極體失效與晶片隱裂像素級辨識",
-      "instructor": "智慧巡檢中心",
-      "date": "規劃中 (2027 Q1)",
+      "id": "pv-thermal-ir-inspection-20261027",
+      "slug": "pv-thermal-ir-inspection",
+      "title": "太陽光電設置乙級技術士回訓課程——太陽光電系統熱影像檢查與失效分析",
+      "subtitle": "麥肯錫顧問風格 10 分鐘精華導讀 ✕ 20 頁金字塔原理簡報 ✕ 熱影像失效分析",
+      "instructor": "葉大衛 (David Yeh)",
+      "date": "2026-10-27",
       "category": "safety",
-      "status": "planned",
-      "badge": "預備擴充模組",
-      "recordingDuration": "40 分鐘",
-      "slidesCount": 15,
+      "status": "ready",
+      "badge": "旗艦回訓核心課",
+      "recordingDuration": "44 分鐘",
+      "slidesCount": 20,
       "sourceHandoutPages": 20,
-      "url": "#",
-      "coreThesis": "以無人機正射熱成像取代人力逐串勾測，結合電氣時序數據實現毫米級缺陷精準定位。",
+      "url": "courses/pv-thermal-ir-inspection.html",
+      "coreThesis": "熱影像檢查是以熱力學溫差倒推電氣內阻與壓差異常的電氣聽診器，是捍衛電廠資產最前線的防禦利刃。",
       "highlights": [
-        "熱斑溫度差 $\\Delta T > 20^\\circ\\text{C}$ 之三級風險警示判定標準。",
-        "夜間 EL 電致發光檢測指紋特徵辨析（黑心片、破片、斷柵與隱裂）。",
-        "熱成像巡檢報告與原廠模組保固索賠 SCAR 證據鏈封裝。"
+        "遮陰放熱乘數效應：遮陰 3/4 焦耳熱暴增 243 倍，全遮片退化為絕緣體引發峰值集中加熱。",
+        "集中式並聯反向逆灌：單片開路壓差誘發 20~23A 反向電流，在低照度陰天引爆連接器大火。",
+        "三大工程防禦紅線：打破絕對溫度迷思（相對溫差 ≥0.5°C 即異常）、鋁框嚴禁鐵自攻螺絲、設備接地嚴禁共地台電 N 相。"
       ],
-      "oneSentenceTakeaway": "空中紅外初篩結合地面 EL 確診，讓隱蔽晶片微裂無所遁形。"
+      "oneSentenceTakeaway": "打破絕對溫度迷思，以 0.5°C 相對溫差早期介入，落實接地獨立與開關上選，杜絕電弧火災。",
+      "modules": [
+        {
+          "moduleNo": 1,
+          "name": "遮陰熱效應原理與半導體物理特性",
+          "slides": "01-04",
+          "summary": "I²R 焦耳熱放大乘數（遮3/4飆243倍）、全遮絕緣化峰值發熱、半切分流反常溫升與二極體極限。"
+        },
+        {
+          "moduleNo": 2,
+          "name": "開路故障、電壓特徵與系統級隱患",
+          "slides": "05-08",
+          "summary": "整片遮陰啟動門檻、IEC 62446-3開路溫升2~7°C、單片開路電壓跌落2~13V與PR監控盲區。"
+        },
+        {
+          "moduleNo": 3,
+          "name": "反向電流危害、熔絲真諦與典型案場",
+          "slides": "09-12",
+          "summary": "低照度陰天20~23A反向充電引發火災、25A熔絲設計真諦、水庫白鷺鸶鳥糞與避雷針獨立串列隔離。"
+        },
+        {
+          "moduleNo": 4,
+          "name": "接頭工藝、電位差腐蝕與熱異常判定",
+          "slides": "13-16",
+          "summary": "MC4異廠混接3分鐘160°C融毀、毛細滲透氯化銅腐蝕、鐵鋁自攻螺絲2.3V超標、相對溫差0.5°C黃金法則與嚴禁共地N相。"
+        },
+        {
+          "moduleNo": 5,
+          "name": "並聯拓撲、保護元件演進與表前開關",
+          "slides": "17-20",
+          "summary": "健達巧克力三色反向充電擊穿IGBT、阻隔二極體到DC熔絲座演進、空拍4°~5°開口率與表前開關養豬場1500A選型。"
+        }
+      ]
     },
     {
       "id": "pv-8d-root-cause-engineering",
