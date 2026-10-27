@@ -6,7 +6,8 @@
 🌐 **線上知識庫與簡報系統**：[https://davidyeh51.github.io/pv-om-knowledge-hub/](https://davidyeh51.github.io/pv-om-knowledge-hub/)  
 🖥 **旗艦回訓簡報 #01 直達（基礎維運與發電特性）**：[https://davidyeh51.github.io/pv-om-knowledge-hub/courses/pv-om-fundamentals.html](https://davidyeh51.github.io/pv-om-knowledge-hub/courses/pv-om-fundamentals.html)  
 🔥 **旗艦回訓簡報 #02 直達（熱影像檢查與失效分析）**：[https://davidyeh51.github.io/pv-om-knowledge-hub/courses/pv-thermal-ir-inspection.html](https://davidyeh51.github.io/pv-om-knowledge-hub/courses/pv-thermal-ir-inspection.html)  
-⚡ **旗艦回訓簡報 #03 直達（儲能系統技術與應用現況）**：[https://davidyeh51.github.io/pv-om-knowledge-hub/courses/bess-technologies-applications.html](https://davidyeh51.github.io/pv-om-knowledge-hub/courses/bess-technologies-applications.html)
+⚡ **旗艦回訓簡報 #03 直達（儲能系統技術與應用現況）**：[https://davidyeh51.github.io/pv-om-knowledge-hub/courses/bess-technologies-applications.html](https://davidyeh51.github.io/pv-om-knowledge-hub/courses/bess-technologies-applications.html)  
+🌿 **旗艦回訓簡報 #04 直達（綠電交易機制與再生能源憑證）**：[https://davidyeh51.github.io/pv-om-knowledge-hub/courses/green-power-trading-trec.html](https://davidyeh51.github.io/pv-om-knowledge-hub/courses/green-power-trading-trec.html)
 
 ---
 
@@ -23,7 +24,7 @@
    - 包含台電三相平衡容量矩陣表、逆變器 300 秒狀態機流程圖、STC 照度鉗表 30% 清洗模型、半切 vs 全片阻抗對比、MC4 端子防燒燬與負極 -199V 防觸電 SOP。
    - 包含遮陰 $I^2R$ 放熱乘數、IEC 62446-3 開路溫升 2~7°C、開路電壓跌落 2~13V、反向電流 20~23A 陰天火災、MC4 異廠混接 160°C 融毀、鐵鋁自攻螺絲 2.3V 電位差腐蝕穿孔、健達巧克力三色反向充電擊穿 IGBT、設備接地嚴禁共地台電 N 相、表前開關 1500A 上選防氨氣電弧等。
    - 每頁均配備高解析實體講義縮圖，點擊即可開啟燈箱放大檢視。
-4. **全域與頁內即時關鍵字檢索引擎（40 頁投影片全索引）**：
+4. **全域與頁內即時關鍵字檢索引擎（80 頁投影片全索引）**：
    - 支援模糊比對、多關鍵字交集、標籤快篩與匹配詞高亮（`<mark>`），點擊一鍵直達特定簡報投影片（如 `#s15`）。
 5. **講者備忘錄模式（按 `N` 鍵呼出）**：
    - 內建三段式演講講稿（① 本頁核心結論、② 補充說明與現場數據、③ 下一頁轉場提示），完全融入葉大衛講師現場實戰心法。
@@ -69,6 +70,18 @@
 
 ---
 
+### 課程四：綠電交易機制與再生能源憑證制度 (55 分鐘，20 頁)
+
+| 模組編號 | 核心工程主題 | 對應投影片 | 核心結論與關鍵數據 |
+| :---: | :--- | :---: | :--- |
+| **模組一** | **綠電憑證本質與國際範疇界定** | Slide 01-04 | T-REC 為經濟部標檢局專責核發之唯一法定綠電身分證，採產銷履歷溯源，**轉讓一次為限**（嚴禁二次交易炒作）。國際 RE100 正面表列「風光水地生」五大綠能；廢棄物發電不獲認可且碳係數非0；抽蓄水力屬儲能；氫能僅為載體。申請必備設備登記函與併網約；台電 FIT 躉購與環境部碳抵換主體絕對排除。歐盟 CBAM 認 PPA 實體合約而非純憑證。 |
+| **模組二** | **綠電交易市場演進與路徑全貌** | Slide 05-08 | 經歷 98 年一度 10 元 FIT 拓荒期到 106 年電業法修正「綠電先行」，市場邁入 4A 自用、4B 電證分離、PPA 轉供直售三大體系。**關鍵政策紅利**：二三型自用發電設備免轉一型發電業（免委員現勘/專任技術員），透過售電業直接賣電，釋放全台百萬瓩「螞蟻雄兵」自由市場供給。憑證中心存憑證現貨熱絡，店家證因 PPA 複雜條款全走線下深度客製私約。 |
+| **模組三** | **自由市場定價與便民推廣政策** | Slide 09-12 | 綠電自由市場定價錨定台電 FIT 躉購費率（3.5~5.6 元/度）為絕對下限，疊加 VPC (+6%)、風雨球場、北部 (+15%) 加成後市場售價多落在 4.8~6.5 元。**台資電（台灣智慧電網公司）**統購分銷充當信用蓄水池，破解大型案場聯貸銀行對中小企業頂級信評要求。**台電小額綠電**（1萬/20萬度、1年/5年、5~6元）定位為合約實戰練兵場。中小企業平價競標（底價 4.3 元、限資本額1億/員工200人、30%用電）與小農式綠電市集全台巡迴對接。 |
+| **模組四** | **無電號租戶解方與沙盒3.0彈性分配** | Slide 13-16 | 台北 101 大樓無獨立電號租戶從 1.0 單租戶模式（取得800萬度）跨越至 2.0 綠色大樓房東統籌團購（突破 2 億度）。解析太陽光電（夏日）與風電（冬日）、商辦（平日尖/週末零）之供需曲線時空雙重錯配與售電業配比價值。台電 15 分鐘計量「四獨立時段密封水桶」月內同區間二次彌合。**沙盒 3.0 革命**：打破事前固定比例僵局，月結後事後自主劃撥優先電號，資料提供費斷崖暴降 98%（大戶 120 萬降至 2.4 萬）。 |
+| **模組五** | **2026最新變革與維運十條軍規** | Slide 17-20 | **零股化新制**按月獨立結算告別零頭跨月滾存，任意拼接連續 12 個月完美對齊美商（6/7月）與日商（3/4月）跨國財年。憑證查核大鬆綁：取消北中南區域劃分自由選，1MW 以下案場自撰報告先行發證事後抽驗。**年底三大預告法規**：未售台電余電可全額發證、解約次日電表拍照追溯起算點消滅真空期、單一電號多主體合資依出資比例直接拆分。提煉綠電採購與維運 10 條實戰軍規。 |
+
+---
+
 ## 🛠️ 資料擴充架構指南（三步驟快速新增課程）
 
 本知識庫採用**數據驅動（Data-Driven）的模組化架構**：
@@ -79,22 +92,24 @@ pv-om-knowledge-hub/
 ├── generate_deck.py             # 課程 #01 簡報生成器
 ├── generate_deck_c2.py          # 課程 #02 簡報生成器
 ├── generate_deck_c3.py          # 課程 #03 簡報生成器
+├── generate_deck_c4.py          # 課程 #04 簡報生成器
 ├── courses/
 │   ├── pv-om-fundamentals.html  # 回訓課程 #01 簡報 (20 Slides)
 │   ├── pv-thermal-ir-inspection.html # 回訓課程 #02 簡報 (20 Slides)
-│   └── bess-technologies-applications.html # 回訓課程 #03 簡報 (20 Slides)
+│   ├── bess-technologies-applications.html # 回訓課程 #03 簡報 (20 Slides)
+│   └── green-power-trading-trec.html # 回訓課程 #04 簡報 (20 Slides)
 ├── assets/
 │   ├── css/
 │   │   ├── style.css            # 麥肯錫入口首頁樣式
 │   │   └── deck.css             # 16:9 簡報樣式與列印樣式
 │   ├── js/
-│   │   ├── search.js            # 全文檢索引擎與高亮模組 (60 Slides)
+│   │   ├── search.js            # 全文檢索引擎與高亮模組 (80 Slides)
 │   │   └── deck.js              # 簡報互動控制器 (鍵盤/講稿/燈箱/總覽)
 │   └── images/
 │       └── slides/              # 66 張高清原廠講義圖冊 (slide_01.jpg ~ slide_66.jpg)
 ├── data/
-│   ├── courses.json             # 課程目錄與中繼資料 (3 Ready, 2 Planned)
-│   └── search-index.json        # 全域搜尋索引 (60 頁投影片全索引)
+│   ├── courses.json             # 課程目錄與中繼資料 (4 Ready, 2 Planned)
+│   └── search-index.json        # 全域搜尋索引 (80 頁投影片全索引)
 └── docs/
     └── EXPANSION.md             # 擴充 SOP 指南
 ```
@@ -121,7 +136,7 @@ pv-om-knowledge-hub/
 ## 🏢 維護與版權資訊
 
 - **專案發起**：進金生能源服務股份有限公司 (ACMEPOINT 6692) 運維管理部
-- **技術體系**：太陽光電設置乙級技術士回訓課程、台電最新併聯技術規範、IEC 62446-3、NEC 690.12、NFPA 855 / UL 9540A 儲能標準
-- **授課講師**：葉大衛 (David Yeh)、慧能 張經理 (13-14 年台塑能管資歷)
+- **技術體系**：太陽光電設置乙級技術士回訓課程、台電最新併聯技術規範、IEC 62446-3、NEC 690.12、NFPA 855 / UL 9540A 儲能標準、經濟部標檢局 T-REC 憑證制度
+- **授課講師**：葉大衛 (David Yeh)、慧能 張經理 (13-14 年台塑能管資歷)、張彥堂 科長 (經濟部標檢局 國家再生能源憑證中心)
 - **架構設計**：麥肯錫顧問風格結構化工程智庫 (Pyramid Principle)
 - **開源託管**：GitHub Pages 靜態安全託管
