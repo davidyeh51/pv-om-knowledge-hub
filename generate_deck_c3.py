@@ -1,0 +1,1137 @@
+# -*- coding: utf-8 -*-
+import os
+
+out_dir = r"G:\我的雲端硬碟\0_AI Agent\Obsidian\DavidCloud\大衛工作\3.0 組織層級\3.3 人資管理\3.3.5 育才\pv-om-knowledge-hub\courses"
+os.makedirs(out_dir, exist_ok=True)
+out_path = os.path.join(out_dir, "bess-technologies-applications.html")
+
+slides_data = [
+    {
+        "slideNo": 1,
+        "module": "COURSE OVERVIEW ｜ 核心回訓模組",
+        "ref": "講義對照 P.01 ｜ 錄音 00:00~02:25",
+        "title": "儲能系統技術與應用現況：能源管理 (EMS) ✕ 表後儲能 (BTM) 的價值最大化",
+        "question": "如何打破傳統硬體替換思維，將能源管理可視化與表後儲能深度融合，實現電費套利、防超約與台電電力交易全維度增益？",
+        "highlights": [
+            "<strong>管理型節能哲學：</strong>台塑 14 年節能實戰心法，不靠大舉替換設備，而是靠可視化電表數據體檢揪出隱蔽浪費點。",
+            "<strong>表後儲能四大核心價值：</strong>尖離峰電價套利、防超約需量平抑、重要設備備援運轉、參與台電電力交易獲取補貼。",
+            "<strong>軟硬結合效益翻倍：</strong>單純建儲能缺乏管理會虛擲容量；單純做節能又受限於設備拉閘，二者結合效益方能最大化。"
+        ],
+        "takeaway": "儲能是前鋒，能管是中樞；以數據診斷用電浪費，以儲能放電免除限電，是工廠電費最佳化的終極解法。",
+        "visualTitle": "能源管理 (EMS) ✕ 表後儲能 (BTM) 雙輪驅動模型",
+        "visualType": "overview",
+        "thumbImg": "../assets/images/slides/slide_01.jpg",
+        "thumbCaption": "講義 P.01：回訓整體課程總綱與講師經歷",
+        "thumbLabel": "P.01 課程總綱",
+        "noteTakeaway": "本堂課由慧能張經理主講，結合台塑 10 餘年實戰經驗，深入剖析表後儲能與能源管理整合落地法。",
+        "noteDetail": "講師開宗明義：管理型節能就像身體健康檢查，抽血照 X 光數據出來，才知道工廠真正漏財的盲點在哪裡。",
+        "noteTransition": "請進入下一頁，從台灣供電備用容量與 AIDC 機房崛起，透視分散式儲能的戰略背景。"
+    },
+    {
+        "slideNo": 2,
+        "module": "MODULE 1 ｜ 台灣電力政策與局勢",
+        "ref": "講義對照 P.02 ｜ 錄音 00:02:26~00:03:33",
+        "title": "AIDC 機房引爆用電缺口：台電推動「藏電於民」，民間分散式儲能成為電網解方",
+        "question": "為什麼台灣政府與台電近年全力推動民間建置表後儲能？分散式儲能如何免除耗資千億新建電廠的困境？",
+        "highlights": [
+            "<strong>AI 算力中心爆發性缺口：</strong>AIDC 高耗能資料中心大舉進駐台灣，電網備用容量面臨嚴峻挑戰，政府積極開發高效機組補足缺口。",
+            "<strong>「藏電於民」戰略轉向：</strong>與其耗費巨資與漫長環評新建大型電廠，台電大力推廣分散式儲能，利用民間電池削峰填谷支援電網。",
+            "<strong>企業雙贏獲利機制：</strong>平日自行放電賺取尖離峰電價差並抑制需量；緊急時接受台電調度領取高額每度 10 元減免補貼。"
+        ],
+        "takeaway": "分散式表後儲能是台灣電網韌性與企業永續降本的戰略交匯點，政策紅利窗口正全面開啟。",
+        "visualTitle": "集中式電廠瓶頸 vs 分散式儲能「藏電於民」調度拓撲",
+        "visualType": "grid_policy",
+        "thumbImg": "../assets/images/slides/slide_33.jpg",
+        "thumbCaption": "講義 P.17：台灣備用容量趨勢與分散式儲能政策指引",
+        "thumbLabel": "P.17 分散式儲能政策",
+        "noteTakeaway": "台電需要電時向民間調度放電，民間放電給自己用就不跟台電要電，釋放電網餘裕。",
+        "noteDetail": "台電推動分散式儲能核心在於將負載端的峰值平抑，避免為了一年短短幾十個小時的尖峰負載而去蓋幾百億的新電廠。",
+        "noteTransition": "推動儲能最具吸引力的直接商業動力是電價差，請看第三頁尖離峰套利空間測算。"
+    },
+    {
+        "slideNo": 3,
+        "module": "MODULE 1 ｜ 電價走勢與價差套利",
+        "ref": "講義對照 P.03 ｜ 錄音 00:03:34~00:05:24",
+        "title": "三段式價差 6.86 元、批次電價飆至 9.29 元：表後儲能充放電套利空間巨大",
+        "question": "台電最新三段式電價與批次電價的尖離峰價差各是多少？儲能單靠「充放電套利」能產生多少真金白銀的效益？",
+        "highlights": [
+            "<strong>電價上漲長期確定性：</strong>地緣政治與國際燃料成本推升發電成本，工業與用電大戶電價持續面臨調整壓力。",
+            "<strong>三段式電價夏月價差 6.86 元/度：</strong>夏月尖峰電價高昂，離峰谷底充電、尖峰放電，單度價差高達 6.86 元！",
+            "<strong>工業區批次電價飆達 9.29 元/度：</strong>製造業專用批次電價尖離峰落差突破 9 元大關，使表後儲能純套利回收期大幅壓縮至 5 年以內。"
+        ],
+        "takeaway": "尖離峰電價差突破 9 元大關，表後儲能已從「純成本支出」躍升為「穩定產生強勁現金流的金融級能源資產」。",
+        "visualTitle": "三段式電價 (6.86元) vs 批次電價 (9.29元) 尖離峰價差階梯對照",
+        "visualType": "tariff_arbitrage",
+        "thumbImg": "../assets/images/slides/slide_16.jpg",
+        "thumbCaption": "講義 P.08：台電三段式與批次電價尖離峰費率表",
+        "thumbLabel": "P.08 電價套利差額",
+        "noteTakeaway": "夏月只要運轉儲能，每度電現賺 6.86~9.29 元，光是電費差價每年就是上百萬收益。",
+        "noteDetail": "批次電價是近三年為工業區新增的計費方案，離峰時間更長、尖離峰價差更大，是建置表後儲能最肥沃的套利土壤。",
+        "noteTransition": "除電價套利外，用電大戶條款的法規大刀正步步逼近，請看第四頁綠電與儲能履約分析。"
+    },
+    {
+        "slideNo": 4,
+        "module": "MODULE 1 ｜ 用電大戶與法規門檻",
+        "ref": "講義對照 P.04 ｜ 錄音 00:05:25~00:08:28",
+        "title": "綠電憑證飆漲至 5.8 元且斷貨：表後儲能成用電大戶履行義務量的唯一可行解",
+        "question": "契約容量 5000kW（地方下殺至 800kW）的用電大戶面臨何種履約困境？為什麼儲能成為最優破局者？",
+        "highlights": [
+            "<strong>綠電市場嚴重供不應求：</strong>綠電憑證單價從去年 5.3 元/度漲至 5.6~5.8 元/度，市場全數被科技巨頭掃空，傳產企業有錢也買不到！",
+            "<strong>自建光電受限空間瓶頸：</strong>廠房與商業大樓屋頂有限，甚至如台北 101、晶華酒店等根本無屋頂空間增建太陽能。",
+            "<strong>地方自治門檻向下蔓延：</strong>台北市維持 4000kW；台中與台南直接下殺至 800kW，表後儲能占地極小（1.3m×1.3m），是履約合規的最佳抓手。"
+        ],
+        "takeaway": "買不到綠電、建不了光電的企業，表後儲能是履行用電大戶法定義務且兼具電費套利的最優解法。",
+        "visualTitle": "用電大戶四大履約路徑比較 (自建光電 / 買憑證 / 繳代金 / 建儲能)",
+        "visualType": "compliance_options",
+        "thumbImg": "../assets/images/slides/slide_17.jpg",
+        "thumbCaption": "講義 P.09：用電大戶義務量計算公式與綠電市場現況",
+        "thumbLabel": "P.09 用電大戶路徑",
+        "noteTakeaway": "繳代金是純賠錢沒人想選；買憑證又搶不到；建儲能能履約又能省電費，是一石二鳥。",
+        "noteDetail": "台北產發局本想調降至 3000kW，但因市區商業大樓無空間建光電引發反彈，暫時維持 4000kW；而中南部 800kW 門檻已成既定事實，企業必須加速應對。",
+        "noteTransition": "掌握了宏觀政策後，企業如何自我診斷？請看第五頁能源管理法申報與第六頁電費單診斷術。"
+    },
+    {
+        "slideNo": 5,
+        "module": "MODULE 2 ｜ 能源管理法合規要求",
+        "ref": "講義對照 P.05 ｜ 錄音 00:08:29~00:09:31",
+        "title": "800kW 以上用戶限期申報五年計畫：能源可視化是通過合規稽核的硬性前提",
+        "question": "能源管理法最新修法要求什麼？為什麼「能源可視化」被列為企業必須完成的法定底線？",
+        "highlights": [
+            "<strong>強制提交五年節能計畫：</strong>契約容量 800kW 以上之重點用電戶，必須在後年 3 月 31 日前向主管機關提交為期 5 年的節能計畫書。",
+            "<strong>能源可視化硬性要求：</strong>法規核心意旨要求用電資訊全面「可視化揭露」，杜絕無客觀數據佐證的紙上談兵估算。",
+            "<strong>從被動合規到主動獲利：</strong>將公文合規壓力轉化為工廠用電大體檢契機，藉由儀表裝設直擊長年未察覺的電費黑洞。"
+        ],
+        "takeaway": "能源管理法不僅是公文合規，更是推動工廠電氣透明化、揪出百萬電費漏洞的法定尚方寶劍。",
+        "visualTitle": "能源管理法合規里程碑與可視化數據架構",
+        "visualType": "law_timeline",
+        "thumbImg": "../assets/images/slides/slide_18.jpg",
+        "thumbCaption": "講義 P.09：能源管理法條文重點與 800kW 用戶申報時限通知",
+        "thumbLabel": "P.09 能管法申報時程",
+        "noteTakeaway": "後年 3 月底前要交五年計畫，所有 800kW 用戶都逃不掉，沒有裝電表可視化連計畫書都寫不出來。",
+        "noteDetail": "企業若只把這當作應付官員的報告，就是白白浪費資源；透過能管可視化，往往第一年就能替工廠省下幾十萬甚至上百萬電費。",
+        "noteTransition": "如何不進工廠現場就能診斷企業用電健康度？請看第六頁電費單六大核心維度診斷法。"
+    },
+    {
+        "slideNo": 6,
+        "module": "MODULE 2 ｜ 電費單科學診斷六大維度",
+        "ref": "講義對照 P.06 ｜ 錄音 00:09:32~00:13:48",
+        "title": "電費單六大維度秒判工廠健康度：離峰佔比達 36% 即屬異常，基本電費超標透露管理失控",
+        "question": "如何單憑一年 12 張電費單，在不進廠的情況下精準揪出工廠的用電浪費點與管理漏洞？",
+        "highlights": [
+            "<strong>六大維度診斷體系：</strong>契約容量、最高需量、尖離峰用電佔比、負載率（設備利用率）、基本電費佔比、平均電價。",
+            "<strong>離峰佔比 36% 異常警訊：</strong>非 24 小時連續生產之一般工廠，深夜無人生產時段若離峰佔比高達 36%，100% 存在忘記關機或嚴重漏耗！",
+            "<strong>基本電費 15% 紅線：</strong>基本電費佔總電費比率標準應在 10%~12%，若超過 15%（如實測達 16%）代表契約容量訂太高，每月白送台電大筆固定費。"
+        ],
+        "takeaway": "電費單是工廠的綜合血液常規檢查報告；掌握六大維度，無需進廠即可精準鎖定數十萬元的隱形浪費。",
+        "visualTitle": "電費單六大維度診斷指標與健康基準線 (Benchmark)",
+        "visualType": "bill_diagnostic",
+        "thumbImg": "../assets/images/slides/slide_20.jpg",
+        "thumbCaption": "講義 P.10：工廠真實電費單拆解與六大指標計算範例",
+        "thumbLabel": "P.10 電費單六大指標",
+        "noteTakeaway": "問客戶離峰佔比為什麼高達 36%，十個有八個答不出來，這就是管理上最大的盲區與肉眼不可見的浪費。",
+        "noteDetail": "平均需量除以最高需量就是負載率；負載率低代表產線震盪大、契約容量定太高，隨便調整就能替工廠省下巨額基本電費。",
+        "noteTransition": "最高需量是如何被計算的？為什麼台電單次抓違規這麼嚴格？請看第七頁台電 2880 次規則。"
+    },
+    {
+        "slideNo": 7,
+        "module": "MODULE 2 ｜ 台電需量計算底層規則",
+        "ref": "講義對照 P.07 ｜ 錄音 00:16:35~00:18:14",
+        "title": "台電最高需量規則解密：每月 2880 次取單次最高值，2879 次表現良好單次超標即重罰",
+        "question": "瞬間用電飆升算不算超約？台電計費的「最高需量」究竟是如何從大數據中抓取出來的？",
+        "highlights": [
+            "<strong>2880 次取最高值機制：</strong>台電一天採集 96 次 15 分鐘平均需量，每月 30 天共計 2880 筆數據；台電只從中挑選「單次最高的那 1 筆」作為當月計費最高需量！",
+            "<strong>單次超標即全月受罰：</strong>哪怕 2879 次都精準控制在 800kW，只要有一次不小心疏忽衝到 1200kW，當月即判定超約 200kW 並加收巨額超約附加費！",
+            "<strong>精準鎖定時間戳排查：</strong>必須調取台電智慧電表 15 分鐘數據，精確鎖定最高需量發生的「月、日、時、分」，追查現場到底哪幾台設備同時啟動撞峰。"
+        ],
+        "takeaway": "台電只看 2880 次裡的最高峰；需量管理的核心不在於均值有多漂亮，而在於杜絕那致命的單一 15 分鐘峰值。",
+        "visualTitle": "台電每月 2880 次 15 分鐘平均需量取峰機制示意圖",
+        "visualType": "demand_rule",
+        "thumbImg": "../assets/images/slides/slide_21.jpg",
+        "thumbCaption": "講義 P.11：台電 15 分鐘需量取樣邏輯與超約罰金計算說明",
+        "thumbLabel": "P.11 2880次需量規則",
+        "noteTakeaway": "瞬間跳起來不算超約，15 分鐘平均值衝上去才算；但只要一次超約，整個月的基本電費就被罰翻。",
+        "noteDetail": "很多工廠以為平均用電平穩就沒事，殊不知某天早上 8 點空壓機跟大馬達同時啟動 15 分鐘，直接被台電抓到超約罰幾十萬。",
+        "noteTransition": "如何透過自己跟自己比，算出每個月到底被浪費了多少流動電費？請看第八頁平均單價自我同比法。"
+    },
+    {
+        "slideNo": 8,
+        "module": "MODULE 2 ｜ 平均單價自我同比法",
+        "ref": "講義對照 P.08 ｜ 錄音 00:13:49~00:16:34",
+        "title": "平均單價自我同比法：同夏月不同月份差 11 萬，數據反推設備開機時序與行為異常",
+        "question": "為什麼不要跟台積電比電價，而要自己跟自己比？夏月牌價相同的情況下，單價落差從何而來？",
+        "highlights": [
+            "<strong>拒絕跨界無效攀比：</strong>台積電平均單價 1.9 元/度是其超高負載率的特例；傳統產業無須好高騖遠，應專注自家「6 月 vs 9 月」夏月同基準比較。",
+            "<strong>單價差 0.11 元多付 11 萬元：</strong>牌價完全相同下，某廠 6 月平均單價 3.35 元，9 月為 3.24 元，僅 0.11 元落差就差出 11 萬元流動電費！",
+            "<strong>數據反推現場管理病灶：</strong>產能相近卻單價偏高，代表尖峰時段用電比例暴增、離峰未妥善利用，或無人生產時設備未關機造成純耗損。"
+        ],
+        "takeaway": "自我同比能擠出電費最真實的水分；用數據說服工廠主管排查開機時序，是零出資創造數十萬純利的最快路徑。",
+        "visualTitle": "夏月同基準自我同比：單價落差 (0.11元) 與多付電費 (11萬元) 對照",
+        "visualType": "unit_price_compare",
+        "thumbImg": "../assets/images/slides/slide_22.jpg",
+        "thumbCaption": "講義 P.11：某傳產工廠夏月與非夏月平均單價趨勢分析圖",
+        "thumbLabel": "P.11 平均單價自我同比",
+        "noteTakeaway": "牌價都一樣，為什麼 6 月比 9 月貴 11 萬？答案只有兩個：尖峰用太多，或者沒人在時浪費太多。",
+        "noteDetail": "非夏月也是如此，2.61 元跟 2.54 元只差 0.07 元，該廠就多付了 9.3 萬元；透過可視化儀表回推，立刻發現是熱處理烤爐排程撞到尖峰。",
+        "noteTransition": "那麼，表後儲能進場之後，能帶來哪些顛覆性的七大效益？請進入第三模組第九頁。"
+    },
+    {
+        "slideNo": 9,
+        "module": "MODULE 3 ｜ 表後儲能七大核心效益",
+        "ref": "講義對照 P.09 ｜ 錄音 00:19:47~00:22:28",
+        "title": "表後儲能七大核心效益：徹底終結拉閘限電痛苦，免關設備放電頂峰平抑需量",
+        "question": "表後儲能（BTM）如何取代傳統痛苦的需量控制器？它能為企業帶來哪七大維度的綜合收益？",
+        "highlights": [
+            "<strong>告別痛苦的拉閘需量控制：</strong>過去為了防超約，需量控制器強行切斷空調或風機，現場抱怨連連甚至影響製程；儲能一放電，設備全開需量自動下降！",
+            "<strong>七大核心效益全景矩陣：</strong>尖離峰電價套利、契約容量優化下調、重要設備不斷電備援、台電電力交易、需量反應措施、用電大戶履約與減碳形象。",
+            "<strong>電費超約附加費歸零：</strong>利用儲能毫秒級放電削平突波峰值，再也不用擔心設備同時啟動被台電抓到超約重罰。"
+        ],
+        "takeaway": "儲能讓需量管理從「痛苦的限電拉閘」升級為「優雅的放電頂峰」；設備不減產、員工不流汗，電費照樣大幅下調。",
+        "visualTitle": "表後儲能 (BTM) 七大核心收益全景樹狀圖",
+        "visualType": "storage_7_benefits",
+        "thumbImg": "../assets/images/slides/slide_23.jpg",
+        "thumbCaption": "講義 P.12：表後儲能七大核心效益架構與台電對接機制",
+        "thumbLabel": "P.12 儲能七大效益",
+        "noteTakeaway": "以前做節能用需量控制器，說要超約了把冷氣關掉，現場罵翻天最後直接把系統拆掉；儲能進來設備照開，放電需量就降下來。",
+        "noteDetail": "儲能效益是疊加的：除了每天賺電價差，還能參與台電需量反應，再加上契約容量調降的基本電費節省，多管齊下回收極快。",
+        "noteTransition": "儲能每天該如何充放電？夏月與非夏月排程有何不同？請看第十頁充放電操作模式。"
+    },
+    {
+        "slideNo": 10,
+        "module": "MODULE 3 ｜ 儲能充放電操作時序與排程",
+        "ref": "講義對照 P.10 ｜ 錄音 00:22:29~00:23:36",
+        "title": "夏月單充單放、非夏月雙充雙放：週末全天休眠調養，精細化排程極大化套利兼顧壽命",
+        "question": "儲能電池如何配合台電不同季節的時鐘電價進行調度？為什麼週末兩天應該讓儲能櫃休眠停機？",
+        "highlights": [
+            "<strong>夏月單充單放模式：</strong>深夜 00:00~06:00 離峰谷底全速充電；日間 10:00~16:00 尖峰最高電價全額放電，賺取單度高達 6.86~9.29 元價差！",
+            "<strong>非夏月午間雙充雙放：</strong>非夏月中午 13:00~14:00 屬離峰低價，排定二次充電；傍晚 18:00~20:00 執行二次放電，實現一日兩次套利！",
+            "<strong>週日休眠保護原則：</strong>週日全天 24 小時皆為離峰電價無價差空間，排定儲能櫃停機休息，避免無效循環磨損電芯，延長 10 年使用壽命。"
+        ],
+        "takeaway": "非夏月善用午間離峰實現一日兩次套利；週日全天休眠降低折舊，精細化排程是電芯 10 年穩健運行的保證。",
+        "visualTitle": "夏月 (單充單放) vs 非夏月 (雙充雙放) 24小時充放電調度曲線圖",
+        "visualType": "dispatch_schedule",
+        "thumbImg": "../assets/images/slides/slide_24.jpg",
+        "thumbCaption": "講義 P.12：夏月與非夏月 24 小時充放電排程與週末休眠策略",
+        "thumbLabel": "P.12 充放電排程時序",
+        "noteTakeaway": "儲能每天都要放電放到乾，每天都要運轉賺套利；唯獨禮拜天整天都是離峰沒價差，一定要讓機器休息保養。",
+        "noteDetail": "非夏月雖然電價差稍微縮小，但因為多了一次午間充放電機會，累積起來的總套利度數反而不輸夏月。",
+        "noteTransition": "如何參與台電的需量反應？三大方案收益與懲罰規則是什麼？請看第十一頁需量反應收益拆解。"
+    },
+    {
+        "slideNo": 11,
+        "module": "MODULE 3 ｜ 需量反應三大方案收益拆解",
+        "ref": "講義對照 P.11 ｜ 錄音 00:27:11~00:29:22",
+        "title": "需量反應零風險獲利：日選型固定放電最穩健，彈性反應每度補貼 10 元無罰則",
+        "question": "需量反應（Demand Response）是不是一定要投資儲能才能參加？三大方案的補貼費率與操作策略為何？",
+        "highlights": [
+            "<strong>不限手段只看需量結果：</strong>需量反應如部隊高裝檢，不問手段只看結果！可用儲能放電、啟動備用發電機或排程關機，只要需量壓到承諾值以下即可領錢！",
+            "<strong>計劃性日選型最推薦：</strong>僅在 5~10 月每日 18:00~20:00 固定放電，操作規律且門檻低，最適合工廠常態化賺取扣減電費。",
+            "<strong>彈性反應型每度補貼 10 元：</strong>台電隨機緊急調度時放電，每度直接給予 10 元電費減免補貼；若當日工廠趕工無法配合亦「完全不罰款」，申請零門檻。"
+        ],
+        "takeaway": "需量反應申請零成本、未履約零罰款；結合儲能或發電機排程，每月能從台電帳單直接扣減數萬至數十萬元電費。",
+        "visualTitle": "台電需量反應三大方案 (日選型 / 彈性型 / 用電大戶方案二) 收益與規則對比",
+        "visualType": "demand_response_plans",
+        "thumbImg": "../assets/images/slides/slide_25.jpg",
+        "thumbCaption": "講義 P.13：需量反應申請表單格式與各方案每度電扣減電費費率",
+        "thumbLabel": "P.13 需量反應方案",
+        "noteTakeaway": "容量小於 1000kW 的用戶，千萬不要去花大錢搞電力交易平台，直接去申請台電需量反應負載管理措施，沒罰則又有錢領最划算。",
+        "noteDetail": "某造紙廠透過關閉備用打漿機參與需量反應，每個月躺著多收幾十萬代運費；結合儲能放電更是完全不影響主製程生產。",
+        "noteTransition": "儲能作為工廠備用電源時，切換延遲會不會導致電腦死機？請看第十二頁關鍵備援配置禁忌。"
+    },
+    {
+        "slideNo": 12,
+        "module": "MODULE 3 ｜ 關鍵設備備援配置禁忌",
+        "ref": "講義對照 P.12 ｜ 錄音 00:29:23~00:30:20",
+        "title": "儲能絕非全廠不斷電：切換延遲 1 秒必須搭配 UPS，聚焦咽喉核心設備防止食材報廢",
+        "question": "能不能用儲能當作全廠斷電備援？儲能 VCS 切換時間是多少？如何為精密設備與馬達進行合理搭配？",
+        "highlights": [
+            "<strong>全廠備援成本陷阱：</strong>為整座工廠配置斷電全負載備援，電池容量需求將暴增數十倍，投資成本高如新建電廠，在商業上完全不可行。",
+            "<strong>食品廠冷凍機實戰案例：</strong>某食品工廠專門為「急速冷凍機」配置儲能備援，防止台電無預警跳電造成數百萬元生鮮肉品腐壞報廢，平時還能套利。",
+            "<strong>1 秒 VCS 切換 vs 4ms UPS：</strong>儲能離網切換有 1 秒內的微小中斷，馬達與水泵不受影響；但 PLC 控制器與電腦伺服器必須串接在線式 UPS（4ms）以防死機重啟。"
+        ],
+        "takeaway": "儲能備援重在保住不可中斷的咽喉設備；馬達類直推、精密控制類必搭 UPS，才是兼顧成本與可靠度的配置之道。",
+        "visualTitle": "儲能離網切換時間 (1秒) vs 在線式 UPS (4ms) 混合拓撲架構圖",
+        "visualType": "backup_topology",
+        "thumbImg": "../assets/images/slides/slide_26.jpg",
+        "thumbCaption": "講義 P.13：工廠重要設備備援電路單線圖與 VCS 切換時序",
+        "thumbLabel": "P.13 關鍵備援拓撲",
+        "noteTakeaway": "儲能不是萬靈丹，斷電切換有一秒鐘的頓斷，精密電腦一定會重開機，一定要加裝 UPS 實現無縫銜接。",
+        "noteDetail": "規劃備援第一步是跟廠長盤點：哪台設備停機一小時損失會超過百萬？把儲能專門接給那台設備，投報率最高。",
+        "noteTransition": "如何落地能源可視化？電表到底要裝多少顆才算合理？請進入第四模組第十三頁。"
+    },
+    {
+        "slideNo": 13,
+        "module": "MODULE 4 ｜ 電表分層安裝架構原則",
+        "ref": "講義對照 P.13 ｜ 錄音 00:30:21~00:32:00",
+        "title": "電表分層安裝黃金三原則：總盤、高壓分盤、低壓總盤三層即足，嚴禁全廠浮濫裝 800 顆",
+        "question": "電表廠商宣稱「全點位安裝才能抓到漏電」，真的需要裝幾百顆電表嗎？極簡、高性價比的分層架構是什麼？",
+        "highlights": [
+            "<strong>800 顆電表的資訊災難：</strong>某工廠聽信硬體商建議砸重金裝設 800 顆電表，資訊過載毫無頭緒，最終無人能看、系統淪為裝飾垃圾。",
+            "<strong>極簡三層核心骨架：</strong>總盤（掌握全廠總量）、高壓分盤（掌握各大車間配電）、低壓總盤（掌握變壓器轉換耗損），三層架構邏輯嚴密清晰。",
+            "<strong>高耗能重點設備單點覆蓋：</strong>僅針對空壓機、冰水主機、大型烤爐或大馬力馬達等佔全廠 70% 耗能的核心設備獨立裝表，其餘次要照明無需裝表。"
+        ],
+        "takeaway": "電表在精不在多；抓住三層配電與大心臟設備，20 顆電表即可洞悉 90% 的用電全貌，杜絕資源浪費。",
+        "visualTitle": "電表分層安裝架構圖 (總盤 &rarr; 高壓分盤 &rarr; 低壓總盤 &rarr; 重點設備)",
+        "visualType": "meter_layers",
+        "thumbImg": "../assets/images/slides/slide_27.jpg",
+        "thumbCaption": "講義 P.14：工廠三層配電系統電表配置規範圖",
+        "thumbLabel": "P.14 電表三層架構",
+        "noteTakeaway": "我幫客戶做能管只裝三層重點盤，裝 800 顆電表的工廠連廠長都不知道怎麼看，那是硬體商在薛錢。",
+        "noteDetail": "高壓分盤配低壓總盤，中間剛好夾一顆變壓器，這就能精準量測變壓器的損耗率；空壓機單獨裝表就能監控管路震盪。",
+        "noteTransition": "裝好電表有了數據之後，該如何建立持續改善的管理機制？請看第十四頁季度覆盤機制。"
+    },
+    {
+        "slideNo": 14,
+        "module": "MODULE 4 ｜ 季度數據覆盤與責任歸屬",
+        "ref": "講義對照 P.14 ｜ 錄音 00:32:01~00:33:02",
+        "title": "季度電力數據覆盤機制：顧問拋異常曲線、現場講真實原因，管路與壓力缺陷全面現形",
+        "question": "有了電表數據後如何落實改善？為什麼說「顧問拋曲線、現場講原因」是推動傳統工廠節能的最佳實踐？",
+        "highlights": [
+            "<strong>以數據為依據問責到人：</strong>每季度召開電力分析會議，能管顧問從 SCADA 系統拋出異常突刺曲線，直接點名該設備現場負責人覆盤說明。",
+            "<strong>深層物理缺陷現形：</strong>透過曲線異常的高頻震盪或無載耗電，揪出空氣管路漏氣、冰水閥門堵塞或壓力設定過高等長年隱匿的工程缺陷。",
+            "<strong>跨部門推諉終結者：</strong>過去生產部門與廠務互踢皮球推卸電費超標責任，客觀 15 分鐘曲線讓行為無所遁形，推動管理步入正軌。"
+        ],
+        "takeaway": "能管系統不是掛在牆上的花瓶看版；每季由顧問拋出異常曲線、現場還原事實，才能將數據變現為真金白銀。",
+        "visualTitle": "季度電力覆盤工作流 (數據擷取 &rarr; 異常標註 &rarr; 現場復盤 &rarr; 工藝閉環)",
+        "visualType": "review_workflow",
+        "thumbImg": "../assets/images/slides/slide_28.jpg",
+        "thumbCaption": "講義 P.14：季度電力數據覆盤會議架構與改善成效追蹤表",
+        "thumbLabel": "P.14 季度數據覆盤",
+        "noteTakeaway": "空壓機曲線為什麼震盪這麼大？把設備負責人叫來問，去現場看才發現是兩台機器在互相打氣推擠。",
+        "noteDetail": "傳產業最缺乏的就是數據對話能力；能管顧問扮演健康檢查醫師的角色，把異常波形圈出來，現場工程師立刻就知道問題在哪。",
+        "noteTransition": "如何透過簡單的設備排程錯開，為工廠節省 100 萬基本電費？請看第十五頁自強號讓莒光號哲學。"
+    },
+    {
+        "slideNo": 15,
+        "module": "MODULE 4 ｜ 自強號與莒光號避峰哲學",
+        "ref": "講義對照 P.15 ｜ 錄音 00:33:03~00:34:10 & 00:42:51~00:43:18",
+        "title": "自強號讓莒光號避峰哲學：核心製程啟動時關停輔機，錯峰 20 分鐘契約容量直降 500kW",
+        "question": "什麼是「火車避峰哲學」？如何不花一毛錢添購設備，單靠開機時序調整省下每年 100 萬基本電費？",
+        "highlights": [
+            "<strong>台鐵列車讓行生動比喻：</strong>自強號（製程大設備）要通過時，莒光號（抽水泵、空調、排風機等非製程輔機）先在側線暫停，過後再開！",
+            "<strong>三設備錯峰省百萬實例：</strong>某廠原本 3 台高耗能設備早上 8 點同時開機，瞬時需量衝破 2700kW；改為錯開 20 分鐘分步啟動，峰值降至 2000kW！",
+            "<strong>契約容量大降 500kW：</strong>需量尖峰被撫平後，契約容量大膽下調 500kW，工廠每年光是「基本電費」就直接省下 100 萬元現金純利！"
+        ],
+        "takeaway": "不用花一毛錢改裝設備，只要調整開機時序 15 分鐘，自強號讓莒光號，一年就能替工廠多擠出百萬純利。",
+        "visualTitle": "同時啟動衝破 2700kW vs 錯峰啟動壓至 2000kW 需量波形對比圖",
+        "visualType": "train_stagger",
+        "thumbImg": "../assets/images/slides/slide_29.jpg",
+        "thumbCaption": "講義 P.15：某大廠高耗能設備錯峰啟動時序調整與 500kW 降約紀錄",
+        "thumbLabel": "P.15 錯峰開機降約",
+        "noteTakeaway": "自強號要過莒光號先停旁邊，核心製程啟動那 15 分鐘，把抽水馬達關掉，等製程穩定了再開，需量完全不會衝上去。",
+        "noteDetail": "很多工廠早上 8 點上班所有產線電閘一閉合，需量瞬時衝天，整個月的最高需量就定格在 8 點 15 分，這種超約冤枉至極。",
+        "noteTransition": "如何運用節能績效分享（ESCO）商業模式，讓企業零出資推動改造？請看第十六頁。"
+    },
+    {
+        "slideNo": 16,
+        "module": "MODULE 4 ｜ ESCO 節能績效分享商業模式",
+        "ref": "講義對照 P.16 ｜ 錄音 00:34:11~00:34:52",
+        "title": "ESCO 8:2 利潤分成商模：零資本支出改造，以節省電費分期償付實現零風險共贏",
+        "question": "工廠老闆不想出資買設備怎麼辦？台塑時期的 8:2 效益分享模型是如何讓業主與節能商共贏的？",
+        "highlights": [
+            "<strong>零前期資本支出（Zero CapEx）：</strong>節能服務商出資全額採購電表與能管系統，工廠無需編列任何初期硬體投資預算。",
+            "<strong>台塑 8:2 效益分享實踐：</strong>省下來的電費淨額由雙方按協議拆分（如節能商分 8 成、業主分 2 成，合約簽署 3 年），期滿後設備無償贈與業主。",
+            "<strong>客觀基準線（Baseline）建模：</strong>依據 IPMVP 國際量測驗證標準建立用電基線，排除產能與天候波動干擾，以數據為準公正拆分效益。"
+        ],
+        "takeaway": "ESCO 模式將技術與財務風險全數轉移至服務商；以節省下來的電費支付改造成本，是企業零負擔推動節能的大殺器。",
+        "visualTitle": "ESCO 節能績效保證與 8:2 效益拆分商業現金流模型",
+        "visualType": "esco_model",
+        "thumbImg": "../assets/images/slides/slide_30.jpg",
+        "thumbCaption": "講義 P.15：ESCO 效益分享合約架構與用電基線驗證指引",
+        "thumbLabel": "P.15 ESCO商模分成",
+        "noteTakeaway": "我出錢幫你改、幫你裝電表，省下來的錢你拿兩成我拿八成，三年約滿設備送你，老闆哪有不願意的道理？",
+        "noteDetail": "建立嚴謹的 Baseline 是 ESCO 的成敗核心；有了精確的電費單歷史數據與回歸分析，雙方對節省金額心服口服。",
+        "noteTransition": "表後儲能一體櫃的具體規格與投資回本期如何？請進入第五模組第十七頁測算。"
+    },
+    {
+        "slideNo": 17,
+        "module": "MODULE 5 ｜ 一體機參數與效益測算",
+        "ref": "講義對照 P.17 ｜ 錄音 00:35:23~00:39:18",
+        "title": "標準一體機 125kW / 261kWh 占地如公廁：扣除 15% 損耗年賺 140 萬，5.22 年全本收回",
+        "question": "一體化儲能櫃（All-in-One Cabinet）尺寸與容量是多少？雙櫃系統的總建置成本與投資報酬率如何測算？",
+        "highlights": [
+            "<strong>超高能量密度極小占地：</strong>單台一體機尺寸僅 1.3m × 1.3m × 2.35m，占地如小型公共廁所，完美化解工廠寸土寸金無空間放貨櫃的痛點。",
+            "<strong>雙櫃系統保守測算參數：</strong>兩櫃額定功率 250kW、儲電量 522kWh，扣除 15% 充放電轉換與衰退損耗後，有效套利容量按 440kWh 計算。",
+            "<strong>年賺 140 萬、5.22 年靜態回收：</strong>年綜合收益達 140 萬元（電價套利 + 降約基本電費 + 需量反應），總造價約 750 萬元，5.22 年完全回本！"
+        ],
+        "takeaway": "現代一體化儲能櫃占地小、部署快、投資回收僅 5 年出頭；扣除 15% 損耗的保守測算，展現了無可撼動的商業吸引力。",
+        "visualTitle": "雙一體機儲能系統 (250kW/522kWh) 財務收支與 5.22 年回收現金流模型",
+        "visualType": "bess_roi",
+        "thumbImg": "../assets/images/slides/slide_31.jpg",
+        "thumbCaption": "講義 P.16：125kW/261kWh 一體化儲能櫃外觀尺寸與 10 年投資回收試算",
+        "thumbLabel": "P.16 儲能櫃參數與ROI",
+        "noteTakeaway": "扣掉 15% 轉換損耗，算出來 5.22 年回本，這還是用保守的電價算的；未來電價只要再漲，4 年多就能回本。",
+        "noteDetail": "很多廠商拿 100% 效率去哄客戶，現場充放電一定有熱損耗與衰退，扣掉 15% 算出來的 140 萬才是踏實能裝進口袋的真金白銀。",
+        "noteTransition": "以下分享四大震撼實操案例，首先看第十八頁變壓器漏損 12.6% 案例。"
+    },
+    {
+        "slideNo": 18,
+        "module": "MODULE 5 ｜ 案例一：變壓器損耗率 12.6%",
+        "ref": "講義對照 P.18 ｜ 錄音 00:40:05~00:41:34",
+        "title": "高低壓雙表揪出變壓器損耗 12.6%：合理值僅 3%，每月多耗萬度電、年蒸發 40 萬電費",
+        "question": "為什麼高壓側分盤與低壓總盤都必須裝表？某工廠變壓器損耗高達 12.6% 是如何被發現並挽回 40 萬損失的？",
+        "highlights": [
+            "<strong>高低壓雙表量測差額：</strong>高壓側進電度數減去低壓側輸出度數，差額即為變壓器轉換損耗，客觀數據無可推諉。",
+            "<strong>損耗率暴增至 12.6%：</strong>一般正常變壓器損耗率應嚴格控制在 3% 以下，該廠實測竟高達 12.6%，超標 4 倍以上！",
+            "<strong>年漏 40 萬流動電費：</strong>扣除合理的 3%，每月多損耗 11,262 度電，每年白白蒸發近 40 萬元電費；緊急安排停機換油保養或汰換老舊變壓器即時止血。"
+        ],
+        "takeaway": "高低壓雙表是抓出老舊變壓器漏財的照妖鏡；損耗率超標 4 倍的變壓器，換油或換新 1 年即可回本。",
+        "visualTitle": "變壓器正常損耗 (3%) vs 實測異常損耗 (12.6%) 能量差額流向圖",
+        "visualType": "transformer_loss",
+        "thumbImg": "../assets/images/slides/slide_32.jpg",
+        "thumbCaption": "講義 P.16：高低壓側電表讀數對比曲線與變壓器損耗計算單",
+        "thumbLabel": "P.16 變壓器損耗案例",
+        "noteTakeaway": "高壓進來藍色線、低壓出來紅色線，兩條線落差高達 12.6%，變壓器燙得要命，一個月 3 萬多塊就這樣燒在空中。",
+        "noteDetail": "變壓器就像汽車引擎，十幾年不換油、不保養，鐵芯老化絕緣劣化，電氣效率暴跌；花幾萬塊保養換油，一年換回 40 萬。",
+        "noteTransition": "接下來看第十九頁案例二：兩台空壓機並聯共振互推，花幾千元改管省下 40 萬。"
+    },
+    {
+        "slideNo": 19,
+        "module": "MODULE 5 ｜ 案例二：兩台空壓機並聯共振互推",
+        "ref": "講義對照 P.19 ｜ 錄音 00:41:35~00:42:50",
+        "title": "兩台空壓機管路共振互推：花數千元改管關閉一台，年省 40 萬電費並下調 50kW 契約",
+        "question": "為什麼兩台空壓機一起開反而頻繁損壞？如何透過能管波形診斷氣流互推，實現關機一台的奇蹟？",
+        "highlights": [
+            "<strong>鋸齒狀頻繁震盪波形：</strong>能管曲線揭露兩台空壓機在高頻打氣與卸載間劇烈震盪，不但耗電極大，機組更經常過熱跳機。",
+            "<strong>氣流互推管路缺陷：</strong>現場勘查發現兩機出風管直接對沖，缺乏單向阻尼與緩衝罐，氣流在管路內相互推擠干涉打內戰！",
+            "<strong>花數千元改管關閉一台：</strong>管路重新配置消除干涉後，實測僅需開啟一台即可滿足全產線風壓！年省 40 萬流動電費，更順利調降 50kW 契約容量！"
+        ],
+        "takeaway": "不是設備不夠力，而是管路設計在打內戰；花小錢改管關掉一台機器，一年回收百倍效益。",
+        "visualTitle": "空壓機並聯共振波形 (震盪劇烈) vs 改管單機運轉波形 (平穩省電) 對比",
+        "visualType": "air_compressor",
+        "thumbImg": "../assets/images/slides/slide_34.jpg",
+        "thumbCaption": "講義 P.17：空壓機改管前後電力曲線與現場管線改造照片",
+        "thumbLabel": "P.17 空壓機改管案例",
+        "noteTakeaway": "兩台空壓機打出來的氣在管子裡互推，產線根本沒吃到氣；改管花幾千塊，關掉一台一年省 40 萬還降 50kW 契約。",
+        "noteDetail": "設備工程師原本還吵著要花 200 萬買第三台空壓機，能管曲線一調出來，證明開一台就綽綽有餘，直接省下大筆資本支出。",
+        "noteTransition": "最後看第二十頁案例三生鏽輸送帶，並為太陽能、儲能與能管的全方位整合下達總結行動方針。"
+    },
+    {
+        "slideNo": 20,
+        "module": "MODULE 5 ｜ 案例三與創儲節全面整合",
+        "ref": "講義對照 P.20 ｜ 錄音 00:43:19~00:44:22",
+        "title": "生鏽輸送帶多吃 13 萬度電：創能 (PV) ✕ 儲能 (BTM) ✕ 節能 (EMS) 構築企業綠能護城河",
+        "question": "機械生鏽如何在電氣曲線上露出馬腳？進金生能源如何整合「創儲節」全鏈路方案，實現永續與獲利最大化？",
+        "highlights": [
+            "<strong>3 號輸送帶生鏽吃電黑洞：</strong>定速輸送帶鐵鏈生鏽摩擦力大增，馬達為了維持轉速被迫持續超額輸出 20kW，一年多吃 13 萬度電！現場人員因運轉正常而毫無知覺。",
+            "<strong>能管可視化賦能預防保養：</strong>電流異動即是機械磨損的預警訊號；在設備燒毀停線前提前介入保養，杜絕數百萬非預期停機損失。",
+            "<strong>創能、儲能、節能全方位融合：</strong>屋頂太陽能（創能）+ 表後儲能削峰填谷（儲能）+ 能源管理數據體檢（節能），構築進金生全生命週期服務壁壘。"
+        ],
+        "takeaway": "電氣曲線能穿透外殼診斷機械磨損；將光伏創能、表後儲能與管理節能融為一體，是邁向淨零碳排與獲利最大化的終極之道。",
+        "visualTitle": "創能 (PV) ✕ 儲能 (BTM) ✕ 節能 (EMS) ✕ 綠電 (RE) 四位一體全景圖",
+        "visualType": "energy_triad",
+        "thumbImg": "../assets/images/slides/slide_36.jpg",
+        "thumbCaption": "講義 P.18：輸送帶馬達負載異常曲線與進金生能源全鏈路整合方案",
+        "thumbLabel": "P.18 創儲節四位一體",
+        "noteTakeaway": "輸送帶生鏽正常在轉，現場沒人覺得壞了，但電表一看多吃 20kW，一年浪費 13 萬度電；這就是能管無可替代的價值。",
+        "noteDetail": "進金生能源具備太陽能 EPC、表後儲能建置、管理型節能能管系統與綠電交易全牌照能力，能為企業提供最完整的一站式能源轉型護航。",
+        "noteTransition": "恭喜完成第三堂課全篇學習！請點擊左上方按鈕返回知識庫首頁，或按 G 鍵回顧 20 頁精彩內容。"
+    }
+]
+
+def render_visual(vt):
+    if vt == "overview":
+        return '''
+        <div style="background:#0F172A; padding:1.25rem; border-radius:8px; border:1px solid #334155;">
+          <div style="display:grid; grid-template-columns:repeat(5, 1fr); gap:0.5rem; text-align:center;">
+            <div style="background:#1E293B; padding:0.75rem 0.5rem; border-radius:6px; border-top:3px solid #38BDF8;">
+              <div style="font-size:0.7rem; color:#94A3B8; font-weight:bold;">MOD 1</div>
+              <div style="font-size:0.85rem; font-weight:bold; color:#F8FAFC; margin:0.25rem 0;">政策與套利</div>
+              <div style="font-size:0.7rem; color:#38BDF8;">批次價差 9.29元</div>
+            </div>
+            <div style="background:#1E293B; padding:0.75rem 0.5rem; border-radius:6px; border-top:3px solid #F59E0B;">
+              <div style="font-size:0.7rem; color:#94A3B8; font-weight:bold;">MOD 2</div>
+              <div style="font-size:0.85rem; font-weight:bold; color:#F8FAFC; margin:0.25rem 0;">電費單診斷</div>
+              <div style="font-size:0.7rem; color:#F59E0B;">2880次抓最高峰</div>
+            </div>
+            <div style="background:#1E293B; padding:0.75rem 0.5rem; border-radius:6px; border-top:3px solid #10B981;">
+              <div style="font-size:0.7rem; color:#94A3B8; font-weight:bold;">MOD 3</div>
+              <div style="font-size:0.85rem; font-weight:bold; color:#F8FAFC; margin:0.25rem 0;">表後儲能效益</div>
+              <div style="font-size:0.7rem; color:#10B981;">免拉閘 / 需量反應10元</div>
+            </div>
+            <div style="background:#1E293B; padding:0.75rem 0.5rem; border-radius:6px; border-top:3px solid #8B5CF6;">
+              <div style="font-size:0.7rem; color:#94A3B8; font-weight:bold;">MOD 4</div>
+              <div style="font-size:0.85rem; font-weight:bold; color:#F8FAFC; margin:0.25rem 0;">能管三層落地</div>
+              <div style="font-size:0.7rem; color:#8B5CF6;">自強讓莒光降500kW</div>
+            </div>
+            <div style="background:#1E293B; padding:0.75rem 0.5rem; border-radius:6px; border-top:3px solid #EC4899;">
+              <div style="font-size:0.7rem; color:#94A3B8; font-weight:bold;">MOD 5</div>
+              <div style="font-size:0.85rem; font-weight:bold; color:#F8FAFC; margin:0.25rem 0;">實操四大案例</div>
+              <div style="font-size:0.7rem; color:#EC4899;">變壓器12.6% / 改管40萬</div>
+            </div>
+          </div>
+          <div style="margin-top:1rem; padding:0.75rem; background:#1E293B; border-radius:6px; display:flex; justify-content:space-around; align-items:center;">
+            <div style="text-align:center;"><span style="color:#94A3B8; font-size:0.75rem;">管理節能哲學</span><br><strong style="color:#38BDF8; font-size:0.95rem;">不換設備・數據體檢</strong></div>
+            <div style="width:1px; height:24px; background:#475569;"></div>
+            <div style="text-align:center;"><span style="color:#94A3B8; font-size:0.75rem;">台電需量規則</span><br><strong style="color:#F59E0B; font-size:0.95rem;">2880次抓唯一最高</strong></div>
+            <div style="width:1px; height:24px; background:#475569;"></div>
+            <div style="text-align:center;"><span style="color:#94A3B8; font-size:0.75rem;">一體機投資回收</span><br><strong style="color:#10B981; font-size:0.95rem;">5.22 年全額收回</strong></div>
+          </div>
+        </div>
+        '''
+    elif vt == "grid_policy":
+        return '''
+        <div style="background:#0F172A; padding:1.25rem; border-radius:8px; border:1px solid #334155; text-align:center;">
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem;">
+            <div style="background:#1E293B; padding:1rem; border-radius:6px; border-left:3px solid #EF4444;">
+              <div style="font-size:0.85rem; font-weight:bold; color:#EF4444;">❌ 傳統集中式電廠困境</div>
+              <div style="font-size:0.75rem; color:#CBD5E1; margin-top:0.5rem; text-align:left; line-height:1.5;">
+                &bull; AIDC 資料中心激增，用電缺口巨大<br>
+                &bull; 新建電廠耗資數千億、環評抗爭長達數年<br>
+                &bull; 輸配電網擁塞，電送不進工業用電核心區
+              </div>
+            </div>
+            <div style="background:#1E293B; padding:1rem; border-radius:6px; border-left:3px solid #10B981;">
+              <div style="font-size:0.85rem; font-weight:bold; color:#10B981;">✅ 「藏電於民」分散式儲能</div>
+              <div style="font-size:0.75rem; color:#CBD5E1; margin-top:0.5rem; text-align:left; line-height:1.5;">
+                &bull; 鼓勵企業自建表後儲能 (BTM)，就地消納<br>
+                &bull; 平時充低放高賺取電價差，自給自足<br>
+                &bull; 尖峰接受台電調度，每度補貼 10 元解電網之急
+              </div>
+            </div>
+          </div>
+        </div>
+        '''
+    elif vt == "tariff_arbitrage":
+        return '''
+        <div style="background:#0F172A; padding:1.25rem; border-radius:8px; border:1px solid #334155;">
+          <table style="width:100%; border-collapse:collapse; font-size:0.85rem; text-align:center;">
+            <thead>
+              <tr style="background:#1E293B; color:#94A3B8; border-bottom:1px solid #475569;">
+                <th style="padding:0.5rem; text-align:left;">電價計費方案</th>
+                <th style="padding:0.5rem;">尖峰時段費率</th>
+                <th style="padding:0.5rem;">離峰時段費率</th>
+                <th style="padding:0.5rem; color:#F59E0B;">尖離峰單度價差</th>
+                <th style="padding:0.5rem;">儲能套利吸引力</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="border-bottom:1px solid #334155; color:#E2E8F0;">
+                <td style="padding:0.5rem; text-align:left; font-weight:bold;">常規三段式電價 (夏月)</td>
+                <td style="padding:0.5rem;">高電價區間</td>
+                <td style="padding:0.5rem;">低電價谷底</td>
+                <td style="padding:0.5rem; font-weight:bold; color:#38BDF8;">6.86 元 / 度</td>
+                <td style="padding:0.5rem; color:#38BDF8;">高套利回報</td>
+              </tr>
+              <tr style="color:#E2E8F0; background:rgba(16,185,129,0.1);">
+                <td style="padding:0.5rem; text-align:left; font-weight:bold; color:#10B981;">工業區批次電價 (近三年新制)</td>
+                <td style="padding:0.5rem;">極端尖峰費率</td>
+                <td style="padding:0.5rem;">深谷離峰費率</td>
+                <td style="padding:0.5rem; font-weight:bold; color:#10B981; font-size:1rem;">9.29 元 / 度</td>
+                <td style="padding:0.5rem; font-weight:bold; color:#10B981;">超強套利首選 (回本縮短)</td>
+              </tr>
+            </tbody>
+          </table>
+          <div style="margin-top:0.75rem; font-size:0.75rem; color:#94A3B8; text-align:right;">
+            *註：批次電價離峰長達 18 小時，極大化充電容量，是目前製造業建置儲能最具吸引力的收費制度。
+          </div>
+        </div>
+        '''
+    elif vt == "compliance_options":
+        return '''
+        <div style="background:#0F172A; padding:1.25rem; border-radius:8px; border:1px solid #334155;">
+          <div style="display:grid; grid-template-columns:repeat(4, 1fr); gap:0.5rem; text-align:center; font-size:0.8rem;">
+            <div style="background:#1E293B; padding:0.75rem 0.4rem; border-radius:6px; border-top:3px solid #64748B;">
+              <div style="color:#94A3B8; font-weight:bold;">方案一：自建光電</div>
+              <div style="color:#EF4444; margin:0.3rem 0; font-weight:bold;">無屋頂空間</div>
+              <div style="color:#94A3B8; font-size:0.7rem;">商業大樓與部分老廠房完全無法建置</div>
+            </div>
+            <div style="background:#1E293B; padding:0.75rem 0.4rem; border-radius:6px; border-top:3px solid #F59E0B;">
+              <div style="color:#94A3B8; font-weight:bold;">方案二：購買綠電憑證</div>
+              <div style="color:#F59E0B; margin:0.3rem 0; font-weight:bold;">5.8元且斷貨</div>
+              <div style="color:#94A3B8; font-size:0.7rem;">價格持續走高，科技巨頭包圓難以購得</div>
+            </div>
+            <div style="background:#1E293B; padding:0.75rem 0.4rem; border-radius:6px; border-top:3px solid #EF4444;">
+              <div style="color:#94A3B8; font-weight:bold;">方案三：繳納代金</div>
+              <div style="color:#EF4444; margin:0.3rem 0; font-weight:bold;">純成本無回報</div>
+              <div style="color:#94A3B8; font-size:0.7rem;">等同罰款，企業毫無節能實質收益</div>
+            </div>
+            <div style="background:#1E293B; padding:0.75rem 0.4rem; border-radius:6px; border-top:3px solid #10B981; border:1px solid #10B981;">
+              <div style="color:#10B981; font-weight:bold;">方案四：建置表後儲能</div>
+              <div style="color:#10B981; margin:0.3rem 0; font-weight:bold;">占地小＋賺套利</div>
+              <div style="color:#E2E8F0; font-size:0.7rem;">占地僅1.3m²，合法履約兼賺電價差</div>
+            </div>
+          </div>
+        </div>
+        '''
+    elif vt == "law_timeline":
+        return '''
+        <div style="background:#0F172A; padding:1.25rem; border-radius:8px; border:1px solid #334155; text-align:center;">
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1rem;">
+            <div style="background:#1E293B; padding:0.75rem 1rem; border-radius:6px; border:1px solid #38BDF8;">
+              <div style="font-size:0.75rem; color:#94A3B8;">法規納管對象</div>
+              <div style="font-size:1.1rem; font-weight:bold; color:#38BDF8;">&ge; 800 kW 用戶</div>
+              <div style="font-size:0.75rem; color:#E2E8F0;">已全面送達通知公文</div>
+            </div>
+            <div style="font-size:1.5rem; color:#F59E0B;">&rarr;</div>
+            <div style="background:#1E293B; padding:0.75rem 1rem; border-radius:6px; border:1px solid #F59E0B;">
+              <div style="font-size:0.75rem; color:#94A3B8;">法定申報死線</div>
+              <div style="font-size:1.1rem; font-weight:bold; color:#F59E0B;">後年 3 月 31 日前</div>
+              <div style="font-size:0.75rem; color:#E2E8F0;">提交為期 5 年節能計畫</div>
+            </div>
+            <div style="font-size:1.5rem; color:#10B981;">&rarr;</div>
+            <div style="background:#1E293B; padding:0.75rem 1rem; border-radius:6px; border:1px solid #10B981;">
+              <div style="font-size:0.75rem; color:#94A3B8;">核心合規硬指標</div>
+              <div style="font-size:1.1rem; font-weight:bold; color:#10B981;">能源數據可視化</div>
+              <div style="font-size:0.75rem; color:#E2E8F0;">裝設數位儀表排查浪費</div>
+            </div>
+          </div>
+          <div style="font-size:0.75rem; color:#94A3B8;">
+            *關鍵突破：將被動的公文申報，轉化為內部能源大體檢，藉此機會建置能管與儲能，年省數十萬。
+          </div>
+        </div>
+        '''
+    elif vt == "bill_diagnostic":
+        return '''
+        <div style="background:#0F172A; padding:1.25rem; border-radius:8px; border:1px solid #334155;">
+          <table style="width:100%; border-collapse:collapse; font-size:0.8rem; text-align:center;">
+            <thead>
+              <tr style="background:#1E293B; color:#94A3B8; border-bottom:1px solid #475569;">
+                <th style="padding:0.4rem; text-align:left;">診斷指標</th>
+                <th style="padding:0.4rem;">健康基準線 (Benchmark)</th>
+                <th style="padding:0.4rem;">異常警訊門檻</th>
+                <th style="padding:0.4rem; text-align:left;">背後反映之管理病灶</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="border-bottom:1px solid #334155; color:#E2E8F0;">
+                <td style="padding:0.4rem; text-align:left; font-weight:bold;">離峰用電佔比</td>
+                <td style="padding:0.4rem; color:#10B981;">&le; 20% ~ 25%</td>
+                <td style="padding:0.4rem; font-weight:bold; color:#EF4444;">&ge; 36% (非24h廠)</td>
+                <td style="padding:0.4rem; text-align:left; color:#94A3B8;">無人時段設備未關、空轉待機漏耗嚴重</td>
+              </tr>
+              <tr style="border-bottom:1px solid #334155; color:#E2E8F0;">
+                <td style="padding:0.4rem; text-align:left; font-weight:bold;">基本電費佔比</td>
+                <td style="padding:0.4rem; color:#10B981;">10% ~ 12% (極限&le;15%)</td>
+                <td style="padding:0.4rem; font-weight:bold; color:#EF4444;">&ge; 16%</td>
+                <td style="padding:0.4rem; text-align:left; color:#94A3B8;">契約容量虛高或需量管理混亂想用就用</td>
+              </tr>
+              <tr style="border-bottom:1px solid #334155; color:#E2E8F0;">
+                <td style="padding:0.4rem; text-align:left; font-weight:bold;">負載率 (利用率)</td>
+                <td style="padding:0.4rem; color:#10B981;">平均需量 / 最高需量</td>
+                <td style="padding:0.4rem; color:#F59E0B;">偏低 (<50%)</td>
+                <td style="padding:0.4rem; text-align:left; color:#94A3B8;">用電震盪劇烈，產線存在嚴重瞬間突刺</td>
+              </tr>
+              <tr style="color:#E2E8F0;">
+                <td style="padding:0.4rem; text-align:left; font-weight:bold;">夏月平均單價</td>
+                <td style="padding:0.4rem; color:#10B981;">同廠同夏月自我同比</td>
+                <td style="padding:0.4rem; color:#F59E0B;">月間差距 &gt; 0.1元</td>
+                <td style="padding:0.4rem; text-align:left; color:#94A3B8;">尖峰用電集中、排程撞峰導致流動費暴增</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        '''
+    elif vt == "demand_rule":
+        return '''
+        <div style="background:#0F172A; padding:1.25rem; border-radius:8px; border:1px solid #334155; text-align:center;">
+          <svg viewBox="0 0 500 160" style="width:100%; max-height:160px;">
+            <!-- Background Baseline -->
+            <line x1="40" y1="120" x2="480" y2="120" stroke="#475569" stroke-width="1"/>
+            <text x="30" y="125" fill="#94A3B8" font-size="10" text-anchor="end">0 kW</text>
+
+            <!-- Contract limit -->
+            <line x1="40" y1="50" x2="480" y2="50" stroke="#F59E0B" stroke-width="2" stroke-dasharray="4"/>
+            <text x="480" y="45" fill="#F59E0B" font-size="11" text-anchor="end">契約容量：1000 kW</text>
+
+            <!-- 2879 normal bars -->
+            <rect x="50" y="70" width="10" height="50" fill="#38BDF8"/>
+            <rect x="70" y="65" width="10" height="55" fill="#38BDF8"/>
+            <rect x="90" y="75" width="10" height="45" fill="#38BDF8"/>
+            <rect x="110" y="60" width="10" height="60" fill="#38BDF8"/>
+            <text x="130" y="90" fill="#64748B" font-size="16">. . . . . .</text>
+            <rect x="230" y="65" width="10" height="55" fill="#38BDF8"/>
+            
+            <!-- The 1 fatal spike -->
+            <rect x="260" y="20" width="16" height="100" fill="#EF4444"/>
+            <text x="268" y="15" fill="#EF4444" font-size="11" font-weight="bold" text-anchor="middle">1200 kW (僅1次!)</text>
+
+            <text x="310" y="90" fill="#64748B" font-size="16">. . . . . .</text>
+            <rect x="420" y="70" width="10" height="50" fill="#38BDF8"/>
+            <rect x="440" y="65" width="10" height="55" fill="#38BDF8"/>
+          </svg>
+          <div style="font-size:0.75rem; color:#CBD5E1; margin-top:0.5rem; background:#1E293B; padding:0.5rem; border-radius:4px;">
+            <strong>殘酷真相：</strong>全月 2880 次 15 分鐘平均中，前 2879 次都控制在 800kW，只要有 1 次飆到 1200kW，當月即判定超約 200kW 重罰！
+          </div>
+        </div>
+        '''
+    elif vt == "unit_price_compare":
+        return '''
+        <div style="background:#0F172A; padding:1.25rem; border-radius:8px; border:1px solid #334155;">
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem; text-align:center;">
+            <div style="background:#1E293B; padding:1rem; border-radius:6px; border:1px solid #EF4444;">
+              <div style="font-size:0.8rem; color:#94A3B8;">某廠 6 月份實測 (夏月)</div>
+              <div style="font-size:1.4rem; font-weight:bold; color:#EF4444; margin:0.25rem 0;">3.35 元 / 度</div>
+              <div style="font-size:0.75rem; color:#CBD5E1;">尖峰撞車、待機未關，流動電費多支出 <strong>11 萬元</strong></div>
+            </div>
+            <div style="background:#1E293B; padding:1rem; border-radius:6px; border:1px solid #10B981;">
+              <div style="font-size:0.8rem; color:#94A3B8;">某廠 9 月份實測 (同為夏月)</div>
+              <div style="font-size:1.4rem; font-weight:bold; color:#10B981; margin:0.25rem 0;">3.24 元 / 度</div>
+              <div style="font-size:0.75rem; color:#CBD5E1;">排程優化避開尖峰，台電牌價相同直接省下 11 萬</div>
+            </div>
+          </div>
+          <div style="margin-top:0.75rem; font-size:0.75rem; color:#94A3B8; text-align:center;">
+            *自我同比原理：台電 6 月與 9 月牌價分文未差，0.11 元差距完全來自工廠內部管理與用電行為改善。
+          </div>
+        </div>
+        '''
+    elif vt == "storage_7_benefits":
+        return '''
+        <div style="background:#0F172A; padding:1.25rem; border-radius:8px; border:1px solid #334155;">
+          <div style="display:grid; grid-template-columns:repeat(3, 1fr); gap:0.5rem; text-align:center; font-size:0.8rem;">
+            <div style="background:#1E293B; padding:0.6rem; border-radius:6px; border-left:3px solid #38BDF8;">
+              <div style="font-weight:bold; color:#38BDF8;">1. 尖離峰電價套利</div>
+              <div style="font-size:0.7rem; color:#94A3B8; margin-top:0.2rem;">充低放高每度賺 6.86~9.29 元</div>
+            </div>
+            <div style="background:#1E293B; padding:0.6rem; border-radius:6px; border-left:3px solid #10B981;">
+              <div style="font-weight:bold; color:#10B981;">2. 契約容量調降</div>
+              <div style="font-size:0.7rem; color:#94A3B8; margin-top:0.2rem;">儲能放電平抑突波，降約省基本費</div>
+            </div>
+            <div style="background:#1E293B; padding:0.6rem; border-radius:6px; border-left:3px solid #F59E0B;">
+              <div style="font-weight:bold; color:#F59E0B;">3. 關鍵設備備援</div>
+              <div style="font-size:0.7rem; color:#94A3B8; margin-top:0.2rem;">斷電保住冷凍庫或核心機台不壞</div>
+            </div>
+            <div style="background:#1E293B; padding:0.6rem; border-radius:6px; border-left:3px solid #8B5CF6;">
+              <div style="font-weight:bold; color:#8B5CF6;">4. 需量反應措施</div>
+              <div style="font-size:0.7rem; color:#94A3B8; margin-top:0.2rem;">日選型固定放電，彈性每度拿10元</div>
+            </div>
+            <div style="background:#1E293B; padding:0.6rem; border-radius:6px; border-left:3px solid #EC4899;">
+              <div style="font-weight:bold; color:#EC4899;">5. 用電大戶履約</div>
+              <div style="font-size:0.7rem; color:#94A3B8; margin-top:0.2rem;">取代買不到的綠電合法合規</div>
+            </div>
+            <div style="background:#1E293B; padding:0.6rem; border-radius:6px; border-left:3px solid #14B8A6;">
+              <div style="font-weight:bold; color:#14B8A6;">6. 台電電力交易</div>
+              <div style="font-size:0.7rem; color:#94A3B8; margin-top:0.2rem;">大型案場參與輔助服務多元收益</div>
+            </div>
+          </div>
+          <div style="margin-top:0.6rem; text-align:center; font-size:0.75rem; color:#E2E8F0; background:#1E293B; padding:0.4rem; border-radius:4px;">
+            7. 綠色品牌形象：提升 RE100 / ESG 評級，從純排碳戶轉型為電網韌性守護者。
+          </div>
+        </div>
+        '''
+    elif vt == "dispatch_schedule":
+        return '''
+        <div style="background:#0F172A; padding:1.25rem; border-radius:8px; border:1px solid #334155;">
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem; font-size:0.8rem;">
+            <div style="background:#1E293B; padding:0.75rem; border-radius:6px; border-top:3px solid #F59E0B;">
+              <div style="font-weight:bold; color:#F59E0B; font-size:0.85rem;">☀️ 夏月模式 (單充單放)</div>
+              <div style="margin-top:0.4rem; color:#CBD5E1; line-height:1.4;">
+                &bull; <strong>充電：</strong>00:00 ~ 06:00 (夜間離峰最低價)<br>
+                &bull; <strong>放電：</strong>10:00 ~ 16:00 (日間最高尖峰價)<br>
+                &bull; <strong>效益：</strong>單次充放賺取 6.86~9.29 元極致價差
+              </div>
+            </div>
+            <div style="background:#1E293B; padding:0.75rem; border-radius:6px; border-top:3px solid #10B981;">
+              <div style="font-weight:bold; color:#10B981; font-size:0.85rem;">❄️ 非夏月模式 (雙充雙放)</div>
+              <div style="margin-top:0.4rem; color:#CBD5E1; line-height:1.4;">
+                &bull; <strong>一充一放：</strong>夜充 00-06 &rarr; 早放 08-11<br>
+                &bull; <strong>二充二放：</strong>午充 13-14 &rarr; 晚放 18-20<br>
+                &bull; <strong>效益：</strong>利用中午離峰一日兩度套利！
+              </div>
+            </div>
+          </div>
+          <div style="margin-top:0.6rem; font-size:0.75rem; color:#94A3B8; text-align:center;">
+            *週末鐵律：週日 24 小時全天均為離峰電價無價差，排定儲能櫃休眠停機，減緩電芯循環折舊。
+          </div>
+        </div>
+        '''
+    elif vt == "demand_response_plans":
+        return '''
+        <div style="background:#0F172A; padding:1.25rem; border-radius:8px; border:1px solid #334155;">
+          <div style="display:grid; grid-template-columns:repeat(3, 1fr); gap:0.5rem; text-align:center; font-size:0.8rem;">
+            <div style="background:#1E293B; padding:0.75rem 0.4rem; border-radius:6px; border-top:3px solid #38BDF8;">
+              <div style="color:#38BDF8; font-weight:bold;">方案一：計劃性日選型</div>
+              <div style="color:#F8FAFC; margin:0.3rem 0; font-weight:bold;">最穩健推薦</div>
+              <div style="color:#CBD5E1; font-size:0.7rem;">5~10月每日18-20點固定放電，操作規律零出錯</div>
+            </div>
+            <div style="background:#1E293B; padding:0.75rem 0.4rem; border-radius:6px; border-top:3px solid #10B981;">
+              <div style="color:#10B981; font-weight:bold;">方案二：彈性反應型</div>
+              <div style="color:#10B981; margin:0.3rem 0; font-weight:bold;">每度補貼 10 元</div>
+              <div style="color:#CBD5E1; font-size:0.7rem;">台電隨機緊急調度，配合即享高額補貼，未配合免罰</div>
+            </div>
+            <div style="background:#1E293B; padding:0.75rem 0.4rem; border-radius:6px; border-top:3px solid #F59E0B;">
+              <div style="color:#F59E0B; font-weight:bold;">方案三：用電大戶方案二</div>
+              <div style="color:#F59E0B; margin:0.3rem 0; font-weight:bold;">階梯式提早領錢</div>
+              <div style="color:#CBD5E1; font-size:0.7rem;">0-150h補1元、151-400h補2元、401h+補5元</div>
+            </div>
+          </div>
+        </div>
+        '''
+    elif vt == "backup_topology":
+        return '''
+        <div style="background:#0F172A; padding:1.25rem; border-radius:8px; border:1px solid #334155; text-align:center;">
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.75rem; font-size:0.85rem;">
+            <div style="background:#1E293B; padding:0.75rem 1rem; border-radius:6px; border:1px solid #38BDF8; flex:1; margin-right:0.5rem;">
+              <div style="color:#94A3B8; font-size:0.75rem;">馬達 / 水泵 / 冷凍機</div>
+              <div style="font-weight:bold; color:#38BDF8; font-size:1rem; margin:0.25rem 0;">儲能 VCS 直推</div>
+              <div style="color:#CBD5E1; font-size:0.75rem;">容許 &le;1秒 瞬態切換斷電</div>
+            </div>
+            <div style="color:#64748B; font-weight:bold;">VS</div>
+            <div style="background:#1E293B; padding:0.75rem 1rem; border-radius:6px; border:1px solid #EF4444; flex:1; margin-left:0.5rem;">
+              <div style="color:#94A3B8; font-size:0.75rem;">電腦 / PLC / 控制伺服器</div>
+              <div style="font-weight:bold; color:#EF4444; font-size:1rem; margin:0.25rem 0;">必加在線式 UPS</div>
+              <div style="color:#CBD5E1; font-size:0.75rem;">必須 4ms 無縫切換防死機</div>
+            </div>
+          </div>
+          <div style="font-size:0.75rem; color:#94A3B8;">
+            *規劃原則：嚴禁企圖用儲能做全廠不斷電；精準鎖定核心咽喉設備（如食品廠冷凍機），ROI 最高。
+          </div>
+        </div>
+        '''
+    elif vt == "meter_layers":
+        return '''
+        <div style="background:#0F172A; padding:1.25rem; border-radius:8px; border:1px solid #334155; text-align:center;">
+          <div style="background:#1E293B; padding:0.5rem; border-radius:6px; border:1px solid #38BDF8; margin-bottom:0.5rem;">
+            <strong style="color:#38BDF8;">第一層：全廠總盤電表</strong> (掌握總需量與進電品質)
+          </div>
+          <div style="color:#64748B; font-size:0.8rem;">&darr;</div>
+          <div style="background:#1E293B; padding:0.5rem; border-radius:6px; border:1px solid #10B981; margin-bottom:0.5rem;">
+            <strong style="color:#10B981;">第二層：高壓分盤電表</strong> (掌握各車間配電與負載流向)
+          </div>
+          <div style="color:#64748B; font-size:0.8rem;">&darr; (中間夾變壓器，精準測損耗)</div>
+          <div style="background:#1E293B; padding:0.5rem; border-radius:6px; border:1px solid #F59E0B; margin-bottom:0.5rem;">
+            <strong style="color:#F59E0B;">第三層：低壓總盤電表</strong> (掌握變壓器轉換效率)
+          </div>
+          <div style="color:#64748B; font-size:0.8rem;">&darr;</div>
+          <div style="background:#1E293B; padding:0.5rem; border-radius:6px; border:1px solid #EC4899;">
+            <strong style="color:#EC4899;">特設：重點大心臟設備</strong> (空壓機、冰水主機、大型烤爐獨立裝表)
+          </div>
+          <div style="margin-top:0.5rem; font-size:0.75rem; color:#EF4444;">
+            *避坑提示：嚴禁聽信硬體商浮濫裝設 800 顆電表，資訊過載毫無實益，20 顆重點表即掌大局。
+          </div>
+        </div>
+        '''
+    elif vt == "review_workflow":
+        return '''
+        <div style="background:#0F172A; padding:1.25rem; border-radius:8px; border:1px solid #334155;">
+          <div style="display:flex; justify-content:space-between; align-items:center; text-align:center; font-size:0.8rem;">
+            <div style="flex:1; background:#1E293B; padding:0.6rem; border-radius:6px; margin-right:0.4rem;">
+              <div style="color:#94A3B8;">1. 能管顧問</div>
+              <div style="color:#38BDF8; font-weight:bold; margin-top:0.2rem;">拋出異常曲線</div>
+            </div>
+            <div style="color:#64748B;">&rarr;</div>
+            <div style="flex:1; background:#1E293B; padding:0.6rem; border-radius:6px; margin:0 0.4rem;">
+              <div style="color:#94A3B8;">2. 設備負責人</div>
+              <div style="color:#F59E0B; font-weight:bold; margin-top:0.2rem;">還原操作事實</div>
+            </div>
+            <div style="color:#64748B;">&rarr;</div>
+            <div style="flex:1; background:#1E293B; padding:0.6rem; border-radius:6px; margin:0 0.4rem;">
+              <div style="color:#94A3B8;">3. 現場診斷</div>
+              <div style="color:#EF4444; font-weight:bold; margin-top:0.2rem;">定位管路/壓力</div>
+            </div>
+            <div style="color:#64748B;">&rarr;</div>
+            <div style="flex:1; background:rgba(16,185,129,0.15); padding:0.6rem; border-radius:6px; margin-left:0.4rem; border:1px solid #10B981;">
+              <div style="color:#10B981;">4. 落地閉環</div>
+              <div style="color:#F8FAFC; font-weight:bold; margin-top:0.2rem;">省下百萬電費</div>
+            </div>
+          </div>
+          <div style="margin-top:0.75rem; font-size:0.75rem; color:#94A3B8; text-align:center;">
+            每季定期開會覆盤，客觀 15 分鐘曲線讓行為無所遁形，終結跨部門推諉。
+          </div>
+        </div>
+        '''
+    elif vt == "train_stagger":
+        return '''
+        <div style="background:#0F172A; padding:1.25rem; border-radius:8px; border:1px solid #334155; text-align:center;">
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem;">
+            <div style="background:#1E293B; padding:0.75rem; border-radius:6px; border:1px solid #EF4444;">
+              <div style="font-size:0.8rem; color:#EF4444; font-weight:bold;">❌ 同時開機 (撞車衝破 2700kW)</div>
+              <div style="font-size:0.75rem; color:#CBD5E1; margin-top:0.25rem; text-align:left;">
+                三台大設備早上 8 點同時啟動，需量瞬時衝破 2700kW，契約容量被迫定在 2500kW，超約重罰。
+              </div>
+            </div>
+            <div style="background:#1E293B; padding:0.75rem; border-radius:6px; border:1px solid #10B981;">
+              <div style="font-size:0.8rem; color:#10B981; font-weight:bold;">✅ 錯峰啟動 (自強號讓莒光號)</div>
+              <div style="font-size:0.75rem; color:#CBD5E1; margin-top:0.25rem; text-align:left;">
+                錯開 20 分鐘啟動，最高需量壓至 2000kW！契約容量直降 <strong>500kW</strong>，年省基本電費 <strong>100 萬元</strong>！
+              </div>
+            </div>
+          </div>
+        </div>
+        '''
+    elif vt == "esco_model":
+        return '''
+        <div style="background:#0F172A; padding:1.25rem; border-radius:8px; border:1px solid #334155; text-align:center;">
+          <div style="background:#1E293B; padding:1rem; border-radius:6px; border:1px solid #10B981; margin-bottom:0.75rem;">
+            <div style="font-size:0.8rem; color:#94A3B8;">台塑時期驗證商模：零出資節能績效分享 (ESCO)</div>
+            <div style="font-size:1.3rem; font-weight:bold; color:#10B981; margin:0.25rem 0;">8 : 2 利潤拆分 ✕ 簽約 3 年 ✕ 設備贈與</div>
+            <div style="font-size:0.75rem; color:#CBD5E1;">節能服務商全額出資安裝電表與系統，省下電費業主拿 2 成、服務商拿 8 成，期滿設備歸工廠。</div>
+          </div>
+          <div style="font-size:0.75rem; color:#94A3B8;">
+            *以省下的電費支付改造成本，讓企業零資本支出 (Zero CapEx) 推動能管轉型。
+          </div>
+        </div>
+        '''
+    elif vt == "bess_roi":
+        return '''
+        <div style="background:#0F172A; padding:1.25rem; border-radius:8px; border:1px solid #334155;">
+          <table style="width:100%; border-collapse:collapse; font-size:0.8rem; text-align:center;">
+            <thead>
+              <tr style="background:#1E293B; color:#94A3B8; border-bottom:1px solid #475569;">
+                <th style="padding:0.4rem; text-align:left;">評估項目</th>
+                <th style="padding:0.4rem;">雙一體機儲能系統規格</th>
+                <th style="padding:0.4rem; color:#10B981;">保守效益與財務指標</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="border-bottom:1px solid #334155; color:#E2E8F0;">
+                <td style="padding:0.4rem; text-align:left;">硬體配置與尺寸</td>
+                <td style="padding:0.4rem;">2 台一体機 (1.3m&times;1.3m&times;2.35m)</td>
+                <td style="padding:0.4rem; color:#38BDF8;">占地如公廁，部署極快</td>
+              </tr>
+              <tr style="border-bottom:1px solid #334155; color:#E2E8F0;">
+                <td style="padding:0.4rem; text-align:left;">功率與額定容量</td>
+                <td style="padding:0.4rem;">額定 250 kW / 522 kWh</td>
+                <td style="padding:0.4rem; color:#F59E0B;">扣除 15% 損耗按 440kWh 計</td>
+              </tr>
+              <tr style="border-bottom:1px solid #334155; color:#E2E8F0;">
+                <td style="padding:0.4rem; text-align:left;">年化綜合收益</td>
+                <td style="padding:0.4rem;">套利 + 降約基本費 + 需量反應</td>
+                <td style="padding:0.4rem; font-weight:bold; color:#10B981;">&asymp; 140 萬元 / 年</td>
+              </tr>
+              <tr style="color:#E2E8F0; background:rgba(16,185,129,0.1);">
+                <td style="padding:0.4rem; text-align:left; font-weight:bold;">總成本與回本期</td>
+                <td style="padding:0.4rem;">建置總成本約 750 萬元</td>
+                <td style="padding:0.4rem; font-weight:bold; color:#10B981; font-size:0.95rem;">5.22 年靜態全本回收！</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        '''
+    elif vt == "transformer_loss":
+        return '''
+        <div style="background:#0F172A; padding:1.25rem; border-radius:8px; border:1px solid #334155;">
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem; text-align:center;">
+            <div style="background:#1E293B; padding:0.75rem; border-radius:6px; border:1px solid #10B981;">
+              <div style="font-size:0.8rem; color:#94A3B8;">正常變壓器轉換耗損</div>
+              <div style="font-size:1.3rem; font-weight:bold; color:#10B981; margin:0.25rem 0;">&le; 3.0 %</div>
+              <div style="font-size:0.75rem; color:#CBD5E1;">高低壓轉換正常鐵損與銅損</div>
+            </div>
+            <div style="background:#1E293B; padding:0.75rem; border-radius:6px; border:1px solid #EF4444;">
+              <div style="font-size:0.8rem; color:#94A3B8;">某老舊變壓器實測耗損</div>
+              <div style="font-size:1.3rem; font-weight:bold; color:#EF4444; margin:0.25rem 0;">12.6 % (超標4倍)</div>
+              <div style="font-size:0.75rem; color:#EF4444;">每月多損耗 11,262度電，年漏 <strong>40萬元</strong></div>
+            </div>
+          </div>
+          <div style="margin-top:0.75rem; font-size:0.75rem; color:#94A3B8; text-align:center;">
+            處置解法：緊急停機更換絕緣油保養或更換高效率變壓器，投資數萬元一年即全數收回。
+          </div>
+        </div>
+        '''
+    elif vt == "air_compressor":
+        return '''
+        <div style="background:#0F172A; padding:1.25rem; border-radius:8px; border:1px solid #334155;">
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem; text-align:center;">
+            <div style="background:#1E293B; padding:0.75rem; border-radius:6px; border:1px solid #EF4444;">
+              <div style="font-size:0.8rem; color:#EF4444; font-weight:bold;">❌ 改造前：兩台並聯氣流對沖</div>
+              <div style="font-size:0.75rem; color:#CBD5E1; margin-top:0.25rem; text-align:left;">
+                出氣管直撞無緩衝罐，高頻鋸齒震盪，兩台互推打內戰，機組頻繁過熱故障。
+              </div>
+            </div>
+            <div style="background:#1E293B; padding:0.75rem; border-radius:6px; border:1px solid #10B981;">
+              <div style="font-size:0.8rem; color:#10B981; font-weight:bold;">✅ 改造後：數千元改管關閉一台</div>
+              <div style="font-size:0.75rem; color:#CBD5E1; margin-top:0.25rem; text-align:left;">
+                單機平穩運轉即供應全廠！年省流動電費 <strong>40 萬元</strong>，額外下調 <strong>50kW</strong> 契約容量！
+              </div>
+            </div>
+          </div>
+        </div>
+        '''
+    elif vt == "energy_triad":
+        return '''
+        <div style="background:#0F172A; padding:1.25rem; border-radius:8px; border:1px solid #334155; text-align:center;">
+          <div style="display:grid; grid-template-columns:repeat(3, 1fr); gap:0.5rem; margin-bottom:0.75rem;">
+            <div style="background:#1E293B; padding:0.6rem; border-radius:6px; border-top:3px solid #F59E0B;">
+              <div style="color:#F59E0B; font-weight:bold;">創能 (Solar PV)</div>
+              <div style="font-size:0.7rem; color:#94A3B8; margin-top:0.2rem;">屋頂自發自用 / 餘電上網</div>
+            </div>
+            <div style="background:#1E293B; padding:0.6rem; border-radius:6px; border-top:3px solid #10B981;">
+              <div style="color:#10B981; font-weight:bold;">儲能 (BTM Storage)</div>
+              <div style="font-size:0.7rem; color:#94A3B8; margin-top:0.2rem;">尖離峰套利 / 抑低需量防超約</div>
+            </div>
+            <div style="background:#1E293B; padding:0.6rem; border-radius:6px; border-top:3px solid #38BDF8;">
+              <div style="color:#38BDF8; font-weight:bold;">節能 (Smart EMS)</div>
+              <div style="font-size:0.7rem; color:#94A3B8; margin-top:0.2rem;">可視化體檢 / 揪出漏電與磨損</div>
+            </div>
+          </div>
+          <div style="font-size:0.75rem; color:#CBD5E1; background:#1E293B; padding:0.5rem; border-radius:4px;">
+            生鏽輸送帶案例：定速馬達為對抗生鏽摩擦力多吃 20kW，一年浪費 13 萬度電；能管曲線賦能預防保養，止血巨額損失。
+          </div>
+        </div>
+        '''
+    return ''
+
+# Build slides HTML
+slides_html = []
+for s in slides_data:
+    sn = s["slideNo"]
+    act_cls = "active" if sn == 1 else ""
+    hl_items = "".join([f'<li class="highlight-item">{h}</li>' for h in s["highlights"]])
+    visual_body = render_visual(s["visualType"])
+    
+    sh = f'''
+      <!-- ==========================================
+           SLIDE {sn}
+           ========================================== -->
+      <section class="slide-item {act_cls}" data-slide="{sn}"
+        data-note-takeaway="{s["noteTakeaway"]}"
+        data-note-detail="{s["noteDetail"]}"
+        data-note-transition="{s["noteTransition"]}">
+        <div class="slide-header">
+          <div class="slide-tracker">
+            <span class="module-badge">{s["module"]}</span>
+            <span class="source-ref-badge">{s["ref"]}</span>
+          </div>
+          <h2 class="slide-action-title">{s["title"]}</h2>
+        </div>
+        <div class="slide-body slide-split-2col">
+          <div class="insight-panel">
+            <div class="core-question-block">
+              <div class="block-title">📌 本章要解決的問題／核心論點</div>
+              <div class="block-desc">{s["question"]}</div>
+            </div>
+            <ul class="highlights-list">
+              {hl_items}
+            </ul>
+            <div class="takeaway-banner">
+              {s["takeaway"]}
+            </div>
+          </div>
+          <div class="visual-panel">
+            <div class="diagram-header">
+              <span>{s["visualTitle"]}</span>
+              <span class="badge badge-gold">進金生能源 6692</span>
+            </div>
+            <div class="diagram-body" style="width:100%;">
+              {visual_body}
+            </div>
+            <div class="source-handout-thumb">
+              <div class="thumb-preview-wrap open-lightbox-trigger" data-img-src="{s["thumbImg"]}" data-caption="{s["thumbCaption"]}">
+                <img src="{s["thumbImg"]}" alt="{s["thumbLabel"]}">
+              </div>
+              <div class="thumb-info">
+                <div>原廠講義：<strong>{s["thumbLabel"]}</strong></div>
+                <button type="button" class="open-lightbox-trigger" data-img-src="{s["thumbImg"]}">點擊放大原圖 ↗</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="slide-footer">
+          <div class="footer-meta">
+            <span class="footer-brand-tag">ACMEPOINT 6692 ✕ 儲能系統與能管</span>
+            <span>頁碼：{sn:02d} / 20</span>
+          </div>
+          <div class="footer-keys-tip">按 N 鍵呼出講稿 ｜ ← / → 換頁 ｜ F 全螢幕 ｜ G 總覽</div>
+        </div>
+      </section>
+    '''
+    slides_html.append(sh)
+
+full_html = f'''<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>太陽光電設置乙級技術士回訓課程——儲能系統技術與應用現況｜麥肯錫風格專業簡報</title>
+  <link rel="stylesheet" href="../assets/css/deck.css">
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body class="deck-view">
+
+  <!-- Top App Bar -->
+  <header class="deck-topbar">
+    <div class="topbar-left">
+      <a href="../index.html" class="back-home-btn">
+        <span>← 返回知識庫首頁</span>
+      </a>
+      <div class="deck-title-mini">
+        <strong>進金生能源 6692</strong> ｜ 太陽光電設置乙級技術士回訓課程——儲能系統技術與應用現況
+      </div>
+    </div>
+    <div class="topbar-center">
+      <div class="slide-counter" id="slide-counter-text">1 / 20</div>
+    </div>
+    <div class="topbar-right">
+      <button class="tool-btn" id="notes-toggle-btn" title="開啟/關閉講者備忘錄 (按 N)">
+        <span>📝 講稿備忘 (N)</span>
+      </button>
+      <button class="tool-btn" id="overview-toggle-btn" title="投影片總覽 (按 G)">
+        <span>⊞ 總覽 (G)</span>
+      </button>
+      <button class="tool-btn" id="fullscreen-btn" title="全螢幕模式 (按 F)">
+        <span>⛶ 全螢幕 (F)</span>
+      </button>
+      <button class="tool-btn" id="print-btn" title="列印/匯出 PDF (按 P)">
+        <span>🖨 列印 PDF</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Workspace Canvas -->
+  <main class="deck-workspace">
+    <button class="deck-nav-btn nav-prev" id="deck-prev-btn" title="上一頁 (← / Backspace)">‹</button>
+    <button class="deck-nav-btn nav-next" id="deck-next-btn" title="下一頁 (→ / Space)">›</button>
+
+    <div class="slide-canvas" id="slide-canvas">
+      <div class="deck-progress-bar" id="deck-progress-bar"></div>
+      {"".join(slides_html)}
+    </div>
+  </main>
+
+  <!-- Speaker Notes Drawer (Toggled by 'N') -->
+  <aside class="speaker-notes-drawer" id="speaker-notes-drawer">
+    <div class="notes-header">
+      <div class="notes-title">
+        <span>🎙 麥肯錫顧問風格 3 段式講者備忘錄 (Speaker Notes)</span>
+        <span style="font-size:0.75rem; color:#94A3B8; font-weight:normal;">按 N 鍵或點擊右側 × 關閉</span>
+      </div>
+      <button class="notes-close-btn" id="notes-close-btn" title="關閉備忘錄">&times;</button>
+    </div>
+    <div class="notes-content-grid">
+      <div class="notes-col">
+        <div class="notes-col-label">① 本頁核心結論 (Takeaway)</div>
+        <div class="notes-col-body" id="notes-col-takeaway">
+          本頁重點：依規範嚴格落實。
+        </div>
+      </div>
+      <div class="notes-col">
+        <div class="notes-col-label">② 補充說明與數據佐證 (Field Note & Data)</div>
+        <div class="notes-col-body" id="notes-col-detail">
+          實務數據與補充說明：詳見相關技術手冊。
+        </div>
+      </div>
+      <div class="notes-col">
+        <div class="notes-col-label">③ 下一步 / 轉場提示 (Transition)</div>
+        <div class="notes-col-body" id="notes-col-transition">
+          下一頁重點：進入下一核心環節。
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Overview Grid Modal (Toggled by 'G') -->
+  <div class="overview-modal" id="overview-modal">
+    <div class="overview-header">
+      <h2>⊞ 全簡報 20 頁投影片總覽導航</h2>
+      <button class="tool-btn" id="overview-close-btn">關閉總覽 (Esc)</button>
+    </div>
+    <div class="overview-grid" id="overview-grid"></div>
+  </div>
+
+  <!-- Lightbox Modal for Original Handout Images -->
+  <div class="lightbox-modal" id="lightbox-modal">
+    <button class="lightbox-close-btn" id="lightbox-close-btn">&times;</button>
+    <div class="lightbox-content">
+      <img id="lightbox-img" src="" alt="講義原圖放大">
+      <div class="lightbox-caption" id="lightbox-caption">原版乙級回訓實體講義投影片對照</div>
+    </div>
+  </div>
+
+  <script src="../assets/js/deck.js"></script>
+</body>
+</html>
+'''
+
+with open(out_path, "w", encoding="utf-8") as f:
+    f.write(full_html)
+
+print(f"Generated {out_path} successfully with all 20 slides!")

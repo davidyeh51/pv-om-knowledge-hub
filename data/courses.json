@@ -91,26 +91,58 @@
       ]
     },
     {
-      "id": "pv-bess-scada-alarms",
-      "slug": "pv-bess-scada-alarms",
-      "title": "PV-BESS 光儲案場 SCADA 異常告警與 ISA-18.2 降噪實戰",
-      "subtitle": "符合 ISA-18.2 / IEC 62682 標準之告警洪水抑制與 8D D0/D3 派工聯動",
-      "instructor": "專業技術委員會",
-      "date": "規劃中 (2026 Q4)",
+      "id": "bess-technologies-applications-20261027",
+      "slug": "bess-technologies-applications",
+      "title": "太陽光電設置乙級技術士回訓課程——儲能系統技術與應用現況",
+      "subtitle": "麥肯錫顧問風格 10 分鐘精華導讀 ✕ 20 頁金字塔原理簡報 ✕ 能源管理與表後儲能",
+      "instructor": "慧能 張經理 (特聘業界專家) ＆ 葉大衛",
+      "date": "2026-10-27",
       "category": "advanced",
-      "status": "planned",
-      "badge": "預備擴充模組",
-      "recordingDuration": "45 分鐘",
-      "slidesCount": 16,
-      "sourceHandoutPages": 24,
-      "url": "#",
-      "coreThesis": "透過多 AI Agent 協同消除 70% 抖動與連鎖假告警，將被動警報轉為根因驅動的閉環派工單。",
+      "status": "ready",
+      "badge": "旗艦回訓核心課",
+      "recordingDuration": "44 分鐘",
+      "slidesCount": 20,
+      "sourceHandoutPages": 20,
+      "url": "courses/bess-technologies-applications.html",
+      "coreThesis": "儲能是前鋒，能管是中樞；以數據診斷用電浪費，以儲能放電免除限電，是工廠電費最佳化的終極解法。",
       "highlights": [
-        "告警合理化矩陣：抖動告警（Chattering）死區時間與延遲抑制演算法。",
-        "物理特徵關聯：雲層經過動態遮蔽與線間短路 (LL Fault) 快速解耦。",
-        "8D 閉環聯動：一級關鍵告警 15 分鐘內自動生成 D0 緊急遏制通知。"
+        "批次電價價差 9.29 元：製造業尖離峰套利空間雄厚，扣除 15% 損耗儲能櫃 5.22 年全本金收回。",
+        "台電需量 2880 次規則：每月 2880 次 15 分鐘平均需量取單次最高值，儲能放電無感削峰免除超約重罰。",
+        "四大實操管理案例：高低壓雙表揪出變壓器損耗 12.6%（年漏40萬）、空壓機共振改管關一台（省40萬降50kW）、自強號讓莒光號錯峰（省100萬基本費）、生鏽輸送帶狂吃 13 萬度電。"
       ],
-      "oneSentenceTakeaway": "告警合理化是運維工程師擺脫警報疲勞、聚焦真實核心電氣缺陷的數位護城河。"
+      "oneSentenceTakeaway": "不用換設備、靠管理節能，結合表後儲能充放電套利與需量反應，創造每年百萬現金流純利。",
+      "modules": [
+        {
+          "moduleNo": 1,
+          "name": "管理型節能理念與台灣電力政策局勢",
+          "slides": "01-04",
+          "summary": "台塑14年節能心法、AIDC機房引爆備用容量缺口、批次電價價差9.29元與用電大戶儲能履約。"
+        },
+        {
+          "moduleNo": 2,
+          "name": "電費單科學診斷與台電需量規則",
+          "slides": "05-08",
+          "summary": "能源管理法800kW申報、電費單六大維度（離峰佔比36%異常）、台電2880次抓最高峰與夏月自我同比省11萬。"
+        },
+        {
+          "moduleNo": 3,
+          "name": "表後儲能七大效益與操作模式",
+          "slides": "09-12",
+          "summary": "表後儲能免拉閘限電、夏月單充單放/非夏月雙充雙放、需量反應每度補貼10元無罰則與關鍵冷凍機備援UPS。"
+        },
+        {
+          "moduleNo": 4,
+          "name": "能源可視化落地與電表配置架構",
+          "slides": "13-16",
+          "summary": "總盤/高壓分盤/低壓總盤三層電表（拒絕800顆）、季度數據覆盤追究到人、自強號讓莒光號避峰省百萬與ESCO 8:2商模。"
+        },
+        {
+          "moduleNo": 5,
+          "name": "一體機參數測算與四大實操案例",
+          "slides": "17-20",
+          "summary": "125kW/261kWh一體機占地如公廁5.22年回本、變壓器損耗12.6%、空壓機共振改管、生鏽輸送帶與創儲節四位一體。"
+        }
+      ]
     },
     {
       "id": "pv-substation-grid-dispatch",

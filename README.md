@@ -5,7 +5,8 @@
 
 🌐 **線上知識庫與簡報系統**：[https://davidyeh51.github.io/pv-om-knowledge-hub/](https://davidyeh51.github.io/pv-om-knowledge-hub/)  
 🖥 **旗艦回訓簡報 #01 直達（基礎維運與發電特性）**：[https://davidyeh51.github.io/pv-om-knowledge-hub/courses/pv-om-fundamentals.html](https://davidyeh51.github.io/pv-om-knowledge-hub/courses/pv-om-fundamentals.html)  
-🔥 **旗艦回訓簡報 #02 直達（熱影像檢查與失效分析）**：[https://davidyeh51.github.io/pv-om-knowledge-hub/courses/pv-thermal-ir-inspection.html](https://davidyeh51.github.io/pv-om-knowledge-hub/courses/pv-thermal-ir-inspection.html)
+🔥 **旗艦回訓簡報 #02 直達（熱影像檢查與失效分析）**：[https://davidyeh51.github.io/pv-om-knowledge-hub/courses/pv-thermal-ir-inspection.html](https://davidyeh51.github.io/pv-om-knowledge-hub/courses/pv-thermal-ir-inspection.html)  
+⚡ **旗艦回訓簡報 #03 直達（儲能系統技術與應用現況）**：[https://davidyeh51.github.io/pv-om-knowledge-hub/courses/bess-technologies-applications.html](https://davidyeh51.github.io/pv-om-knowledge-hub/courses/bess-technologies-applications.html)
 
 ---
 
@@ -56,6 +57,18 @@
 
 ---
 
+### 課程三：儲能系統技術與應用現況 (44 分鐘，20 頁)
+
+| 模組編號 | 核心工程主題 | 對應投影片 | 核心結論與關鍵數據 |
+| :---: | :--- | :---: | :--- |
+| **模組一** | **能源轉型、碳排定價與法規推力** | Slide 01-04 | 企業能源管理首重「管理型節能」（免花大錢即省百萬），儲能系統為最後一塊拼圖。歐盟 CBAM 碳關稅 68 歐元/噸，用電大戶條款（5,000kW 門檻，地方自治條例北 4,000kW、中南 800kW）要求建置 10% 綠能或儲能。綠電憑證高達 5.8 元/度且常態斷貨，表後儲能（僅佔 1.3m×1.3m）為最合規抗通膨解方。 |
+| **模組二** | **電價結構、尖離峰套利與台電需量規則** | Slide 05-08 | 台電三段式夏月尖離峰價差 6.86 元/度、批次電價價差 9.29 元/度，表後儲能低充高放套利空間確立。深入剖析台電 2880 筆需量嚴苛規則（每月 96 點/日 × 30 日 = 2880 筆 15 分鐘平均需量，台電取單一最高尖峰計費）。2879 筆守規無用，1 筆跳至 1200kW 即罰百萬超約附加費；儲能削峰填谷為最高防禦保險。 |
+| **模組三** | **表後儲能硬體架構與財務回本模型** | Slide 09-12 | 主流規格為 125kW / 261kWh 戶外一體櫃（佔地 1.3m×1.3m×2.35m）。雙櫃系統（250kW / 522kWh）扣除充放電與年衰減 15% 損耗，實得 440 度/日。年收益約 143.6 萬元，建置成本約 750 萬元，靜態投資回收期僅 5.22 年。整合 EMS 需量自動預警削峰、需量反應聚合、不斷電備援與太陽光電自我消耗提升。 |
+| **模組四** | **工廠電力痛點與現場改善實戰 (四大經典案例)** | Slide 13-16 | **案例一**：老舊變壓器空載損耗 12.6%（遠超 3% 標竿），每月虛耗 11,262 度、年損 40 萬，換油整修 1 年回本。<br>**案例二**：雙空壓機管路共振搶氣，花 1 萬改裝管路即關停 1 台空壓機，年省 40 萬並降契約容量 50kW。<br>**案例三**：高耗能設備錯峰啟動（「自強號讓莒光號先過」策略），尖峰由 2700kW 壓制至 2000kW，年省基本電費百萬。<br>**案例四**：輸送帶鏈條生鏽卡滯，馬達恆速運轉暗中多出 20kW 扭力出力，年虛耗 13 萬度電（可視化電力監測揪出隱形浪費）。 |
+| **模組五** | **台電輔助服務、虛擬電廠與維運工程十條軍規** | Slide 17-20 | 台電電力交易平台 dReg0.25 / E-dReg 門檻高且面臨飽和，表後聚合需量反應為新藍海（日選型 18-20h 穩定領基費、彈性反應型每度補貼最高 10 元且未出席免罰款）。儲能 VCS 離網切換時間 &le; 1 秒（馬達水泵適用，PLC/伺服器需串 4ms UPS）。提煉儲能工程師 10 條安全與維運軍規（冷媒消防、絕緣阻抗、BMS 壓差平衡等）。 |
+
+---
+
 ## 🛠️ 資料擴充架構指南（三步驟快速新增課程）
 
 本知識庫採用**數據驅動（Data-Driven）的模組化架構**：
@@ -65,21 +78,23 @@ pv-om-knowledge-hub/
 ├── index.html                   # 知識庫入口主頁（課程地圖 + 全域搜尋）
 ├── generate_deck.py             # 課程 #01 簡報生成器
 ├── generate_deck_c2.py          # 課程 #02 簡報生成器
+├── generate_deck_c3.py          # 課程 #03 簡報生成器
 ├── courses/
 │   ├── pv-om-fundamentals.html  # 回訓課程 #01 簡報 (20 Slides)
-│   └── pv-thermal-ir-inspection.html # 回訓課程 #02 簡報 (20 Slides)
+│   ├── pv-thermal-ir-inspection.html # 回訓課程 #02 簡報 (20 Slides)
+│   └── bess-technologies-applications.html # 回訓課程 #03 簡報 (20 Slides)
 ├── assets/
 │   ├── css/
 │   │   ├── style.css            # 麥肯錫入口首頁樣式
 │   │   └── deck.css             # 16:9 簡報樣式與列印樣式
 │   ├── js/
-│   │   ├── search.js            # 全文檢索引擎與高亮模組 (40 Slides)
+│   │   ├── search.js            # 全文檢索引擎與高亮模組 (60 Slides)
 │   │   └── deck.js              # 簡報互動控制器 (鍵盤/講稿/燈箱/總覽)
 │   └── images/
 │       └── slides/              # 66 張高清原廠講義圖冊 (slide_01.jpg ~ slide_66.jpg)
 ├── data/
-│   ├── courses.json             # 課程目錄與中繼資料 (2 Ready, 3 Planned)
-│   └── search-index.json        # 全域搜尋索引 (40 頁投影片全索引)
+│   ├── courses.json             # 課程目錄與中繼資料 (3 Ready, 2 Planned)
+│   └── search-index.json        # 全域搜尋索引 (60 頁投影片全索引)
 └── docs/
     └── EXPANSION.md             # 擴充 SOP 指南
 ```
@@ -106,7 +121,7 @@ pv-om-knowledge-hub/
 ## 🏢 維護與版權資訊
 
 - **專案發起**：進金生能源服務股份有限公司 (ACMEPOINT 6692) 運維管理部
-- **技術體系**：太陽光電設置乙級技術士回訓課程、台電最新併聯技術規範、IEC 62446-3、NEC 690.12
-- **授課講師**：葉大衛 (David Yeh)
+- **技術體系**：太陽光電設置乙級技術士回訓課程、台電最新併聯技術規範、IEC 62446-3、NEC 690.12、NFPA 855 / UL 9540A 儲能標準
+- **授課講師**：葉大衛 (David Yeh)、慧能 張經理 (13-14 年台塑能管資歷)
 - **架構設計**：麥肯錫顧問風格結構化工程智庫 (Pyramid Principle)
 - **開源託管**：GitHub Pages 靜態安全託管
