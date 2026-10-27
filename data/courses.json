@@ -1,0 +1,158 @@
+{
+  "version": "1.0.0",
+  "organization": "進金生能源 ACMEPOINT (6692)",
+  "portalName": "光伏維運專業工程師知識庫 (PV O&M Engineering Knowledge Hub)",
+  "description": "專為光伏運維團隊、案場主任與專業工程師打造的現代化維運決策與學習平台，依據麥肯錫顧問風格結構化提煉太陽光電乙級技術士回訓技術精髓。",
+  "categories": [
+    { "id": "all", "name": "全部領域", "count": 5 },
+    { "id": "fundamentals", "name": "光電基礎與發電特性", "count": 1 },
+    { "id": "cleaning", "name": "案場清洗與熱斑防範", "count": 1 },
+    { "id": "inverter", "name": "逆變器與台電併網", "count": 1 },
+    { "id": "safety", "name": "巡檢工安與施工工藝", "count": 1 },
+    { "id": "advanced", "name": "消防RSD與光儲微電網", "count": 1 }
+  ],
+  "courses": [
+    {
+      "id": "pv-om-fundamentals-20261027",
+      "slug": "pv-om-fundamentals",
+      "title": "太陽光電設置乙級技術士回訓課程——光電維運技能與基本光電知識",
+      "subtitle": "麥肯錫顧問風格 10 分鐘精華導讀 ✕ 20 頁金字塔原理簡報 ✕ 66 張原廠講義圖冊",
+      "instructor": "葉大衛 (David Yeh)",
+      "date": "2026-10-27",
+      "category": "fundamentals",
+      "status": "ready",
+      "badge": "旗艦回訓核心課",
+      "recordingDuration": "62 分鐘",
+      "slidesCount": 20,
+      "sourceHandoutPages": 33,
+      "url": "courses/pv-om-fundamentals.html",
+      "coreThesis": "光伏維運的核心不是被動擦板，而是解耦發電物理參數、防範熱斑起火、嚴格遵循接頭工藝與精準匹配台電電網併聯特性。",
+      "highlights": [
+        "物理特性解耦：日照定電流、通風散熱定電壓；模組更換嚴格匹配電流差值在 1A 以內。",
+        "案場清洗科學決策：切忌盲看歷史 PR 值，以共平面照度鉗表修正值衰退 30% 為觸發標準。",
+        "工安死角防禦：單斷正極組串負極對地仍帶 -199V 高壓，需正負極雙斷並驗電歸零方可施作。"
+      ],
+      "oneSentenceTakeaway": "以物理規律指導維運，以電氣工藝杜絕火災，以台電規範保障併網收益最大化。",
+      "modules": [
+        {
+          "moduleNo": 1,
+          "name": "光電基礎與發電物理特性",
+          "slides": "01-05",
+          "summary": "解耦光熱與光電轉換機制、全片到半切封裝突破、日照定電流與溫度定電壓數學模型。"
+        },
+        {
+          "moduleNo": 2,
+          "name": "案場清洗策略與熱斑風險防控",
+          "slides": "06-08",
+          "summary": "1%~2%專屬備品制度、照度鉗表修正30%清洗損益門檻、鳥糞誘發二極體熔斷與背板龜裂機制。"
+        },
+        {
+          "moduleNo": 3,
+          "name": "逆變器選型、超配與台電併網規範",
+          "slides": "09-12",
+          "summary": "三大逆變器架構辨析、1.5倍超配壽命衰退代價、台電函稿高電壓發函調TAP、三相相差<5kVA配算。"
+        },
+        {
+          "moduleNo": 4,
+          "name": "案場巡檢工安、施工工藝與接頭防護",
+          "slides": "13-15",
+          "summary": "變流器遮陽板工法、嚴禁砂輪機切線、20kg扭力扳手、MC4燒燬四因、負極-199V帶電防觸電SOP。"
+        },
+        {
+          "moduleNo": 5,
+          "name": "前瞻安全技術與分散式光儲微電網",
+          "slides": "16-18",
+          "summary": "消防救災RSD 80V/30V關斷機制、AFCI電弧監聽、雙CT防逆送、陽台光電專用迴路與表後儲能四大模式。"
+        }
+      ]
+    },
+    {
+      "id": "pv-bess-scada-alarms",
+      "slug": "pv-bess-scada-alarms",
+      "title": "PV-BESS 光儲案場 SCADA 異常告警與 ISA-18.2 降噪實戰",
+      "subtitle": "符合 ISA-18.2 / IEC 62682 標準之告警洪水抑制與 8D D0/D3 派工聯動",
+      "instructor": "專業技術委員會",
+      "date": "規劃中 (2026 Q4)",
+      "category": "advanced",
+      "status": "planned",
+      "badge": "預備擴充模組",
+      "recordingDuration": "45 分鐘",
+      "slidesCount": 16,
+      "sourceHandoutPages": 24,
+      "url": "#",
+      "coreThesis": "透過多 AI Agent 協同消除 70% 抖動與連鎖假告警，將被動警報轉為根因驅動的閉環派工單。",
+      "highlights": [
+        "告警合理化矩陣：抖動告警（Chattering）死區時間與延遲抑制演算法。",
+        "物理特徵關聯：雲層經過動態遮蔽與線間短路 (LL Fault) 快速解耦。",
+        "8D 閉環聯動：一級關鍵告警 15 分鐘內自動生成 D0 緊急遏制通知。"
+      ],
+      "oneSentenceTakeaway": "告警合理化是運維工程師擺脫警報疲勞、聚焦真實核心電氣缺陷的數位護城河。"
+    },
+    {
+      "id": "pv-substation-grid-dispatch",
+      "slug": "pv-substation-grid-dispatch",
+      "title": "高壓/特高壓升壓站與台電調度通訊審查防禦實務",
+      "subtitle": "DNP3.0 / IEC 61850 通訊協定、虛功控制 (Volt-Var) 與頻率響應防禦",
+      "instructor": "電網工程組",
+      "date": "規劃中 (2027 Q1)",
+      "category": "inverter",
+      "status": "planned",
+      "badge": "預備擴充模組",
+      "recordingDuration": "50 分鐘",
+      "slidesCount": 18,
+      "sourceHandoutPages": 28,
+      "url": "#",
+      "coreThesis": "高壓案場併網成敗在於變電站保護協調與台電調度中心 RTU 通訊實時連動穩定性。",
+      "highlights": [
+        "台電自動頻率控制 (AFC) 與主動功率降載調度邏輯剖析。",
+        "變電所保護電驛 (50/51/87/27/59) 整定值設定與跳脫連鎖防禦。",
+        "台電配電級與輸電級併網審查常見退件原因與公文攻防實戰。"
+      ],
+      "oneSentenceTakeaway": "保護協調精準設定與強韌通訊架構，是保障高壓案場不被台電強制解聯的底線。"
+    },
+    {
+      "id": "pv-thermal-ir-el-inspection",
+      "slug": "pv-thermal-ir-el-inspection",
+      "title": "太陽光電案場無人機紅外線熱成像 (IR) 與 EL 隱裂診斷技術",
+      "subtitle": "符合 IEC 62446-3 標準之熱斑、二極體失效與晶片隱裂像素級辨識",
+      "instructor": "智慧巡檢中心",
+      "date": "規劃中 (2027 Q1)",
+      "category": "safety",
+      "status": "planned",
+      "badge": "預備擴充模組",
+      "recordingDuration": "40 分鐘",
+      "slidesCount": 15,
+      "sourceHandoutPages": 20,
+      "url": "#",
+      "coreThesis": "以無人機正射熱成像取代人力逐串勾測，結合電氣時序數據實現毫米級缺陷精準定位。",
+      "highlights": [
+        "熱斑溫度差 $\\Delta T > 20^\\circ\\text{C}$ 之三級風險警示判定標準。",
+        "夜間 EL 電致發光檢測指紋特徵辨析（黑心片、破片、斷柵與隱裂）。",
+        "熱成像巡檢報告與原廠模組保固索賠 SCAR 證據鏈封裝。"
+      ],
+      "oneSentenceTakeaway": "空中紅外初篩結合地面 EL 確診，讓隱蔽晶片微裂無所遁形。"
+    },
+    {
+      "id": "pv-8d-root-cause-engineering",
+      "slug": "pv-8d-root-cause-engineering",
+      "title": "8D 問題解決法於光伏電廠性能異常與客訴管理實戰",
+      "subtitle": "從 D0 遏制到 D8 嘉勉——太陽光電發電短少與重大電氣事故調查法典",
+      "instructor": "品保與運維治理部",
+      "date": "規劃中 (2027 Q2)",
+      "category": "cleaning",
+      "status": "planned",
+      "badge": "預備擴充模組",
+      "recordingDuration": "55 分鐘",
+      "slidesCount": 20,
+      "sourceHandoutPages": 30,
+      "url": "#",
+      "coreThesis": "嚴格依循 8D 工業標準與雙向 5-Why 驗證，杜絕『推託天氣遮陰』的經驗主義偽根因。",
+      "highlights": [
+        "D2 Is/Is Not 邊界收斂：精準定位異常集中於特定串列、特定方位或特定時間段。",
+        "D4 發生鏈與流出鏈雙向 5-Why 邏輯驗證與現場物理證據鏈閉環。",
+        "D7 管制計畫 (Control Plan) 與 PFMEA 現場連動升版防再發防禦。"
+      ],
+      "oneSentenceTakeaway": "8D 不僅是給業主的合規報告，更是電廠挽回百萬度發電損失的工程調查利刃。"
+    }
+  ]
+}
